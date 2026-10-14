@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- [AÑADIDO] Tipo reutilizable: texto que no puede quedar vacío ni solo con espacios -->
+    <xs:simpleType name="TextoNoVacio">
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Definición del elemento raíz -->
+    <xs:element name="profesores">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- maxOccurs="unbounded" permite registrar múltiples profesores -->
+                <xs:element name="profesor" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="TextoNoVacio"/>
+                            <xs:element name="especialidad" type="TextoNoVacio"/>
+
+                            <!-- Validación avanzada: El correo DEBE tener formato válido -->
+                            <xs:element name="correo">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="departamento" type="TextoNoVacio"/>
+
+                            <!-- Definición de la lista de materias -->
+                            <xs:element name="materias_impartidas">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!-- minOccurs="0" permite profesores sin materias asignadas aún -->
+                                        <xs:element name="materia" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <!-- simpleContent permite texto dentro de la etiqueta + atributos -->
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <!-- Validación: El código de materia debe ser 2 letras y 3 números (Ej. CS201) -->
+                                                        <xs:attribute name="codigo" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:pattern value="[A-Z]{2}[0-9]{3}"/>
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:attribute>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+
+                        <!-- Validación: El ID del profesor debe ser tipo ID y seguir el patrón P + 4 dígitos (Ej. P1001) -->
+                        <xs:attribute name="id" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:ID">
+                                    <xs:pattern value="P[0-9]{4}"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+        <!-- [AÑADIDO] Integridad: no puede haber dos profesores con el mismo correo -->
+        <xs:unique name="correoUnico">
+            <xs:selector xpath="profesor"/>
+            <xs:field xpath="correo"/>
+        </xs:unique>
+    </xs:element>
+
+</xs:schema>

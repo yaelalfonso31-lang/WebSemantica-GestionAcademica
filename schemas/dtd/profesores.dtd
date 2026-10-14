@@ -1,0 +1,15 @@
+<!ELEMENT profesores (profesor+)>
+
+<!ELEMENT profesor (nombre, especialidad, correo, departamento, materias_impartidas)>
+
+<!ATTLIST profesor id ID #REQUIRED>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT especialidad (#PCDATA)>
+<!ELEMENT correo (#PCDATA)>
+<!ELEMENT departamento (#PCDATA)>
+
+<!ELEMENT materias_impartidas (materia*)>
+
+<!ELEMENT materia (#PCDATA)>
+<!ATTLIST materia codigo CDATA #REQUIRED>

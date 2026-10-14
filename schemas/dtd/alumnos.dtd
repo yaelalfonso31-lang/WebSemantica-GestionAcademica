@@ -1,0 +1,12 @@
+<!ELEMENT alumnos (alumno*)>
+<!ELEMENT alumno (nombre, apellidos, correo, carrera_id, semestre, promedio, estatus)>
+<!ATTLIST alumno
+    id ID #REQUIRED
+    matricula CDATA #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT correo (#PCDATA)>
+<!ELEMENT carrera_id (#PCDATA)>
+<!ELEMENT semestre (#PCDATA)>
+<!ELEMENT promedio (#PCDATA)>
+<!ELEMENT estatus (#PCDATA)>

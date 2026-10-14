@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="alumnos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="alumno" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="apellidos" type="xs:string"/>
+                            <xs:element name="correo" type="xs:string"/>
+                            <xs:element name="carrera_id" type="xs:string"/>
+                            <xs:element name="semestre" type="xs:positiveInteger"/>
+                            <xs:element name="promedio" type="xs:decimal"/>
+                            <xs:element name="estatus" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:ID" use="required"/>
+                        <xs:attribute name="matricula" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
