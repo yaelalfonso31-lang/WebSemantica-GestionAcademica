@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios>
+    <usuario id="U001" rol="admin" ref="P_001">
+        <username>admin_general</username>
+        <password_hash>pbkdf2:sha256:...</password_hash>
+    </usuario>
+    <usuario id="U002" rol="alumno" ref="A_2026001">
+        <username>alumno_juan</username>
+        <password_hash>pbkdf2:sha256:...</password_hash>
+    </usuario>
+</usuarios>

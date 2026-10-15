@@ -1,0 +1,58 @@
+@prefix acad: <http://academico.edu.mx/ontologia#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://academico.edu.mx/recurso/alumno/A001> a acad:Alumno ;
+    acad:apellidos "García López" ;
+    acad:correo "maria.garcia@edusemantic.edu" ;
+    acad:estatus "Activo" ;
+    acad:id "A001" ;
+    acad:matricula "20230001" ;
+    acad:nombre "María" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 95.0 ;
+    acad:semestre 3 .
+
+<http://academico.edu.mx/recurso/alumno/A002> a acad:Alumno ;
+    acad:apellidos "Hernández Ruiz" ;
+    acad:correo "carlos.hernandez@alumno.buap.mx" ;
+    acad:estatus "Activo" ;
+    acad:id "A002" ;
+    acad:matricula "20230002" ;
+    acad:nombre "Carlos" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 87.3 ;
+    acad:semestre 6 .
+
+<http://academico.edu.mx/recurso/alumno/A003> a acad:Alumno ;
+    acad:apellidos "Martínez Torres" ;
+    acad:correo "laura.martinez@alumno.buap.mx" ;
+    acad:estatus "Activo" ;
+    acad:id "A003" ;
+    acad:matricula "20230003" ;
+    acad:nombre "Laura" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C002> ;
+    acad:promedio 94.2 ;
+    acad:semestre 4 .
+
+<http://academico.edu.mx/recurso/alumno/A005> a acad:Alumno ;
+    acad:apellidos "Ramírez Flores" ;
+    acad:correo "sofia.ramirez@alumno.buap.mx" ;
+    acad:estatus "Activo" ;
+    acad:id "A005" ;
+    acad:matricula "20230005" ;
+    acad:nombre "Sofía" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C003> ;
+    acad:promedio 89.7 ;
+    acad:semestre 2 .
+
+<http://academico.edu.mx/recurso/alumno/A006> a acad:Alumno ;
+    acad:apellidos "Serrano" ;
+    acad:correo "efewf@dfvs.como" ;
+    acad:estatus "Activo" ;
+    acad:id "A006" ;
+    acad:matricula "202254021" ;
+    acad:nombre "Yael Alf" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 9.0 ;
+    acad:semestre 8 .
+

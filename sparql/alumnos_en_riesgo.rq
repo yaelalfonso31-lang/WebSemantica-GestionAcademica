@@ -1,0 +1,19 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX acad: <http://academico.edu.mx/ontologia#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Propósito: Alumnos con promedio menor a 80.0
+# Parámetros: Ninguno
+
+SELECT ?matricula ?nombre ?apellidos ?promedio
+WHERE {
+    ?alumno a acad:Alumno ;
+            acad:matricula ?matricula ;
+            acad:nombre ?nombre ;
+            acad:apellidos ?apellidos ;
+            acad:promedio ?promedio .
+    
+    # Filtramos semánticamente a aquellos con promedio por debajo del umbral de riesgo
+    FILTER (xsd:decimal(?promedio) < 80.0)
+}
+ORDER BY ASC(?promedio)

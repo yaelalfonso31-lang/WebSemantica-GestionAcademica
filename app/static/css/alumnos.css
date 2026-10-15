@@ -1,0 +1,464 @@
+/* =========================================
+   Módulo de Alumnos - CSS sin Tailwind
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body.cuerpo-alumnos {
+    margin: 0;
+    background: #f3f6fb;
+    color: #1f2937;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.pagina-alumnos {
+    width: min(1200px, calc(100% - 40px));
+    margin: 32px auto;
+}
+
+.encabezado-modulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.titulo-modulo {
+    margin: 0;
+    color: #1e3a8a;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.subtitulo-modulo {
+    margin: 8px 0 0;
+    color: #64748b;
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 7px;
+    padding: 10px 16px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
+}
+
+.boton-primario {
+    background: #2563eb;
+}
+
+.boton-primario:hover {
+    background: #1d4ed8;
+}
+
+.boton-secundario {
+    background: #94a3b8;
+    margin-right: 12px;
+}
+
+.boton-secundario:hover {
+    background: #64748b;
+}
+
+.boton-exito {
+    background: #16a34a;
+}
+
+.boton-exito:hover {
+    background: #15803d;
+}
+
+.boton-peligro {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.boton-peligro:hover {
+    background: #fecaca;
+    color: #7f1d1d;
+}
+
+.boton-pequeno {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.resumen-alumnos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.tarjeta-resumen {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.etiqueta-resumen {
+    display: block;
+    color: #64748b;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.valor-resumen {
+    margin: 6px 0 0;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.valor-azul {
+    color: #1d4ed8;
+}
+
+.valor-verde {
+    color: #15803d;
+}
+
+.valor-indigo {
+    color: #4338ca;
+}
+
+.tabla-contenedor {
+    max-height: 600px;
+    overflow: auto;
+    margin-bottom: 32px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+}
+
+.tabla-alumnos {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.tabla-encabezado {
+    color: #1e3a8a;
+    background: #eff6ff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.tabla-alumnos th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 15px 18px;
+    border-bottom: 2px solid #bfdbfe;
+    box-shadow: 0 2px 2px rgba(15, 23, 42, 0.04);
+    white-space: nowrap;
+}
+
+.tabla-alumnos td {
+    padding: 15px 18px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.tabla-alumnos tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.tabla-alumnos tbody tr:hover {
+    background: #f8fafc;
+}
+
+.tabla-alumnos tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.texto-derecha {
+    text-align: right;
+}
+
+.matricula-alumno {
+    color: #1f2937;
+    font-family: Consolas, monospace;
+    font-weight: 700;
+}
+
+.id-alumno {
+    display: block;
+    margin-top: 3px;
+    color: #94a3b8;
+    font-family: Consolas, monospace;
+    font-size: 0.75rem;
+}
+
+.nombre-alumno {
+    color: #111827;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.correo-alumno {
+    display: block;
+    margin-top: 4px;
+    color: #2563eb;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+
+.etiqueta-carrera {
+    display: inline-block;
+    padding: 3px 8px;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-family: Consolas, monospace;
+    font-size: 0.8rem;
+}
+
+.texto-secundario {
+    color: #64748b;
+}
+
+.promedio-alumno {
+    color: #111827;
+    font-family: Consolas, monospace;
+    font-weight: 700;
+}
+
+.badge-estatus {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.badge-activo {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.badge-egresado {
+    color: #1e40af;
+    background: #dbeafe;
+}
+
+.badge-baja {
+    color: #374151;
+    background: #f3f4f6;
+}
+
+.formulario-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.formulario-dos-columnas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.formulario-cuatro-columnas {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.columna-doble {
+    grid-column: span 2;
+}
+
+.espacio-inferior {
+    margin-bottom: 18px;
+}
+
+.espacio-inferior-grande {
+    margin-bottom: 24px;
+}
+
+.etiqueta-campo {
+    display: block;
+    margin-bottom: 6px;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.campo-formulario {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #fff;
+    color: #1f2937;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo-formulario:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16);
+}
+
+.acciones-formulario {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 18px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgba(15, 23, 42, 0.58);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.modal-contenido {
+    width: min(680px, 100%);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 26px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    animation: modalFadeIn 0.25s ease-out;
+}
+
+.modal-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-titulo {
+    margin: 0;
+    color: #1e3a8a;
+    font-size: 1.35rem;
+}
+
+.boton-cerrar {
+    border: 0;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.boton-cerrar:hover {
+    color: #dc2626;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 760px) {
+    .pagina-alumnos {
+        width: min(100% - 24px, 1200px);
+        margin: 20px auto;
+    }
+
+    .encabezado-modulo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .titulo-modulo {
+        font-size: 1.7rem;
+    }
+
+    .resumen-alumnos {
+        grid-template-columns: 1fr;
+    }
+
+    .tabla-contenedor {
+        max-height: none;
+    }
+
+    .tabla-alumnos {
+        min-width: 760px;
+    }
+
+    .formulario-cuatro-columnas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .columna-doble {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario-dos-columnas {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-overlay {
+        padding: 10px;
+    }
+
+    .modal-contenido {
+        padding: 18px;
+    }
+
+    .acciones-formulario {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .boton-secundario {
+        margin-right: 0;
+    }
+
+    .acciones-formulario .boton {
+        width: 100%;
+    }
+}

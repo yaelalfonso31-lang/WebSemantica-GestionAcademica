@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE alumnos SYSTEM "../../schemas/dtd/alumnos.dtd">
+<!-- Se omite la instrucción <?xml-stylesheet ... ?> porque la transformación ahora se hace en el servidor con lxml -->
+<alumnos>
+    <alumno id="A001" matricula="20230001">
+        <nombre>María</nombre>
+        <apellidos>García López</apellidos>
+        <correo>maria.garcia@edusemantic.edu</correo>
+        <carrera_id>C001</carrera_id>
+        <semestre>3</semestre>
+        <promedio>95.0</promedio>
+        <estatus>Activo</estatus>
+    </alumno>
+    <alumno id="A002" matricula="20230002">
+        <nombre>Carlos</nombre>
+        <apellidos>Hernández Ruiz</apellidos>
+        <correo>carlos.hernandez@alumno.buap.mx</correo>
+        <carrera_id>C001</carrera_id>
+        <semestre>6</semestre>
+        <promedio>87.3</promedio>
+        <estatus>Activo</estatus>
+    </alumno>
+    <alumno id="A003" matricula="20230003">
+        <nombre>Laura</nombre>
+        <apellidos>Martínez Torres</apellidos>
+        <correo>laura.martinez@alumno.buap.mx</correo>
+        <carrera_id>C002</carrera_id>
+        <semestre>4</semestre>
+        <promedio>94.2</promedio>
+        <estatus>Activo</estatus>
+    </alumno>
+    <alumno id="A005" matricula="20230005">
+        <nombre>Sofía</nombre>
+        <apellidos>Ramírez Flores</apellidos>
+        <correo>sofia.ramirez@alumno.buap.mx</correo>
+        <carrera_id>C003</carrera_id>
+        <semestre>2</semestre>
+        <promedio>89.7</promedio>
+        <estatus>Activo</estatus>
+    </alumno>
+</alumnos>

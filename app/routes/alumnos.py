@@ -1,34 +1,53 @@
-from flask import Blueprint, request, jsonify, render_template
-from lxml import etree
+import os
+from flask import Blueprint, current_app, session, request, jsonify
+from app.auth.decorators import login_requerido
+from app.services.transformer import transformar_a_html
 from app.services.xml_repository import XMLRepository
 
-alumnos_bp = Blueprint("alumnos", __name__)
-repo = XMLRepository()
+alumnos_bp = Blueprint('alumnos', __name__)
+# Instanciamos el repositorio apuntando a alumnos.xml
+repo = XMLRepository(entidad="alumnos")
 
-@alumnos_bp.route("/alumnos", methods=["GET"])
+# ==========================================
+# 1. RUTA DE VISTA WEB (HTML vía XSLT)
+# ==========================================
+@alumnos_bp.route('/alumnos', methods=["GET"])
+@login_requerido
 def vista_alumnos():
     """Renderiza la vista de alumnos transformando alumnos.xml con XSLT."""
-    xml_tree = etree.parse("data/xml/alumnos.xml")
-    xsl_tree = etree.parse("xslt/html/alumnos.xsl")
-    transform = etree.XSLT(xsl_tree)
-    tabla_html = str(transform(xml_tree))
-    return render_template("dashboard_alumno.html", tabla_alumnos=tabla_html)
+    
+    xml_path = os.path.join(current_app.config.get('XML_DIR', 'data/xml'), 'alumnos.xml')
+    rol_actual = session.get('rol', 'visitante')
+    nombre_actual = session.get('username', 'Invitado')
+    
+    if not os.path.exists(xml_path):
+        xml_data = '<?xml version="1.0" encoding="UTF-8"?><alumnos></alumnos>'
+        return transformar_a_html(xml_data, 'alumnos.xsl', {'rol_usuario': rol_actual, 'nombre_usuario': nombre_actual})
+    
+    html_generado = transformar_a_html(
+        xml_path_or_string=xml_path,
+        xslt_filename='alumnos.xsl',
+        params={
+            'rol_usuario': rol_actual,
+            'nombre_usuario': nombre_actual
+        }
+    )
+    
+    return html_generado
 
+# ==========================================
+# 2. RUTAS API (CRUD JSON)
+# ==========================================
 @alumnos_bp.route("/api/alumnos", methods=["GET"])
+@login_requerido
 def api_listar_alumnos():
-    """Endpoint JSON equivalente al GET de server.js en Sistema-Semantico-Academico."""
+    """Devuelve la lista de alumnos en formato JSON."""
     return jsonify(repo.listar_alumnos()), 200
 
-@alumnos_bp.route("/api/alumnos/<alumno_id>", methods=["GET"])
-def api_obtener_alumno(alumno_id):
-    alumno = repo.obtener_alumno(alumno_id)
-    if not alumno:
-        return jsonify({"error": "Alumno no encontrado"}), 404
-    return jsonify(alumno), 200
-
 @alumnos_bp.route("/api/alumnos", methods=["POST"])
+@login_requerido
 def api_crear_alumno():
-    """Endpoint JSON equivalente al POST de server.js."""
+    """Recibe datos para crear un nuevo alumno, validando contra DTD y XSD."""
     datos = request.get_json() or request.form.to_dict()
     try:
         creado = repo.agregar_alumno(datos)
@@ -36,17 +55,10 @@ def api_crear_alumno():
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
-@alumnos_bp.route("/api/alumnos/<alumno_id>", methods=["PUT"])
-def api_actualizar_alumno(alumno_id):
-    datos = request.get_json() or request.form.to_dict()
-    try:
-        actualizado = repo.actualizar_alumno(alumno_id, datos)
-        return jsonify({"mensaje": "Alumno actualizado correctamente", "alumno": actualizado}), 200
-    except ValueError as e:
-        return jsonify({"error": str(e)}), 404
-
 @alumnos_bp.route("/api/alumnos/<alumno_id>", methods=["DELETE"])
+@login_requerido
 def api_eliminar_alumno(alumno_id):
+    """Elimina un alumno por su atributo ID."""
     eliminado = repo.eliminar_alumno(alumno_id)
     if not eliminado:
         return jsonify({"error": "Alumno no encontrado"}), 404

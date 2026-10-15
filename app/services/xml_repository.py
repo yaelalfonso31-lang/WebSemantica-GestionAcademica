@@ -1,97 +1,114 @@
 import os
+import shutil
+from datetime import datetime
 from lxml import etree
+from flask import current_app
+from app.services.validator import XMLValidator
+from app.services.rdf_graph import SemanticEngine
 
 class XMLRepository:
-    def __init__(self, base_xml_dir="data/xml"):
-        self.base_xml_dir = base_xml_dir
+    def __init__(self, entidad="alumnos"):
+        self.entidad = entidad
+        self.campos_esperados = ['nombre', 'apellidos', 'correo', 'carrera_id', 'semestre', 'promedio', 'estatus']
+    
+    def _get_file_path(self):
+        return os.path.join(current_app.config.get('XML_DIR', 'data/xml'), f'{self.entidad}.xml')
+        
+    def _crear_backup(self, xml_path):
+        """Crea una copia del XML en data/backups/ antes de cualquier escritura."""
+        backup_dir = os.path.join('data', 'backups')
+        os.makedirs(backup_dir, exist_ok=True)
+        timestamp = datetime.now().strftime('%Y-%m-%d_%H%M%S')
+        backup_path = os.path.join(backup_dir, f'{self.entidad}_{timestamp}.xml')
+        
+        if os.path.exists(xml_path):
+            shutil.copy2(xml_path, backup_path)
+            
+    def _guardar_xml(self, tree, xml_path):
+        """Valida el árbol contra DTD y XSD, crea un backup y guarda el archivo."""
+        xsd_path = os.path.join('schemas', 'xsd', f'{self.entidad}.xsd')
+        dtd_path = os.path.join('schemas', 'dtd', f'{self.entidad}.dtd')
+        
+        # 1. Validar integridad de datos
+        XMLValidator.validar_contra_xsd(tree, xsd_path)
+        XMLValidator.validar_contra_dtd(tree, dtd_path)
+        
+        # 2. Crear respaldo
+        self._crear_backup(xml_path)
+        
+        # 3. Guardar el archivo definitivo (preservando el DOCTYPE si es posible)
+        doctype = f'<!DOCTYPE {self.entidad} SYSTEM "../../schemas/dtd/{self.entidad}.dtd">'
+        tree.write(xml_path, encoding="UTF-8", xml_declaration=True, pretty_print=True, doctype=doctype)
 
-    def _get_path(self, filename):
-        return os.path.join(self.base_xml_dir, filename)
-
-    def get_tree(self, filename):
-        path = self._get_path(filename)
-        parser = etree.XMLParser(remove_blank_text=True)
-        return etree.parse(path, parser)
-
+    # ==========================
+    # Operaciones CRUD Alumnos
+    # ==========================
+    
     def listar_alumnos(self):
-        tree = self.get_tree("alumnos.xml")
-        root = tree.getroot()
+        """Retorna una lista de diccionarios (útil para la API JSON)."""
+        xml_path = self._get_file_path()
+        if not os.path.exists(xml_path):
+            return []
+            
+        tree = etree.parse(xml_path)
         alumnos = []
-        for elem in root.findall("alumno"):
-            alumnos.append({
-                "id": elem.get("id"),
-                "matricula": elem.get("matricula"),
-                "nombre": elem.findtext("nombre", default=""),
-                "apellidos": elem.findtext("apellidos", default=""),
-                "correo": elem.findtext("correo", default=""),
-                "carrera_id": elem.findtext("carrera_id", default=""),
-                "semestre": elem.findtext("semestre", default="1"),
-                "promedio": elem.findtext("promedio", default="0.0"),
-                "estatus": elem.findtext("estatus", default="Activo"),
-            })
+        for nodo in tree.xpath('//alumno'):
+            alumno_data = {"id": nodo.get("id"), "matricula": nodo.get("matricula")}
+            for hijo in nodo:
+                alumno_data[hijo.tag] = hijo.text
+            alumnos.append(alumno_data)
         return alumnos
 
-    def obtener_alumno(self, alumno_id):
-        tree = self.get_tree("alumnos.xml")
-        elem = tree.find(f"//alumno[@id='{alumno_id}']")
-        if elem is None:
-            return None
-        return {
-            "id": elem.get("id"),
-            "matricula": elem.get("matricula"),
-            "nombre": elem.findtext("nombre", default=""),
-            "apellidos": elem.findtext("apellidos", default=""),
-            "correo": elem.findtext("correo", default=""),
-            "carrera_id": elem.findtext("carrera_id", default=""),
-            "semestre": elem.findtext("semestre", default="1"),
-            "promedio": elem.findtext("promedio", default="0.0"),
-            "estatus": elem.findtext("estatus", default="Activo"),
-        }
-
     def agregar_alumno(self, datos):
-        path = self._get_path("alumnos.xml")
-        tree = self.get_tree("alumnos.xml")
+        xml_path = self._get_file_path()
+        tree = etree.parse(xml_path)
         root = tree.getroot()
-
-        if root.find(f"alumno[@id='{datos['id']}']") is not None:
+        
+        # Verificar que el ID o la matrícula no existan ya
+        if root.xpath(f"//alumno[@id='{datos['id']}']"):
             raise ValueError(f"El alumno con ID {datos['id']} ya existe.")
-
-        nuevo = etree.SubElement(root, "alumno", id=datos["id"], matricula=datos["matricula"])
-        for campo in ["nombre", "apellidos", "correo", "carrera_id", "semestre", "promedio", "estatus"]:
-            sub = etree.SubElement(nuevo, campo)
-            sub.text = str(datos.get(campo, ""))
-
-        tree.write(path, pretty_print=True, xml_declaration=True, encoding="UTF-8")
+            
+        # Crear el nodo principal
+        nuevo_alumno = etree.Element("alumno", id=datos['id'], matricula=datos['matricula'])
+        
+        # Agregar los hijos según los campos esperados
+        for campo in self.campos_esperados:
+            hijo = etree.Element(campo)
+            hijo.text = str(datos.get(campo, ''))
+            nuevo_alumno.append(hijo)
+            
+        root.append(nuevo_alumno)
+        self._guardar_xml(tree, xml_path)
         return datos
 
-    def actualizar_alumno(self, alumno_id, datos):
-        path = self._get_path("alumnos.xml")
-        tree = self.get_tree("alumnos.xml")
-        root = tree.getroot()
-        elem = root.find(f"alumno[@id='{alumno_id}']")
-        if elem is None:
-            raise ValueError(f"Alumno {alumno_id} no encontrado.")
-
-        if "matricula" in datos:
-            elem.set("matricula", str(datos["matricula"]))
-
-        for campo in ["nombre", "apellidos", "correo", "carrera_id", "semestre", "promedio", "estatus"]:
-            if campo in datos:
-                nodo = elem.find(campo)
-                if nodo is None:
-                    nodo = etree.SubElement(elem, campo)
-                nodo.text = str(datos[campo])
-
-        tree.write(path, pretty_print=True, xml_declaration=True, encoding="UTF-8")
-        return self.obtener_alumno(alumno_id)
-
     def eliminar_alumno(self, alumno_id):
-        path = self._get_path("alumnos.xml")
-        tree = self.get_tree("alumnos.xml")
+        xml_path = self._get_file_path()
+        tree = etree.parse(xml_path)
         root = tree.getroot()
-        elem = root.find(f"alumno[@id='{alumno_id}']")
-        if elem is None:
+        
+        nodos = root.xpath(f"//alumno[@id='{alumno_id}']")
+        if not nodos:
             return False
-        root.remove(elem)
-        tree.write(path, pretty_print=True, xml_declaration=True, encoding="UTF-8")
+            
+        root.remove(nodos[0])
+        self._guardar_xml(tree, xml_path)
         return True
+
+    def _guardar_xml(self, tree, xml_path):
+        """Valida el árbol, crea un backup, guarda el archivo y actualiza el RDF."""
+        xsd_path = os.path.join('schemas', 'xsd', f'{self.entidad}.xsd')
+        dtd_path = os.path.join('schemas', 'dtd', f'{self.entidad}.dtd')
+        
+        # 1. Validar integridad de datos
+        XMLValidator.validar_contra_xsd(tree, xsd_path)
+        XMLValidator.validar_contra_dtd(tree, dtd_path)
+        
+        # 2. Crear respaldo
+        self._crear_backup(xml_path)
+        
+        # 3. Guardar el archivo definitivo XML
+        doctype = f'<!DOCTYPE {self.entidad} SYSTEM "../../schemas/dtd/{self.entidad}.dtd">'
+        tree.write(xml_path, encoding="UTF-8", xml_declaration=True, pretty_print=True, doctype=doctype)
+        
+        # 4. ¡NUEVO!: Reconstruir el grafo semántico inmediatamente después de guardar
+        SemanticEngine.construir_grafo()

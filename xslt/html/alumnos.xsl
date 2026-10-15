@@ -2,124 +2,143 @@
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+    <!-- Importamos el layout que controla el menú, CSS estático y JavaScript -->
+    <xsl:import href="layout.xsl"/>
 
-    <xsl:template match="/">
+    <xsl:template name="content">
         <html lang="es">
             <head>
-                <meta charset="UTF-8"/>
-                <title>Dashboard Administrador - Alumnos</title>
-                <script src="https://cdn.tailwindcss.com"></script>
-            </head>
-            <body class="bg-gray-100 text-gray-800 font-sans p-8">
+                <meta charset="UTF-8" />
+                <title>Sistema Semántico Académico</title>
+                <link rel="stylesheet" type="text/css" href="/static/css/alumnos.css" />
 
-                <div class="max-w-6xl mx-auto">
-                    <header class="mb-8">
-                        <h1 class="text-3xl font-bold text-blue-900">Módulo de Alumnos</h1>
-                        <p class="text-gray-600 mt-2">EduSemantic - Sistema Web Semántico de Gestión Académica</p>
-                    </header>
+            </head>
+            <body class="cuerpo-alumnos">
+                <div class="pagina-alumnos">
+
+
+                    <!-- Header con Botón Nuevo Alumno -->
+                    <div class="encabezado-modulo">
+                        <header>
+                            <h1 class="titulo-modulo">Módulo de Alumnos</h1>
+                            <p class="subtitulo-modulo">EduSemantic - Sistema Web Semántico de Gestión Académica</p>
+                        </header>
+                        <button onclick="abrirModal()" class="boton boton-primario">
+                    + Nuevo Alumno
+                        </button>
+                    </div>
 
                     <!-- Resumen rápido con XPath -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div class="bg-white p-4 rounded-lg shadow border border-gray-200">
-                            <span class="text-xs font-semibold uppercase text-gray-500">Total de Alumnos</span>
-                            <p class="text-2xl font-bold text-blue-900 mt-1">
+                    <div class="resumen-alumnos">
+                        <div class="tarjeta-resumen">
+                            <span class="etiqueta-resumen">Total de Alumnos</span>
+                            <p class="valor-resumen valor-azul">
                                 <xsl:value-of select="count(alumnos/alumno)"/>
                             </p>
                         </div>
-                        <div class="bg-white p-4 rounded-lg shadow border border-gray-200">
-                            <span class="text-xs font-semibold uppercase text-gray-500">Promedio General</span>
-                            <p class="text-2xl font-bold text-green-700 mt-1">
-                                <xsl:value-of select="format-number(sum(alumnos/alumno/promedio) div count(alumnos/alumno), '0.0')"/>
+                        <div class="tarjeta-resumen">
+                            <span class="etiqueta-resumen">Promedio General</span>
+                            <p class="valor-resumen valor-verde">
+                                <xsl:choose>
+                                    <xsl:when test="count(alumnos/alumno) &gt; 0">
+                                        <xsl:value-of select="format-number(sum(alumnos/alumno/promedio) div count(alumnos/alumno), '0.0')"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>0.0</xsl:otherwise>
+                                </xsl:choose>
                             </p>
                         </div>
-                        <div class="bg-white p-4 rounded-lg shadow border border-gray-200">
-                            <span class="text-xs font-semibold uppercase text-gray-500">Alumnos Activos</span>
-                            <p class="text-2xl font-bold text-indigo-700 mt-1">
+                        <div class="tarjeta-resumen">
+                            <span class="etiqueta-resumen">Alumnos Activos</span>
+                            <p class="valor-resumen valor-indigo">
                                 <xsl:value-of select="count(alumnos/alumno[estatus='Activo'])"/>
                             </p>
                         </div>
                     </div>
 
                     <!-- Contenedor de la tabla -->
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
-                        <table class="min-w-full text-left text-sm whitespace-nowrap">
-                            <thead class="bg-blue-50 border-b-2 border-blue-200 text-blue-900 uppercase tracking-wider">
+                    <div class="tabla-contenedor">
+                        <table class="tabla-alumnos">
+                            <thead class="tabla-encabezado">
                                 <tr>
-                                    <th scope="col" class="px-6 py-4 font-semibold">ID / Matrícula</th>
-                                    <th scope="col" class="px-6 py-4 font-semibold">Alumno</th>
-                                    <th scope="col" class="px-6 py-4 font-semibold">Carrera</th>
-                                    <th scope="col" class="px-6 py-4 font-semibold">Semestre</th>
-                                    <th scope="col" class="px-6 py-4 font-semibold">Promedio</th>
-                                    <th scope="col" class="px-6 py-4 font-semibold">Estatus</th>
+                                    <th scope="col" class="celda-encabezado">ID / Matrícula</th>
+                                    <th scope="col" class="celda-encabezado">Alumno</th>
+                                    <th scope="col" class="celda-encabezado">Carrera ID</th>
+                                    <th scope="col" class="celda-encabezado">Semestre</th>
+                                    <th scope="col" class="celda-encabezado">Promedio</th>
+                                    <th scope="col" class="celda-encabezado">Estatus</th>
+                                    <th scope="col" class="celda-encabezado texto-derecha">Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-gray-200">
+                            <tbody class="tabla-cuerpo">
 
                                 <xsl:for-each select="alumnos/alumno">
-                                    <tr class="hover:bg-gray-50 transition duration-150">
+                                    <tr class="fila-alumno">
 
-                                        <!-- ID (atributo @id) y Matrícula -->
-                                        <td class="px-6 py-4">
-                                            <div class="font-mono font-semibold text-gray-800">
-                                                <xsl:value-of select="matricula"/>
+                                        <!-- ID y Matrícula -->
+                                        <td class="celda-alumno">
+                                            <div class="matricula-alumno">
+                                                <xsl:value-of select="@matricula"/>
                                             </div>
-                                            <div class="text-xs text-gray-400 font-mono mt-0.5">
-                                                ID: <xsl:value-of select="@id"/>
+                                            <div class="id-alumno">
+                                        ID: <xsl:value-of select="@id"/>
                                             </div>
                                         </td>
 
                                         <!-- Nombre y Correo -->
-                                        <td class="px-6 py-4">
-                                            <div class="font-bold text-gray-900 text-base">
+                                        <td class="celda-alumno">
+                                            <div class="nombre-alumno">
                                                 <xsl:value-of select="nombre"/>
+                                                <xsl:text></xsl:text>
+                                                <xsl:value-of select="apellidos"/>
                                             </div>
-                                            <div class="text-xs text-blue-600 mt-1">
+                                            <div class="correo-alumno">
                                                 <xsl:value-of select="correo"/>
                                             </div>
                                         </td>
 
-                                        <!-- Carrera y su atributo @id -->
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center">
-                                                <span class="font-mono text-xs bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 border border-gray-300">
-                                                    <xsl:value-of select="carrera/@id"/>
-                                                </span>
-                                                <span class="text-gray-800 font-medium">
-                                                    <xsl:value-of select="carrera"/>
-                                                </span>
-                                            </div>
+                                        <!-- Carrera ID -->
+                                        <td class="celda-alumno">
+                                            <span class="etiqueta-carrera">
+                                                <xsl:value-of select="carrera_id"/>
+                                            </span>
                                         </td>
 
                                         <!-- Semestre -->
-                                        <td class="px-6 py-4 text-gray-600">
-                                            Semestre <xsl:value-of select="semestre"/>
+                                        <td class="celda-alumno texto-secundario">
+                                    Semestre <xsl:value-of select="semestre"/>
                                         </td>
 
-                                        <!-- Promedio formateado a un decimal -->
-                                        <td class="px-6 py-4 font-mono font-bold text-gray-900">
+                                        <!-- Promedio -->
+                                        <td class="celda-alumno promedio-alumno">
                                             <xsl:value-of select="format-number(promedio, '0.0')"/>
                                         </td>
 
                                         <!-- Lógica condicional para el Estatus -->
-                                        <td class="px-6 py-4">
+                                        <td class="celda-alumno">
                                             <xsl:choose>
                                                 <xsl:when test="estatus = 'Activo'">
-                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                    <span class="badge-estatus badge-activo">
                                                         <xsl:value-of select="estatus"/>
                                                     </span>
                                                 </xsl:when>
                                                 <xsl:when test="estatus = 'Egresado'">
-                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                                    <span class="badge-estatus badge-egresado">
                                                         <xsl:value-of select="estatus"/>
                                                     </span>
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-200 text-gray-700">
+                                                    <span class="badge-estatus badge-baja">
                                                         <xsl:value-of select="estatus"/>
                                                     </span>
                                                 </xsl:otherwise>
                                             </xsl:choose>
+                                        </td>
+
+                                        <!-- Botón Eliminar -->
+                                        <td class="celda-alumno texto-derecha">
+                                            <button onclick="eliminarAlumno('{@id}')" class="boton boton-peligro boton-pequeno">
+                                        Eliminar
+                                            </button>
                                         </td>
 
                                     </tr>
@@ -128,8 +147,70 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
 
+                    <!-- MODAL NUEVO ALUMNO -->
+                    <div id="modalNuevoAlumno" class="modal-overlay hidden">
+                        <div class="modal-contenido">
+                            <div class="modal-encabezado">
+                                <h3 class="modal-titulo">Registrar Nuevo Alumno</h3>
+                                <button onclick="cerrarModal()" class="boton-cerrar">&#215;</button>
+                            </div>
+
+                            <form id="formNuevoAlumno" onsubmit="guardarAlumno(event)">
+                                <div class="formulario-grid formulario-dos-columnas espacio-inferior">
+                                    <div>
+                                        <label class="etiqueta-campo">ID del Nodo</label>
+                                        <input type="text" name="id" placeholder="Ej. A006" required="required" class="campo-formulario"/>
+                                    </div>
+                                    <div>
+                                        <label class="etiqueta-campo">Matrícula</label>
+                                        <input type="text" name="matricula" placeholder="Ej. 20260006" required="required" class="campo-formulario"/>
+                                    </div>
+                                </div>
+                                <div class="formulario-grid formulario-dos-columnas espacio-inferior">
+                                    <div>
+                                        <label class="etiqueta-campo">Nombre(s)</label>
+                                        <input type="text" name="nombre" required="required" class="campo-formulario"/>
+                                    </div>
+                                    <div>
+                                        <label class="etiqueta-campo">Apellidos</label>
+                                        <input type="text" name="apellidos" required="required" class="campo-formulario"/>
+                                    </div>
+                                </div>
+                                <div class="grupo-campo espacio-inferior">
+                                    <label class="etiqueta-campo">Correo Electrónico</label>
+                                    <input type="email" name="correo" required="required" class="campo-formulario"/>
+                                </div>
+                                <div class="formulario-grid formulario-cuatro-columnas espacio-inferior">
+                                    <div class="columna-doble">
+                                        <label class="etiqueta-campo">Carrera ID</label>
+                                        <input type="text" name="carrera_id" placeholder="C001" required="required" class="campo-formulario"/>
+                                    </div>
+                                    <div>
+                                        <label class="etiqueta-campo">Semestre</label>
+                                        <input type="number" name="semestre" min="1" max="12" required="required" class="campo-formulario"/>
+                                    </div>
+                                    <div>
+                                        <label class="etiqueta-campo">Promedio</label>
+                                        <input type="number" step="0.1" name="promedio" required="required" class="campo-formulario"/>
+                                    </div>
+                                </div>
+                                <div class="grupo-campo espacio-inferior-grande">
+                                    <label class="etiqueta-campo">Estatus</label>
+                                    <select name="estatus" class="campo-formulario">
+                                        <option value="Activo">Activo</option>
+                                        <option value="Egresado">Egresado</option>
+                                        <option value="Baja">Baja</option>
+                                    </select>
+                                </div>
+                                <div class="acciones-formulario">
+                                    <button type="button" onclick="cerrarModal()" class="boton boton-secundario">Cancelar</button>
+                                    <button type="submit" class="boton boton-exito">Guardar Alumno</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </body>
         </html>
     </xsl:template>
