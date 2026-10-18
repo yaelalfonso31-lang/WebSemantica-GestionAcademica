@@ -1,4 +1,6 @@
+@prefix ac: <http://ejemplo.edu/academico#> .
 @prefix acad: <http://academico.edu.mx/ontologia#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -17,6 +19,7 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
 
 <http://academico.edu.mx/recurso/alumno/A001> a acad:Alumno ;
     acad:apellidos "García López" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS008> ;
     acad:correo "maria.garcia@edusemantic.edu" ;
     acad:estatus "Activo" ;
     acad:id "A001" ;
@@ -28,6 +31,12 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
 
 <http://academico.edu.mx/recurso/alumno/A002> a acad:Alumno ;
     acad:apellidos "Hernández Ruiz" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS007> ;
     acad:correo "carlos.hernandez@alumno.buap.mx" ;
     acad:estatus "Activo" ;
     acad:id "A002" ;
@@ -39,6 +48,8 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
 
 <http://academico.edu.mx/recurso/alumno/A003> a acad:Alumno ;
     acad:apellidos "Martínez Torres" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/ICCS004> ;
     acad:correo "laura.martinez@alumno.buap.mx" ;
     acad:estatus "Activo" ;
     acad:id "A003" ;
@@ -69,16 +80,6 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
     acad:promedio 9.0 ;
     acad:semestre 8 .
-
-<http://academico.edu.mx/recurso/materia/CCOS005> a acad:Materia ;
-    acad:clave "CCOS 005" ;
-    acad:creditos 6 ;
-    acad:descripcion "Fundamentos de programación en lenguaje ensamblador y organización de bajo nivel." ;
-    acad:id "CCOS005" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P001> ;
-    acad:nombre "Ensamblador" ;
-    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 3 .
 
 <http://academico.edu.mx/recurso/materia/CCOS254> a acad:Materia ;
     acad:clave "CCOS 254" ;
@@ -144,13 +145,37 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
     acad:semestre 7 .
 
-<http://academico.edu.mx/recurso/materia/CCOS008> a acad:Materia ;
-    acad:clave "CCOS 008" ;
+ac:Prof_P1001 a ac:Profesor ;
+    ac:especialidad "Desarrollo Web" ;
+    ac:idProfesor "P1001" ;
+    ac:imparte ac:Mat_CS201,
+        ac:Mat_CS205 ;
+    ac:perteneceADepartamento ac:Dep_Sistemas ;
+    foaf:mbox <mailto:ana.lopez@universidad.edu.mx> ;
+    foaf:name "Ana López" .
+
+ac:Prof_P1002 a ac:Profesor ;
+    ac:especialidad "Bases de Datos" ;
+    ac:idProfesor "P1002" ;
+    ac:imparte ac:Mat_CS105 ;
+    ac:perteneceADepartamento ac:Dep_Sistemas ;
+    foaf:mbox <mailto:juan.perez@universidad.edu.mx> ;
+    foaf:name "Juan Pérez" .
+
+ac:Prof_P1003 a ac:Profesor ;
+    ac:especialidad "Inteligencia Artificial" ;
+    ac:idProfesor "P1003" ;
+    ac:perteneceADepartamento ac:Dep_Sistemas ;
+    foaf:mbox <mailto:maria.garcia@universidad.edu.mx> ;
+    foaf:name "María García" .
+
+<http://academico.edu.mx/recurso/materia/CCOS005> a acad:Materia ;
+    acad:clave "CCOS 005" ;
     acad:creditos 6 ;
-    acad:descripcion "Estudio de técnicas de integración y sus aplicaciones." ;
-    acad:id "CCOS008" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P002> ;
-    acad:nombre "Cálculo Integral" ;
+    acad:descripcion "Fundamentos de programación en lenguaje ensamblador y organización de bajo nivel." ;
+    acad:id "CCOS005" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P001> ;
+    acad:nombre "Ensamblador" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
     acad:semestre 3 .
 
@@ -165,16 +190,6 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:semestre 5 ;
     acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS013> .
 
-<http://academico.edu.mx/recurso/materia/ICCS004> a acad:Materia ;
-    acad:clave "ICCS 004" ;
-    acad:creditos 6 ;
-    acad:descripcion "Estudio de fenómenos físicos y principios aplicados a la ingeniería." ;
-    acad:id "ICCS004" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P006> ;
-    acad:nombre "Física II" ;
-    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 4 .
-
 <http://academico.edu.mx/recurso/materia/ICCS007> a acad:Materia ;
     acad:clave "ICCS 007" ;
     acad:creditos 6 ;
@@ -185,6 +200,29 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
     acad:semestre 4 ;
     acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/ICCS004> .
+
+<http://academico.edu.mx/recurso/materia/CCOS008> a acad:Materia ;
+    acad:clave "CCOS 008" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio de técnicas de integración y sus aplicaciones." ;
+    acad:id "CCOS008" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P002> ;
+    acad:nombre "Cálculo Integral" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 3 .
+
+<http://academico.edu.mx/recurso/materia/ICCS004> a acad:Materia ;
+    acad:clave "ICCS 004" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio de fenómenos físicos y principios aplicados a la ingeniería." ;
+    acad:id "ICCS004" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P006> ;
+    acad:nombre "Física II" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 4 .
+
+ac:Dep_Sistemas a ac:Departamento ;
+    rdfs:label "Sistemas" .
 
 <http://academico.edu.mx/recurso/materia/CCOS013> a acad:Materia ;
     acad:clave "CCOS 013" ;
