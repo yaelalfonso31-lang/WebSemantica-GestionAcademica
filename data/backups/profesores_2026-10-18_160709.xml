@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE profesores SYSTEM "../../schemas/dtd/profesores.dtd">
+<?xml-stylesheet type="text/xsl" href="../../xslt/html/profesores.xsl"?>
+<profesores>
+
+    <profesor id="P1001">
+        <nombre>Ana López</nombre>
+        <especialidad>Desarrollo Web</especialidad>
+        <correo>ana.lopez@universidad.edu.mx</correo>
+        <departamento>Sistemas</departamento>
+        <materias_impartidas>
+            <materia codigo="CS201">Programación Web</materia>
+            <materia codigo="CS205">Arquitectura Frontend</materia>
+        </materias_impartidas>
+    </profesor>
+
+    <profesor id="P1002">
+        <nombre>Juan Pérez</nombre>
+        <especialidad>Bases de Datos</especialidad>
+        <correo>juan.perez@universidad.edu.mx</correo>
+        <departamento>Sistemas</departamento>
+        <materias_impartidas>
+            <materia codigo="CS105">Bases de Datos Relacionales</materia>
+        </materias_impartidas>
+    </profesor>
+
+    <profesor id="P1003">
+        <nombre>María García</nombre>
+        <especialidad>Inteligencia Artificial</especialidad>
+        <correo>maria.garcia@universidad.edu.mx</correo>
+        <departamento>Sistemas</departamento>
+        <!-- Un profesor puede estar registrado aunque aún no tenga materias asignadas -->
+        <materias_impartidas/>
+    </profesor>
+
+<profesor id="P1006"><nombre>Profesor de Prueba</nombre><especialidad>Ingeniería de software</especialidad><correo>prueba@edusemantic.edu</correo><departamento>Sistemas</departamento><materias_impartidas><materia codigo="CS201"/></materias_impartidas></profesor></profesores>

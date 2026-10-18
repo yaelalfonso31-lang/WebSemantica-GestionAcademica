@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:ac="http://ejemplo.edu/academico#">
+  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P1001">
+    <ac:idProfesor>P1001</ac:idProfesor>
+    <foaf:name>Ana López</foaf:name>
+    <foaf:mbox rdf:resource="mailto:ana.lopez@universidad.edu.mx"/>
+    <ac:especialidad>Desarrollo Web</ac:especialidad>
+    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
+    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_CS201"/>
+    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_CS205"/>
+  </ac:Profesor>
+  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P1002">
+    <ac:idProfesor>P1002</ac:idProfesor>
+    <foaf:name>Juan Pérez</foaf:name>
+    <foaf:mbox rdf:resource="mailto:juan.perez@universidad.edu.mx"/>
+    <ac:especialidad>Bases de Datos</ac:especialidad>
+    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
+    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_CS105"/>
+  </ac:Profesor>
+  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P1003">
+    <ac:idProfesor>P1003</ac:idProfesor>
+    <foaf:name>María García</foaf:name>
+    <foaf:mbox rdf:resource="mailto:maria.garcia@universidad.edu.mx"/>
+    <ac:especialidad>Inteligencia Artificial</ac:especialidad>
+    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
+  </ac:Profesor>
+  <ac:Departamento rdf:about="http://ejemplo.edu/academico#Dep_Sistemas">
+    <rdfs:label>Sistemas</rdfs:label>
+  </ac:Departamento>
+</rdf:RDF>

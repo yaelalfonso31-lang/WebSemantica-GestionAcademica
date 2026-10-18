@@ -1,4 +1,7 @@
+@prefix ac: <http://ejemplo.edu/academico#> .
 @prefix acad: <http://academico.edu.mx/ontologia#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://academico.edu.mx/recurso/alumno/A001> a acad:Alumno ;
@@ -55,4 +58,31 @@
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
     acad:promedio 9.0 ;
     acad:semestre 8 .
+
+ac:Prof_P1001 a ac:Profesor ;
+    ac:especialidad "Desarrollo Web" ;
+    ac:idProfesor "P1001" ;
+    ac:imparte ac:Mat_CS201,
+        ac:Mat_CS205 ;
+    ac:perteneceADepartamento ac:Dep_Sistemas ;
+    foaf:mbox <mailto:ana.lopez@universidad.edu.mx> ;
+    foaf:name "Ana López" .
+
+ac:Prof_P1002 a ac:Profesor ;
+    ac:especialidad "Bases de Datos" ;
+    ac:idProfesor "P1002" ;
+    ac:imparte ac:Mat_CS105 ;
+    ac:perteneceADepartamento ac:Dep_Sistemas ;
+    foaf:mbox <mailto:juan.perez@universidad.edu.mx> ;
+    foaf:name "Juan Pérez" .
+
+ac:Prof_P1003 a ac:Profesor ;
+    ac:especialidad "Inteligencia Artificial" ;
+    ac:idProfesor "P1003" ;
+    ac:perteneceADepartamento ac:Dep_Sistemas ;
+    foaf:mbox <mailto:maria.garcia@universidad.edu.mx> ;
+    foaf:name "María García" .
+
+ac:Dep_Sistemas a ac:Departamento ;
+    rdfs:label "Sistemas" .
 
