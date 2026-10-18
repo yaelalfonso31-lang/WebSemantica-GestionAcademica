@@ -1,0 +1,128 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:acad="http://academico.edu.mx/ontologia#">
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS005">
+    <acad:id>CCOS005</acad:id>
+    <acad:clave>CCOS 005</acad:clave>
+    <acad:nombre>Ensamblador</acad:nombre>
+    <acad:descripcion>Fundamentos de programación en lenguaje ensamblador y organización de bajo nivel.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P001"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS008">
+    <acad:id>CCOS008</acad:id>
+    <acad:clave>CCOS 008</acad:clave>
+    <acad:nombre>Cálculo Integral</acad:nombre>
+    <acad:descripcion>Estudio de técnicas de integración y sus aplicaciones.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P002"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS013">
+    <acad:id>CCOS013</acad:id>
+    <acad:clave>CCOS 013</acad:clave>
+    <acad:nombre>Estructuras de Datos</acad:nombre>
+    <acad:descripcion>Estudio de estructuras de datos y técnicas para su manejo en programas.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P003"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS252">
+    <acad:id>CCOS252</acad:id>
+    <acad:clave>CCOS 252</acad:clave>
+    <acad:nombre>Sistemas Operativos I</acad:nombre>
+    <acad:descripcion>Fundamentos de sistemas operativos, procesos, memoria y administración de recursos.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P004"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS254">
+    <acad:id>CCOS254</acad:id>
+    <acad:clave>CCOS 254</acad:clave>
+    <acad:nombre>Sistemas Operativos II</acad:nombre>
+    <acad:descripcion>Administración avanzada de sistemas operativos y mecanismos de comunicación.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P005"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS004">
+    <acad:id>ICCS004</acad:id>
+    <acad:clave>ICCS 004</acad:clave>
+    <acad:nombre>Física II</acad:nombre>
+    <acad:descripcion>Estudio de fenómenos físicos y principios aplicados a la ingeniería.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P006"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS006">
+    <acad:id>ICCS006</acad:id>
+    <acad:clave>ICCS 006</acad:clave>
+    <acad:nombre>Ecuaciones Diferenciales</acad:nombre>
+    <acad:descripcion>Estudio y aplicación de ecuaciones diferenciales en problemas de ingeniería.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P007"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS007">
+    <acad:id>ICCS007</acad:id>
+    <acad:clave>ICCS 007</acad:clave>
+    <acad:nombre>Circuitos Eléctricos</acad:nombre>
+    <acad:descripcion>Fundamentos de circuitos eléctricos y análisis de sus principales componentes.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P001"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS250">
+    <acad:id>ICCS250</acad:id>
+    <acad:clave>ICCS 250</acad:clave>
+    <acad:nombre>Circuitos Electrónicos</acad:nombre>
+    <acad:descripcion>Estudio de componentes electrónicos y análisis de circuitos.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P008"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/ICCS007"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS256">
+    <acad:id>ICCS256</acad:id>
+    <acad:clave>ICCS 256</acad:clave>
+    <acad:nombre>Bases de Datos para Ingeniería</acad:nombre>
+    <acad:descripcion>Diseño y administración de bases de datos aplicadas a problemas de ingeniería.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P009"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS257">
+    <acad:id>ICCS257</acad:id>
+    <acad:clave>ICCS 257</acad:clave>
+    <acad:nombre>Minería de Datos</acad:nombre>
+    <acad:descripcion>Análisis de grandes conjuntos de datos para obtener información y patrones.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P010"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS258">
+    <acad:id>ICCS258</acad:id>
+    <acad:clave>ICCS 258</acad:clave>
+    <acad:nombre>Desarrollo de Aplicaciones Web</acad:nombre>
+    <acad:descripcion>Desarrollo de aplicaciones y servicios orientados a plataformas web.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P011"/>
+  </acad:Materia>
+</rdf:RDF>

@@ -1,0 +1,25 @@
+<!ELEMENT materias (materia+)>
+<!ELEMENT materia
+    (nombre, descripcion, creditos, semestre, carrera, profesor, prerrequisitos)>
+<!ATTLIST materia
+    id ID #REQUIRED
+    clave CDATA #REQUIRED
+>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT creditos (#PCDATA)>
+<!ELEMENT semestre (#PCDATA)>
+<!ELEMENT carrera (#PCDATA)>
+<!ATTLIST carrera
+    codigo CDATA #REQUIRED
+>
+<!ELEMENT profesor (#PCDATA)>
+<!ATTLIST profesor
+    id CDATA #REQUIRED
+>
+<!ELEMENT prerrequisitos (prerrequisito*)>
+<!ELEMENT prerrequisito EMPTY>
+<!ATTLIST prerrequisito
+    ref IDREF #REQUIRED
+    nombre CDATA #REQUIRED
+>

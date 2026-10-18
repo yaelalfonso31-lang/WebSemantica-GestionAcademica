@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../../xslt/html/materias.xsl"?>
-<!DOCTYPE profesores SYSTEM "../../schemas/dtd/materias.dtd">
-
+<!DOCTYPE materias SYSTEM "../../schemas/dtd/materias.dtd">
 <materias>
 
     <materia id="CCOS005" clave="CCOS 005">

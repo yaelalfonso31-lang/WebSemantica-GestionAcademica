@@ -1,5 +1,19 @@
 @prefix acad: <http://academico.edu.mx/ontologia#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+acad:Alumno a rdfs:Class .
+
+acad:Carrera a rdfs:Class .
+
+acad:Materia a rdfs:Class .
+
+acad:Profesor a rdfs:Class .
+
+acad:tienePrerrequisito a owl:TransitiveProperty ;
+    rdfs:domain acad:Materia ;
+    rdfs:range acad:Materia .
 
 <http://academico.edu.mx/recurso/alumno/A001> a acad:Alumno ;
     acad:apellidos "García López" ;
@@ -55,4 +69,130 @@
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
     acad:promedio 9.0 ;
     acad:semestre 8 .
+
+<http://academico.edu.mx/recurso/materia/CCOS005> a acad:Materia ;
+    acad:clave "CCOS 005" ;
+    acad:creditos 6 ;
+    acad:descripcion "Fundamentos de programación en lenguaje ensamblador y organización de bajo nivel." ;
+    acad:id "CCOS005" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P001> ;
+    acad:nombre "Ensamblador" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 3 .
+
+<http://academico.edu.mx/recurso/materia/CCOS254> a acad:Materia ;
+    acad:clave "CCOS 254" ;
+    acad:creditos 6 ;
+    acad:descripcion "Administración avanzada de sistemas operativos y mecanismos de comunicación." ;
+    acad:id "CCOS254" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P005> ;
+    acad:nombre "Sistemas Operativos II" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 6 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS252> .
+
+<http://academico.edu.mx/recurso/materia/ICCS006> a acad:Materia ;
+    acad:clave "ICCS 006" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio y aplicación de ecuaciones diferenciales en problemas de ingeniería." ;
+    acad:id "ICCS006" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P007> ;
+    acad:nombre "Ecuaciones Diferenciales" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 4 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS008> .
+
+<http://academico.edu.mx/recurso/materia/ICCS250> a acad:Materia ;
+    acad:clave "ICCS 250" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio de componentes electrónicos y análisis de circuitos." ;
+    acad:id "ICCS250" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P008> ;
+    acad:nombre "Circuitos Electrónicos" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 5 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/ICCS007> .
+
+<http://academico.edu.mx/recurso/materia/ICCS256> a acad:Materia ;
+    acad:clave "ICCS 256" ;
+    acad:creditos 6 ;
+    acad:descripcion "Diseño y administración de bases de datos aplicadas a problemas de ingeniería." ;
+    acad:id "ICCS256" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P009> ;
+    acad:nombre "Bases de Datos para Ingeniería" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 6 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS013> .
+
+<http://academico.edu.mx/recurso/materia/ICCS257> a acad:Materia ;
+    acad:clave "ICCS 257" ;
+    acad:creditos 6 ;
+    acad:descripcion "Análisis de grandes conjuntos de datos para obtener información y patrones." ;
+    acad:id "ICCS257" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P010> ;
+    acad:nombre "Minería de Datos" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 7 .
+
+<http://academico.edu.mx/recurso/materia/ICCS258> a acad:Materia ;
+    acad:clave "ICCS 258" ;
+    acad:creditos 6 ;
+    acad:descripcion "Desarrollo de aplicaciones y servicios orientados a plataformas web." ;
+    acad:id "ICCS258" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P011> ;
+    acad:nombre "Desarrollo de Aplicaciones Web" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 7 .
+
+<http://academico.edu.mx/recurso/materia/CCOS008> a acad:Materia ;
+    acad:clave "CCOS 008" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio de técnicas de integración y sus aplicaciones." ;
+    acad:id "CCOS008" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P002> ;
+    acad:nombre "Cálculo Integral" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 3 .
+
+<http://academico.edu.mx/recurso/materia/CCOS252> a acad:Materia ;
+    acad:clave "CCOS 252" ;
+    acad:creditos 6 ;
+    acad:descripcion "Fundamentos de sistemas operativos, procesos, memoria y administración de recursos." ;
+    acad:id "CCOS252" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P004> ;
+    acad:nombre "Sistemas Operativos I" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 5 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS013> .
+
+<http://academico.edu.mx/recurso/materia/ICCS004> a acad:Materia ;
+    acad:clave "ICCS 004" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio de fenómenos físicos y principios aplicados a la ingeniería." ;
+    acad:id "ICCS004" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P006> ;
+    acad:nombre "Física II" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 4 .
+
+<http://academico.edu.mx/recurso/materia/ICCS007> a acad:Materia ;
+    acad:clave "ICCS 007" ;
+    acad:creditos 6 ;
+    acad:descripcion "Fundamentos de circuitos eléctricos y análisis de sus principales componentes." ;
+    acad:id "ICCS007" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P001> ;
+    acad:nombre "Circuitos Eléctricos" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 4 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/ICCS004> .
+
+<http://academico.edu.mx/recurso/materia/CCOS013> a acad:Materia ;
+    acad:clave "CCOS 013" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio de estructuras de datos y técnicas para su manejo en programas." ;
+    acad:id "CCOS013" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P003> ;
+    acad:nombre "Estructuras de Datos" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 4 .
 

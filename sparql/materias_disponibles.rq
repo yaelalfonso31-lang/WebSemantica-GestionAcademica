@@ -1,0 +1,30 @@
+PREFIX acad: <http://academico.edu.mx/ontologia#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?alumnoId ?nombreAlumno ?materiaId ?clave ?nombreMateria ?semestre ?creditos
+WHERE {
+    ?alumno a acad:Alumno ;
+            acad:id ?alumnoId ;
+            acad:nombre ?nombreAlumno .
+
+    ?materia a acad:Materia ;
+             acad:id ?materiaId ;
+             acad:clave ?clave ;
+             acad:nombre ?nombreMateria ;
+             acad:semestre ?semestre ;
+             acad:creditos ?creditos .
+
+    # 1. Que el alumno no haya aprobado ya esta materia
+    FILTER NOT EXISTS {
+        ?alumno acad:aproboMateria ?materia .
+    }
+
+    # 2. Que no exista ningún prerrequisito en la ruta transitiva (tienePrerrequisito+) sin aprobar
+    FILTER NOT EXISTS {
+        ?materia acad:tienePrerrequisito+ ?prerreq .
+        FILTER NOT EXISTS {
+            ?alumno acad:aproboMateria ?prerreq .
+        }
+    }
+}
+ORDER BY ?alumnoId ?semestre ?materiaId

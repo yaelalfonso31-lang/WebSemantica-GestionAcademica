@@ -1,0 +1,13 @@
+@prefix acad: <http://academico.edu.mx/ontologia#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+acad:Alumno a rdfs:Class .
+acad:Materia a rdfs:Class .
+acad:Profesor a rdfs:Class .
+acad:Carrera a rdfs:Class .
+
+acad:tienePrerrequisito a owl:TransitiveProperty ;
+    rdfs:domain acad:Materia ;
+    rdfs:range acad:Materia .
