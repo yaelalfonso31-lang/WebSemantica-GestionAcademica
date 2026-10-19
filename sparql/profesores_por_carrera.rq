@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX acad: <http://academico.edu.mx/ontologia#>
+
+SELECT ?id ?nombre ?apellidos ?departamento
+WHERE {
+    ?profesor a acad:Profesor ;
+              acad:id ?id ;
+              acad:nombre ?nombre ;
+              acad:apellidos ?apellidos ;
+              acad:departamento ?departamento .
+}
+ORDER BY ASC(?departamento) ASC(?nombre)

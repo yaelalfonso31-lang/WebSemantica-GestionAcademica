@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inscripciones SYSTEM "../../schemas/dtd/inscripciones.dtd">
+<inscripciones>
+    <!-- Alumno A001 con materias aprobadas -->
+    <inscripcion id="I001">
+        <alumno_id>A001</alumno_id>
+        <materia_id>M001</materia_id>
+        <periodo>Otoño 2026</periodo>
+        <calificacion_final>95.0</calificacion_final>
+        <estatus>Aprobado</estatus>
+    </inscripcion>
+
+    <inscripcion id="I002">
+        <alumno_id>A001</alumno_id>
+        <materia_id>M003</materia_id>
+        <periodo>Otoño 2026</periodo>
+        <calificacion_final>92.5</calificacion_final>
+        <estatus>Aprobado</estatus>
+    </inscripcion>
+
+    <!-- Alumno A004 (Diego) con una materia reprobada -->
+    <inscripcion id="I003">
+        <alumno_id>A004</alumno_id>
+        <materia_id>M002</materia_id>
+        <periodo>Otoño 2026</periodo>
+        <calificacion_final>55.0</calificacion_final>
+        <estatus>Reprobado</estatus>
+    </inscripcion>
+
+    <!-- Alumno A002 cursando actualmente (sin calificación final aún) -->
+    <inscripcion id="I004">
+        <alumno_id>A002</alumno_id>
+        <materia_id>M005</materia_id>
+        <periodo>Primavera 2027</periodo>
+        <estatus>Cursando</estatus>
+    </inscripcion>
+</inscripciones>

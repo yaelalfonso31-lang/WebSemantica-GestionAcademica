@@ -1,464 +1,681 @@
-/* =========================================
-   Módulo de Alumnos - CSS sin Tailwind
-   ========================================= */
+/* ============================================================
+   MÓDULO DE ALUMNOS - EduSemantic BUAP
+   Sin border-radius. Paleta azul institucional.
+   ============================================================ */
 
-* {
-    box-sizing: border-box;
+.alumnos-page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0.5rem 0;
 }
 
-body.cuerpo-alumnos {
-    margin: 0;
-    background: #f3f6fb;
-    color: #1f2937;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
-}
+/* ============================================================
+   ENCABEZADO DE PÁGINA
+   ============================================================ */
 
-.pagina-alumnos {
-    width: min(1200px, calc(100% - 40px));
-    margin: 32px auto;
-}
-
-.encabezado-modulo {
+.page-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
-    margin-bottom: 30px;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 1.75rem;
+    background: linear-gradient(135deg, var(--buap-blue-800) 0%, var(--buap-blue-600) 100%);
+    color: #fff;
+    border-left: 6px solid var(--buap-gold);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 1.5rem;
 }
 
-.titulo-modulo {
+.page-header__text {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    min-width: 240px;
+}
+
+.page-header__icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--buap-blue-200);
+}
+
+.page-header__icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.page-header__title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    letter-spacing: -0.01em;
+    color: #fff;
+}
+
+.page-header__subtitle {
+    font-size: 0.9rem;
     margin: 0;
-    color: #1e3a8a;
-    font-size: 2rem;
-    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.78);
 }
 
-.subtitulo-modulo {
-    margin: 8px 0 0;
-    color: #64748b;
-}
+/* ============================================================
+   BOTONES GENERALES
+   ============================================================ */
 
-.boton {
+.btn-app {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 0;
-    border-radius: 7px;
-    padding: 10px 16px;
-    color: #fff;
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-decoration: none;
+    gap: 0.5rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 2px solid transparent;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+    font-family: inherit;
 }
 
-.boton:hover {
+.btn-app svg {
+    width: 18px;
+    height: 18px;
+    transition: var(--transition);
+}
+
+.btn-app--primary {
+    background: var(--buap-gold);
+    color: var(--buap-blue-900);
+    border-color: var(--buap-gold);
+}
+
+.btn-app--primary:hover {
+    background: #b8901f;
+    border-color: #b8901f;
     transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 4px 14px rgba(201, 162, 39, 0.4);
 }
 
-.boton-primario {
-    background: #2563eb;
+.btn-app--primary:hover svg {
+    transform: rotate(90deg);
 }
 
-.boton-primario:hover {
-    background: #1d4ed8;
+.btn-app--ghost {
+    background: transparent;
+    color: var(--buap-blue-600);
+    border-color: var(--buap-blue-300);
 }
 
-.boton-secundario {
-    background: #94a3b8;
-    margin-right: 12px;
+.btn-app--ghost:hover {
+    background: var(--buap-blue-50);
+    border-color: var(--buap-blue-500);
+    color: var(--buap-blue-700);
 }
 
-.boton-secundario:hover {
-    background: #64748b;
-}
+/* ============================================================
+   TARJETAS DE RESUMEN
+   ============================================================ */
 
-.boton-exito {
-    background: #16a34a;
-}
-
-.boton-exito:hover {
-    background: #15803d;
-}
-
-.boton-peligro {
-    background: #fee2e2;
-    color: #b91c1c;
-}
-
-.boton-peligro:hover {
-    background: #fecaca;
-    color: #7f1d1d;
-}
-
-.boton-pequeno {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-}
-
-.resumen-alumnos {
+.stats-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-bottom: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.tarjeta-resumen {
-    padding: 20px;
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.35rem 1.5rem;
     background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    border: 1px solid var(--gray-100);
+    border-left: 4px solid var(--buap-blue-500);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
-.etiqueta-resumen {
-    display: block;
-    color: #64748b;
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--buap-gold);
+}
+
+.stat-card__icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--buap-blue-50);
+    color: var(--buap-blue-600);
+}
+
+.stat-card__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.stat-card__body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    min-width: 0;
+}
+
+.stat-card__label {
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
+    color: var(--gray-500);
+    margin-bottom: 0.3rem;
 }
 
-.valor-resumen {
-    margin: 6px 0 0;
-    font-size: 1.8rem;
-    font-weight: 800;
+.stat-card__value {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--buap-blue-700);
+    letter-spacing: -0.02em;
 }
 
-.valor-azul {
-    color: #1d4ed8;
-}
+/* ============================================================
+   TABLA
+   ============================================================ */
 
-.valor-verde {
-    color: #15803d;
-}
-
-.valor-indigo {
-    color: #4338ca;
-}
-
-.tabla-contenedor {
-    max-height: 600px;
-    overflow: auto;
-    margin-bottom: 32px;
+.table-card {
     background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+    border: 1px solid var(--gray-100);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
 }
 
-.tabla-alumnos {
+.table-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1.5rem;
+    background: var(--buap-blue-50);
+    border-bottom: 2px solid var(--buap-blue-100);
+}
+
+.table-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--buap-blue-800);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.table-card__badge {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--buap-blue-700);
+    background: #fff;
+    border: 1px solid var(--buap-blue-200);
+    padding: 0.3rem 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+.data-table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    text-align: left;
+    border-collapse: collapse;
     font-size: 0.9rem;
 }
 
-.tabla-encabezado {
-    color: #1e3a8a;
-    background: #eff6ff;
+.data-table thead {
+    background: var(--buap-blue-800);
+}
+
+.data-table thead th {
+    padding: 0.95rem 1.1rem;
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.92);
+    white-space: nowrap;
+}
+
+.data-table thead th.text-center {
+    text-align: center;
+}
+
+.data-table thead th.text-right {
+    text-align: right;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid var(--gray-100);
+    transition: background-color 0.15s ease;
+}
+
+.data-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background: var(--buap-blue-50);
+}
+
+.data-table td {
+    padding: 0.95rem 1.1rem;
+    vertical-align: middle;
+    color: var(--gray-700);
+}
+
+.data-table td.text-center {
+    text-align: center;
+}
+
+.data-table td.text-right {
+    text-align: right;
+}
+
+/* Celdas */
+.cell-primary {
+    font-weight: 600;
+    color: var(--gray-900);
+    font-size: 0.92rem;
+    line-height: 1.35;
+}
+
+.cell-secondary {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    margin-top: 0.15rem;
+    line-height: 1.35;
+}
+
+.chip {
+    display: inline-block;
+    padding: 0.22rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--buap-blue-700);
+    background: var(--buap-blue-100);
+    border-left: 3px solid var(--buap-blue-500);
+}
+
+.promedio {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--buap-blue-700);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   ESTATUS / BADGES
+   ============================================================ */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.28rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
 
-.tabla-alumnos th {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    padding: 15px 18px;
-    border-bottom: 2px solid #bfdbfe;
-    box-shadow: 0 2px 2px rgba(15, 23, 42, 0.04);
+.status::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.status--activo {
+    color: #1a7a3e;
+    background: #e5f5eb;
+    border: 1px solid #b8e2c6;
+}
+
+.status--egresado {
+    color: var(--buap-blue-700);
+    background: var(--buap-blue-100);
+    border: 1px solid var(--buap-blue-200);
+}
+
+.status--baja {
+    color: #b02a37;
+    background: #fbe6e8;
+    border: 1px solid #f1c0c5;
+}
+
+/* ============================================================
+   ACCIONES EN TABLA
+   ============================================================ */
+
+.actions {
+    display: inline-flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.42rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: inherit;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition);
     white-space: nowrap;
 }
 
-.tabla-alumnos td {
-    padding: 15px 18px;
-    border-bottom: 1px solid #e5e7eb;
-    vertical-align: middle;
+.btn-action svg {
+    width: 14px;
+    height: 14px;
 }
 
-.tabla-alumnos tbody tr {
-    transition: background-color 0.2s ease;
-}
-
-.tabla-alumnos tbody tr:hover {
-    background: #f8fafc;
-}
-
-.tabla-alumnos tbody tr:last-child td {
-    border-bottom: 0;
-}
-
-.texto-derecha {
-    text-align: right;
-}
-
-.matricula-alumno {
-    color: #1f2937;
-    font-family: Consolas, monospace;
-    font-weight: 700;
-}
-
-.id-alumno {
-    display: block;
-    margin-top: 3px;
-    color: #94a3b8;
-    font-family: Consolas, monospace;
-    font-size: 0.75rem;
-}
-
-.nombre-alumno {
-    color: #111827;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.correo-alumno {
-    display: block;
-    margin-top: 4px;
-    color: #2563eb;
-    font-size: 0.8rem;
-    overflow-wrap: anywhere;
-}
-
-.etiqueta-carrera {
-    display: inline-block;
-    padding: 3px 8px;
-    color: #475569;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
-    font-family: Consolas, monospace;
-    font-size: 0.8rem;
-}
-
-.texto-secundario {
-    color: #64748b;
-}
-
-.promedio-alumno {
-    color: #111827;
-    font-family: Consolas, monospace;
-    font-weight: 700;
-}
-
-.badge-estatus {
-    display: inline-flex;
-    align-items: center;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-}
-
-.badge-activo {
-    color: #166534;
-    background: #dcfce7;
-}
-
-.badge-egresado {
-    color: #1e40af;
-    background: #dbeafe;
-}
-
-.badge-baja {
-    color: #374151;
-    background: #f3f4f6;
-}
-
-.formulario-grid {
-    display: grid;
-    gap: 16px;
-}
-
-.formulario-dos-columnas {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.formulario-cuatro-columnas {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.columna-doble {
-    grid-column: span 2;
-}
-
-.espacio-inferior {
-    margin-bottom: 18px;
-}
-
-.espacio-inferior-grande {
-    margin-bottom: 24px;
-}
-
-.etiqueta-campo {
-    display: block;
-    margin-bottom: 6px;
-    color: #374151;
-    font-size: 0.875rem;
-    font-weight: 700;
-}
-
-.campo-formulario {
-    display: block;
-    width: 100%;
-    min-height: 42px;
-    padding: 9px 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 7px;
+.btn-action--edit {
+    color: var(--buap-blue-700);
+    border-color: var(--buap-blue-300);
     background: #fff;
-    color: #1f2937;
-    font: inherit;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.campo-formulario:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16);
+.btn-action--edit:hover {
+    background: var(--buap-blue-600);
+    color: #fff;
+    border-color: var(--buap-blue-600);
 }
 
-.acciones-formulario {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 18px;
-    border-top: 1px solid #e5e7eb;
+.btn-action--delete {
+    color: #b02a37;
+    border-color: #f1c0c5;
+    background: #fff;
 }
 
-.modal-overlay {
+.btn-action--delete:hover {
+    background: #b02a37;
+    color: #fff;
+    border-color: #b02a37;
+}
+
+/* ============================================================
+   MODALES (nuevo y editar)
+   ============================================================ */
+
+.app-modal-overlay {
     position: fixed;
     inset: 0;
-    z-index: 1000;
+    background: rgba(10, 31, 68, 0.55);
+    backdrop-filter: blur(3px);
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow-y: auto;
-    background: rgba(15, 23, 42, 0.58);
+    padding: 1rem;
+    z-index: 1050;
+    opacity: 1;
+    transition: opacity 0.2s ease;
 }
 
-.hidden {
-    display: none !important;
+.app-modal-overlay.hidden {
+    display: none;
+    opacity: 0;
 }
 
-.modal-contenido {
-    width: min(680px, 100%);
-    max-height: calc(100vh - 40px);
-    overflow-y: auto;
-    padding: 26px;
+.app-modal {
+    width: 100%;
+    max-width: 640px;
+    max-height: 92vh;
     background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-    animation: modalFadeIn 0.25s ease-out;
-}
-
-.modal-encabezado {
+    border-top: 6px solid var(--buap-gold);
+    box-shadow: 0 24px 60px rgba(10, 31, 68, 0.35);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid #e5e7eb;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modalIn 0.22s ease-out;
 }
 
-.modal-titulo {
-    margin: 0;
-    color: #1e3a8a;
-    font-size: 1.35rem;
-}
-
-.boton-cerrar {
-    border: 0;
-    background: transparent;
-    color: #94a3b8;
-    font-size: 1.8rem;
-    font-weight: 700;
-    cursor: pointer;
-    line-height: 1;
-}
-
-.boton-cerrar:hover {
-    color: #dc2626;
-}
-
-@keyframes modalFadeIn {
+@keyframes modalIn {
     from {
+        transform: translateY(-12px);
         opacity: 0;
-        transform: translateY(-12px) scale(0.985);
     }
 
     to {
+        transform: translateY(0);
         opacity: 1;
-        transform: translateY(0) scale(1);
     }
 }
 
-@media (max-width: 760px) {
-    .pagina-alumnos {
-        width: min(100% - 24px, 1200px);
-        margin: 20px auto;
-    }
+.app-modal__header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1.35rem 1.5rem;
+    background: linear-gradient(135deg, var(--buap-blue-800), var(--buap-blue-600));
+    color: #fff;
+    border-bottom: 2px solid var(--buap-gold);
+    flex-shrink: 0;
+}
 
-    .encabezado-modulo {
-        align-items: flex-start;
+.app-modal__header-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--buap-blue-200);
+}
+
+.app-modal__header-icon--gold {
+    color: var(--buap-gold-soft);
+    background: rgba(201, 162, 39, 0.15);
+    border-color: rgba(201, 162, 39, 0.35);
+}
+
+.app-modal__header-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.app-modal__header-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.app-modal__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.15rem 0;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.app-modal__subtitle {
+    font-size: 0.82rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.app-modal__close {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.app-modal__close:hover {
+    background: rgba(220, 53, 69, 0.9);
+    border-color: rgba(220, 53, 69, 1);
+    color: #fff;
+}
+
+.app-modal__close svg {
+    width: 16px;
+    height: 16px;
+}
+
+.app-modal>form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.app-modal__body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.app-modal__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1.1rem 1.5rem;
+    background: var(--buap-blue-50);
+    border-top: 1px solid var(--buap-blue-100);
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   FORMULARIOS (dentro de modales)
+   ============================================================ */
+
+.form-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-grid--2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-grid--3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.form-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-700);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.62rem 0.85rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--gray-900);
+    background: #fff;
+    border: 1px solid var(--gray-300);
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-input:hover {
+    border-color: var(--buap-blue-300);
+}
+
+.form-input:focus {
+    border-color: var(--buap-blue-500);
+    box-shadow: 0 0 0 3px rgba(37, 99, 184, 0.15);
+}
+
+.form-input::placeholder {
+    color: var(--gray-300);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 1.25rem;
         flex-direction: column;
+        align-items: flex-start;
     }
 
-    .titulo-modulo {
-        font-size: 1.7rem;
+    .page-header__title {
+        font-size: 1.3rem;
     }
 
-    .resumen-alumnos {
+    .form-grid--2,
+    .form-grid--3 {
         grid-template-columns: 1fr;
     }
 
-    .tabla-contenedor {
-        max-height: none;
+    .data-table {
+        font-size: 0.85rem;
     }
 
-    .tabla-alumnos {
-        min-width: 760px;
+    .data-table thead th,
+    .data-table td {
+        padding: 0.75rem 0.7rem;
     }
 
-    .formulario-cuatro-columnas {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    .columna-doble {
-        grid-column: span 2;
+    .app-modal {
+        max-height: 95vh;
     }
 }
 
-@media (max-width: 480px) {
-    .formulario-dos-columnas {
-        grid-template-columns: 1fr;
+@media (max-width: 576px) {
+    .app-modal__body {
+        padding: 1.1rem;
     }
 
-    .modal-overlay {
-        padding: 10px;
-    }
-
-    .modal-contenido {
-        padding: 18px;
-    }
-
-    .acciones-formulario {
+    .app-modal__footer {
         flex-direction: column-reverse;
-        gap: 10px;
     }
 
-    .boton-secundario {
-        margin-right: 0;
-    }
-
-    .acciones-formulario .boton {
+    .app-modal__footer .btn-app {
         width: 100%;
     }
 }

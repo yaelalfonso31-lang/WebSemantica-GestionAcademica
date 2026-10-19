@@ -17,12 +17,21 @@ function eliminarAlumno(alumnoId) {
 }
 
 function abrirModal() {
-    document.getElementById('modalNuevoAlumno').classList.remove('hidden');
+    const modal = document.getElementById('modalNuevoAlumno');
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
+
 function cerrarModal() {
-    document.getElementById('modalNuevoAlumno').classList.add('hidden');
-    document.getElementById('formNuevoAlumno').reset();
+    const modal = document.getElementById('modalNuevoAlumno');
+
+    if (modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
 }
 
 function guardarAlumno(event) {
@@ -54,6 +63,8 @@ function guardarAlumno(event) {
             alert('Error de conexión con el servidor.');
             console.error('Error:', error);
         });
+
+    cerrarModal();
 }
 
 // Aquí Eduardo y Rubi agregar sus funciones:
@@ -107,10 +118,92 @@ function cerrarModalProfesor() {
     if (metodo) metodo.value = 'POST';
 }
 
-// Leer el formulario y convertir las materias en una lista.
-// Formato esperado por línea del campo "materias":
-// MAT001|Programación
-// MAT002|Bases de datos
+// ==========================================
+// Módulo de Buscador SPARQL
+// ==========================================
+function lanzarConsultaSPARQL() {
+    const archivoSeleccionado = document.getElementById('selectConsulta').value;
+
+    if (!archivoSeleccionado) {
+        alert("⚠️ Por favor selecciona una consulta del menú desplegable.");
+        return;
+    }
+
+    // Efectos de carga visual
+    document.getElementById('spinnerCarga').classList.remove('d-none');
+    document.getElementById('headSPARQL').innerHTML = '';
+    document.getElementById('bodySPARQL').innerHTML = '<tr><td class="text-center py-5 text-muted">Consultando el Grafo RDF...</td></tr>';
+    document.getElementById('panelMetricas').classList.add('d-none');
+
+    fetch('/api/consultas/ejecutar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ archivo: archivoSeleccionado })
+    })
+        .then(response => response.json())
+        .then(res => {
+            document.getElementById('spinnerCarga').classList.add('d-none');
+
+            if (res.error) {
+                document.getElementById('bodySPARQL').innerHTML = `<tr><td class="text-center py-5 text-danger fw-bold">❌ Error SPARQL: ${res.error}</td></tr>`;
+                return;
+            }
+
+            // Mostrar métricas
+            document.getElementById('panelMetricas').classList.remove('d-none');
+            document.getElementById('totalResultados').innerText = res.total_resultados;
+
+            const data = res.data;
+            const thead = document.getElementById('headSPARQL');
+            const tbody = document.getElementById('bodySPARQL');
+
+            thead.innerHTML = '';
+            tbody.innerHTML = '';
+
+            if (data.length === 0) {
+                thead.innerHTML = '<tr><th class="py-3 px-4">Resultado</th></tr>';
+                tbody.innerHTML = '<tr><td class="text-center py-5 text-muted">No se encontraron inferencias para esta consulta.</td></tr>';
+                return;
+            }
+
+            // 1. Generar los encabezados <th> leyendo las llaves del primer diccionario (las variables ?x del SELECT)
+            let trHead = document.createElement('tr');
+            const columnas = Object.keys(data[0]);
+            columnas.forEach(col => {
+                let th = document.createElement('th');
+                th.className = "px-4 text-capitalize";
+                th.innerText = col;
+                trHead.appendChild(th);
+            });
+            thead.appendChild(trHead);
+
+            // 2. Generar las filas <td> con los valores devueltos
+            data.forEach(fila => {
+                let trBody = document.createElement('tr');
+                columnas.forEach(col => {
+                    let td = document.createElement('td');
+                    td.className = "px-4";
+
+                    // Formateo visual: Si detecta una URL/URI, le da estilo de etiqueta
+                    let valor = fila[col];
+                    if (valor.includes("http://")) {
+                        valor = `<span class="badge bg-secondary badge-mono" title="${valor}">` + valor.split('/').pop().split('#').pop() + `</span>`;
+                        td.innerHTML = valor;
+                    } else {
+                        td.innerText = valor;
+                    }
+
+                    trBody.appendChild(td);
+                });
+                tbody.appendChild(trBody);
+            });
+        })
+        .catch(error => {
+            document.getElementById('spinnerCarga').classList.add('d-none');
+            document.getElementById('bodySPARQL').innerHTML = `<tr><td class="text-center py-5 text-danger fw-bold">Error de red al consultar el motor.</td></tr>`;
+            console.error('Error:', error);
+        });
+}
 
 
 function obtenerDatosFormularioProfesor(form) {
@@ -288,4 +381,116 @@ async function eliminarProfesor(profesorId) {
         console.error('Error al eliminar profesor:', error);
         alert('Error de conexión con el servidor.');
     }
+}
+
+// Variable global para controlar el modal de Bootstrap
+let modalEditar;
+
+function abrirModalEditarAlumno(id, matricula, nombre, apellidos, correo, carrera, semestre, promedio, estatus) {
+    // Llenar los campos del formulario
+    document.getElementById('edit_id').value = id;
+    document.getElementById('edit_matricula').value = matricula;
+    document.getElementById('edit_nombre').value = nombre;
+    document.getElementById('edit_apellidos').value = apellidos;
+    document.getElementById('edit_correo').value = correo;
+    document.getElementById('edit_carrera').value = carrera;
+    document.getElementById('edit_semestre').value = semestre;
+    document.getElementById('edit_promedio').value = promedio;
+    document.getElementById('edit_estatus').value = estatus;
+
+    // Mostrar el modal usando la API de Bootstrap
+    const modal = document.getElementById('modalEditarAlumno');
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // bloquear scroll del body
+    }
+}
+
+function cerrarModalEditar() {
+    const modal = document.getElementById('modalEditarAlumno');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
+function actualizarAlumno(event) {
+    event.preventDefault();
+
+    const id = document.getElementById('edit_id').value;
+    const datos = {
+        matricula: document.getElementById('edit_matricula').value,
+        nombre: document.getElementById('edit_nombre').value,
+        apellidos: document.getElementById('edit_apellidos').value,
+        correo: document.getElementById('edit_correo').value,
+        carrera_id: document.getElementById('edit_carrera').value,
+        semestre: document.getElementById('edit_semestre').value,
+        promedio: document.getElementById('edit_promedio').value,
+        estatus: document.getElementById('edit_estatus').value
+    };
+
+    fetch('/api/alumnos/' + id, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos)
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert('Error: ' + data.error);
+            } else {
+                alert('✅ ' + data.mensaje);
+                modalEditar.hide();
+                window.location.reload();
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+// ==========================================
+// Módulo de Materias
+// ==========================================
+let modalEditarMateria;
+
+function abrirModalEditarMateria(id, nombre, creditos, prerrequisito) {
+    document.getElementById('edit_mat_id').value = id;
+    document.getElementById('edit_mat_nombre').value = nombre;
+    document.getElementById('edit_mat_creditos').value = creditos;
+    document.getElementById('edit_mat_prerrequisito').value = prerrequisito || '';
+
+    document.getElementById('modalEditarMateria').classList.remove('hidden');
+    document.body.classList.add('modal-open');
+}
+
+function cerrarModalEditarMateria() {
+    document.getElementById('modalEditarMateria').classList.add('hidden');
+    document.body.classList.remove('modal-open');
+}
+
+function actualizarMateria(event) {
+    event.preventDefault();
+
+    const id = document.getElementById('edit_mat_id').value;
+    const datos = {
+        nombre: document.getElementById('edit_mat_nombre').value,
+        creditos: document.getElementById('edit_mat_creditos').value,
+        prerrequisito: document.getElementById('edit_mat_prerrequisito').value
+    };
+
+    fetch('/api/materias/' + id, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos)
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert('Error: ' + data.error);
+            } else {
+                alert('✅ ' + data.mensaje);
+                modalEditarMateria.hide();
+                window.location.reload();
+            }
+        })
+        .catch(error => console.error('Error:', error));
 }

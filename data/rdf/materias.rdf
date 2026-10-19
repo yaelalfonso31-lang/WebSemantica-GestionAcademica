@@ -41,17 +41,6 @@
     <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P004"/>
     <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
   </acad:Materia>
-  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS254">
-    <acad:id>CCOS254</acad:id>
-    <acad:clave>CCOS 254</acad:clave>
-    <acad:nombre>Sistemas Operativos II</acad:nombre>
-    <acad:descripcion>Administración avanzada de sistemas operativos y mecanismos de comunicación.</acad:descripcion>
-    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
-    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:semestre>
-    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
-    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P005"/>
-    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
-  </acad:Materia>
   <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS004">
     <acad:id>ICCS004</acad:id>
     <acad:clave>ICCS 004</acad:clave>

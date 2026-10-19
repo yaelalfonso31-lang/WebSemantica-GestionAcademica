@@ -1,0 +1,276 @@
+/* ============================================================
+   MÓDULO DE CONSULTAS SPARQL - EduSemantic BUAP
+   Sin border-radius. Paleta azul institucional.
+   ============================================================ */
+
+/* ============================================================
+   BADGE DEL ENCABEZADO
+   ============================================================ */
+
+.page-header__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--buap-blue-900);
+    background: var(--buap-gold-soft);
+    border: 1px solid var(--buap-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.page-header__badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ============================================================
+   LAYOUT DE DOS COLUMNAS
+   ============================================================ */
+
+.consultas-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .consultas-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   PANEL DE CONTROL (sidebar)
+   ============================================================ */
+
+.consultas-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: 90px;
+}
+
+@media (max-width: 992px) {
+    .consultas-sidebar {
+        position: static;
+    }
+}
+
+.panel-card {
+    background: #fff;
+    border: 1px solid var(--gray-100);
+    border-top: 4px solid var(--buap-blue-600);
+    box-shadow: var(--shadow-sm);
+}
+
+.panel-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.1rem 1.35rem;
+    background: var(--buap-blue-50);
+    border-bottom: 1px solid var(--buap-blue-100);
+}
+
+.panel-card__header-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid var(--buap-blue-200);
+    color: var(--buap-blue-600);
+}
+
+.panel-card__header-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.panel-card__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--buap-blue-800);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.panel-card__body {
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+/* Botón a todo el ancho */
+.btn-app--block {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ============================================================
+   PANEL DE MÉTRICAS (resultado rápido)
+   ============================================================ */
+
+.metric-panel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.35rem;
+    background: linear-gradient(135deg, var(--buap-blue-800), var(--buap-blue-600));
+    color: #fff;
+    border-left: 4px solid var(--buap-gold);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.metric-panel.hidden {
+    display: none;
+}
+
+.metric-panel__icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--buap-gold-soft);
+}
+
+.metric-panel__icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.metric-panel__body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+    min-width: 0;
+}
+
+.metric-panel__label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 0.3rem;
+}
+
+.metric-panel__value {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   PANEL DE RESULTADOS
+   ============================================================ */
+
+.consultas-results {
+    min-width: 0;
+}
+
+.consultas-results .table-scroll {
+    min-height: 340px;
+}
+
+/* ============================================================
+   SPINNER DE CARGA
+   ============================================================ */
+
+.loading-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--buap-blue-200);
+    border-top-color: var(--buap-blue-600);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+.loading-spinner.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================================
+   CELDAS GENERADAS DINÁMICAMENTE POR JS
+   Añade estas clases desde tu JS al inyectar filas
+   ============================================================ */
+
+.cell-uri {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    color: var(--buap-blue-700);
+    word-break: break-all;
+}
+
+.cell-value {
+    font-size: 0.88rem;
+    color: var(--gray-700);
+}
+
+/* Fila de error generada por JS */
+.row-error td {
+    background: #fbe6e8;
+    color: #b02a37;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Fila de "sin resultados" generada por JS */
+.row-empty td {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 576px) {
+    .panel-card__body {
+        padding: 1.1rem;
+    }
+
+    .panel-card__header {
+        padding: 0.9rem 1.1rem;
+    }
+
+    .metric-panel {
+        padding: 1rem 1.1rem;
+    }
+
+    .metric-panel__value {
+        font-size: 1.6rem;
+    }
+
+    .page-header__badge {
+        display: none;
+    }
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="inscripciones">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="inscripcion" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="alumno_id" type="xs:string"/>
+                            <xs:element name="materia_id" type="xs:string"/>
+                            <xs:element name="periodo" type="xs:string"/>
+                            <!-- minOccurs="0" permite que la calificación esté vacía si está Cursando -->
+                            <xs:element name="calificacion_final" type="xs:decimal" minOccurs="0"/>
+                            <xs:element name="estatus" type="xs:string"/>
+                        </xs:sequence>
+                        <!-- El atributo id es obligatorio para poder hacer el CRUD y apuntar desde RDF -->
+                        <xs:attribute name="id" type="xs:ID" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,18 +1,14 @@
-PREFIX acad: <http://academico.edu.mx/ontologia#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX acad: <http://academico.edu.mx/ontologia#>
 
-SELECT DISTINCT ?materiaId ?materiaNombre ?prerrequisitoId ?prerrequisitoClave ?prerrequisitoNombre ?semestrePrerreq ?tipo
+SELECT ?claveMateria ?nombreMateria ?claveRequisito ?nombreRequisito
 WHERE {
     ?materia a acad:Materia ;
-             acad:id ?materiaId ;
-             acad:nombre ?materiaNombre ;
-             acad:tienePrerrequisito+ ?prerreq .
-
-    ?prerreq acad:id ?prerrequisitoId ;
-             acad:clave ?prerrequisitoClave ;
-             acad:nombre ?prerrequisitoNombre ;
-             acad:semestre ?semestrePrerreq .
-
-    BIND(IF(EXISTS { ?materia acad:tienePrerrequisito ?prerreq }, "Directo", "Transitivo") AS ?tipo)
+             acad:id ?claveMateria ;
+             acad:nombre ?nombreMateria ;
+             acad:tienePrerrequisito ?requisito .
+             
+    ?requisito acad:id ?claveRequisito ;
+               acad:nombre ?nombreRequisito .
 }
-ORDER BY ?materiaId ?semestrePrerreq
+ORDER BY ASC(?nombreMateria)

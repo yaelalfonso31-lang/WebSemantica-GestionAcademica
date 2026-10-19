@@ -1,33 +1,35 @@
-from flask import Blueprint, session
+import os
+from flask import Blueprint, session, current_app
+from app.auth.decorators import login_requerido
 from app.services.transformer import transformar_a_html
 
 dashboard_bp = Blueprint('dashboard', __name__)
 
 @dashboard_bp.route('/dashboard')
-# Aquí iría tu @login_requerido importado de decorators.py
-def panel_control():
-    rol_actual = session.get('rol', 'visitante')
-    nombre_actual = session.get('username', 'Invitado')
+@login_requerido
+def vista_dashboard():
+    rol_actual = session.get('rol')
+    nombre_actual = session.get('username')
     
-    # 1. Crear un XML dinámico ligero para alimentar el dashboard
-    xml_data = f"""
-    <dashboard>
-        <metricas>
-            <metrica nombre="Estado del Sistema">Activo</metrica>
-            <metrica nombre="Semestre Actual">2026B</metrica>
-        </metricas>
-    </dashboard>
-    """
-    
-    # 2. Pasar el XML, el XSLT y los parámetros de sesión al transformador
+    # Dependiendo del rol, elegimos qué XSLT usar para pintar el panel
+    if rol_actual == 'admin':
+        xslt_file = 'dashboard_admin.xsl'
+        xml_data = '<dashboard><tipo>administrativo</tipo></dashboard>'
+    elif rol_actual == 'profesor':
+        xslt_file = 'dashboard_profesor.xsl'
+        xml_data = '<dashboard><tipo>docente</tipo></dashboard>'
+    elif rol_actual == 'alumno':
+        xslt_file = 'dashboard_alumno.xsl'
+        xml_data = '<dashboard><tipo>estudiante</tipo></dashboard>'
+    else:
+        xslt_file = 'dashboard.xsl'
+        xml_data = '<dashboard></dashboard>'
+
+    # Transformamos un XML en memoria hacia el XSLT correspondiente
     html_generado = transformar_a_html(
         xml_path_or_string=xml_data,
-        xslt_filename='dashboard.xsl',
-        params={
-            'rol_usuario': rol_actual,
-            'nombre_usuario': nombre_actual
-        }
+        xslt_filename=xslt_file,
+        params={'rol_usuario': rol_actual, 'nombre_usuario': nombre_actual}
     )
     
-    # 3. Devolver la respuesta directamente al navegador (sin usar plantillas Jinja)
     return html_generado

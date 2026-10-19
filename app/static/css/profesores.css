@@ -1,359 +1,123 @@
-/* =========================================
-   Módulo de Profesores - CSS sin Tailwind
-   ========================================= */
-
-* {
-    box-sizing: border-box;
-}
-
-body.cuerpo-profesores {
+.materias-list {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    background: #f3f6fb;
-    color: #1f2937;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
-}
-
-.pagina-profesores {
-    width: min(1200px, calc(100% - 40px));
-    margin: 32px auto;
-}
-
-/* Encabezado */
-
-.encabezado-profesores {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.materias-list__item {
+    display: flex;
     align-items: center;
-    gap: 24px;
-    margin-bottom: 30px;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed var(--gray-100);
 }
 
-.titulo-profesores {
-    margin: 0;
-    color: #1e3a8a;
-    font-size: 2rem;
-    line-height: 1.2;
+.materias-list__item:last-child {
+    border-bottom: none;
 }
 
-.subtitulo-profesores {
-    margin: 8px 0 0;
-    color: #64748b;
-}
-
-/* Botones */
-
-.boton-profesor {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    border-radius: 7px;
-    padding: 10px 16px;
-    color: #fff;
-    font-size: 0.95rem;
+.materias-list__code {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease,
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-}
-
-.boton-profesor:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
-}
-
-.boton-profesor-primario {
-    background: #2563eb;
-}
-
-.boton-profesor-primario:hover {
-    background: #1d4ed8;
-}
-
-.boton-profesor-peligro {
-    padding: 6px 12px;
-    color: #b91c1c;
-    background: #fee2e2;
-    font-size: 0.85rem;
-}
-
-.boton-profesor-peligro:hover {
-    color: #7f1d1d;
-    background: #fecaca;
-}
-
-/* Tarjetas de resumen */
-
-.resumen-profesores {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-bottom: 24px;
-}
-
-.tarjeta-profesor {
-    padding: 20px;
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
-}
-
-.etiqueta-resumen-profesores {
-    display: block;
-    color: #64748b;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-.valor-resumen-profesores {
-    margin: 6px 0 0;
-    font-size: 1.8rem;
-    font-weight: 800;
-}
-
-.valor-profesores-azul {
-    color: #1d4ed8;
-}
-
-.valor-profesores-verde {
-    color: #15803d;
-}
-
-.valor-profesores-indigo {
-    color: #4338ca;
-}
-
-/* Tabla */
-
-.tabla-contenedor-profesores {
-    max-height: 600px;
-    overflow: auto;
-    margin-bottom: 32px;
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
-}
-
-.tabla-profesores {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    text-align: left;
-    font-size: 0.9rem;
-}
-
-.tabla-profesores thead {
-    color: #1e3a8a;
-    background: #eff6ff;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-.tabla-profesores th {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    padding: 15px 18px;
-    border-bottom: 2px solid #bfdbfe;
-    box-shadow: 0 2px 2px rgba(15, 23, 42, 0.04);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--buap-blue-700);
+    background: var(--buap-blue-100);
+    border-left: 3px solid var(--buap-blue-500);
+    letter-spacing: 0.02em;
     white-space: nowrap;
 }
 
-.tabla-profesores td {
-    padding: 15px 18px;
-    border-bottom: 1px solid #e5e7eb;
-    vertical-align: middle;
+.materias-list__name {
+    font-size: 0.85rem;
+    color: var(--gray-700);
+    line-height: 1.3;
 }
 
-.tabla-profesores tbody tr {
-    transition: background-color 0.2s ease;
+/* ============================================================
+   TEXTAREA (para materias en el modal)
+   ============================================================ */
+
+.form-textarea {
+    resize: vertical;
+    min-height: 110px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, "Courier New", monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    padding: 0.7rem 0.85rem;
 }
 
-.tabla-profesores tbody tr:hover {
-    background: #f8fafc;
+/* ============================================================
+   AYUDA DEL FORMULARIO
+   ============================================================ */
+
+.form-help {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--gray-500);
+    line-height: 1.5;
+    margin-top: 0.15rem;
 }
 
-.tabla-profesores tbody tr:last-child td {
-    border-bottom: 0;
-}
-
-/* Datos del profesor */
-
-.id-profesor {
-    color: #1f2937;
-    font-family: Consolas, monospace;
+.form-help strong {
+    color: var(--gray-700);
     font-weight: 700;
 }
 
-.nombre-profesor {
-    color: #111827;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.especialidad-profesor {
-    display: block;
-    margin-top: 4px;
-    color: #64748b;
-    font-size: 0.8rem;
-}
-
-.correo-profesor {
-    display: block;
-    margin-top: 4px;
-    color: #2563eb;
-    font-size: 0.8rem;
-    overflow-wrap: anywhere;
-}
-
-.etiqueta-departamento {
+.form-help code {
     display: inline-block;
-    padding: 4px 10px;
-    color: #475569;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
-    font-size: 0.8rem;
+    padding: 0.05rem 0.4rem;
+    font-size: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: var(--buap-blue-50);
+    color: var(--buap-blue-700);
+    border: 1px solid var(--buap-blue-200);
 }
 
-.lista-materias-profesor {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+/* ============================================================
+   FILA VACÍA (sin profesores)
+   ============================================================ */
+
+.empty-row {
+    text-align: center !important;
+    padding: 3rem 1rem !important;
+    color: var(--gray-500);
 }
 
-.materia-profesor {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 0.8rem;
+.empty-row svg {
+    width: 48px;
+    height: 48px;
+    color: var(--buap-blue-300);
+    margin-bottom: 0.75rem;
+    opacity: 0.7;
 }
 
-.codigo-materia-profesor {
-    display: inline-block;
-    padding: 3px 8px;
-    color: #475569;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
-    font-family: Consolas, monospace;
-    font-size: 0.8rem;
+.empty-row p {
+    font-size: 0.95rem;
+    margin: 0 0 1rem 0;
+    color: var(--gray-500);
 }
 
-.texto-sin-materias {
-    color: #94a3b8;
-    font-size: 0.8rem;
-    font-style: italic;
+.empty-row .btn-app {
+    margin: 0 auto;
 }
 
-.texto-derecha-profesores {
-    text-align: right;
-}
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 
-/* Modal: preparado para el punto 3 */
-
-.modal-profesores {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow-y: auto;
-    background: rgba(15, 23, 42, 0.58);
-}
-
-.modal-profesores.hidden {
-    display: none !important;
-}
-
-.modal-contenido-profesores {
-    width: min(680px, 100%);
-    max-height: calc(100vh - 40px);
-    overflow-y: auto;
-    padding: 26px;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-    animation: modalProfesoresFadeIn 0.25s ease-out;
-}
-
-.modal-encabezado-profesores {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.modal-titulo-profesores {
-    margin: 0;
-    color: #1e3a8a;
-    font-size: 1.35rem;
-}
-
-@keyframes modalProfesoresFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-12px) scale(0.985);
+@media (max-width: 768px) {
+    .materias-list__item {
+        flex-wrap: wrap;
+        gap: 0.35rem;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Adaptación a pantallas pequeñas */
-
-@media (max-width: 760px) {
-    .pagina-profesores {
-        width: min(calc(100% - 24px), 1200px);
-        margin: 20px auto;
-    }
-
-    .encabezado-profesores {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .titulo-profesores {
-        font-size: 1.7rem;
-    }
-
-    .resumen-profesores {
-        grid-template-columns: 1fr;
-    }
-
-    .tabla-contenedor-profesores {
-        max-height: none;
-    }
-
-    .tabla-profesores {
-        min-width: 850px;
-    }
-}
-
-@media (max-width: 480px) {
-    .modal-profesores {
-        padding: 10px;
-    }
-
-    .modal-contenido-profesores {
-        padding: 18px;
+    .form-textarea {
+        font-size: 0.8rem;
     }
 }

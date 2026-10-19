@@ -1,83 +1,346 @@
-/* =========================================
-   Estilos Base y Navegación
-   (Complementarios a Tailwind CSS)
-   ========================================= */
-body {
-    background-color: #f3f4f6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
+/* ============================================================
+   LAYOUT GLOBAL - EduSemantic BUAP
+   Coordinado con dashboard.css (misma paleta)
+   ============================================================ */
+
+:root {
+    /* Paleta principal (idéntica a dashboard.css) */
+    --buap-blue-900: #0a1f44;
+    --buap-blue-800: #0f2d5c;
+    --buap-blue-700: #143d7a;
+    --buap-blue-600: #1a4d96;
+    --buap-blue-500: #2563b8;
+    --buap-blue-400: #4a8ad4;
+    --buap-blue-300: #7fb2e5;
+    --buap-blue-200: #b8d4f0;
+    --buap-blue-100: #e3eef9;
+    --buap-blue-50: #f2f7fc;
+
+    --buap-gold: #c9a227;
+    --buap-gold-soft: #f4e7b8;
+
+    --gray-900: #1a1f2e;
+    --gray-700: #4a5163;
+    --gray-500: #7a8194;
+    --gray-300: #c9cdd6;
+    --gray-100: #eef1f6;
+
+    --shadow-sm: 0 1px 2px rgba(10, 31, 68, 0.06);
+    --shadow-md: 0 4px 12px rgba(10, 31, 68, 0.08);
+    --shadow-lg: 0 12px 32px rgba(10, 31, 68, 0.14);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-pill: 999px;
+
+    --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-nav {
-    background-color: #003b5c;
-    /* Azul corporativo */
-    color: white;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+/* ============================================================
+   BASE
+   ============================================================ */
+
+.layout-body {
+    background: linear-gradient(180deg, var(--buap-blue-50) 0%, #f7f9fc 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--gray-900);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.layout-main {
+    flex: 1;
+    padding: 2rem 1rem;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+.app-navbar {
+    background: linear-gradient(135deg, var(--buap-blue-900) 0%, var(--buap-blue-700) 100%);
+    box-shadow: var(--shadow-md);
+    padding: 0.6rem 0;
+    border-bottom: 2px solid var(--buap-gold);
+}
+
+.app-navbar__brand {
     display: flex;
     align-items: center;
-}
-
-nav a {
-    color: #e2e8f0;
-    margin-right: 20px;
+    gap: 0.65rem;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
     text-decoration: none;
+    transition: var(--transition);
+}
+
+.app-navbar__brand:hover {
+    opacity: 0.92;
+}
+
+.app-navbar__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-sm);
+    color: var(--buap-gold-soft);
+    flex-shrink: 0;
+}
+
+.app-navbar__logo svg {
+    width: 22px;
+    height: 22px;
+}
+
+.app-navbar__brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.app-navbar__brand-text small {
+    font-size: 0.65rem;
     font-weight: 600;
-    transition: color 0.2s ease-in-out;
+    letter-spacing: 0.12em;
+    color: var(--buap-gold-soft);
+    text-transform: uppercase;
+    margin-top: 3px;
 }
 
-nav a:hover {
-    color: #ffffff;
+/* Links del nav */
+.app-navbar__links {
+    gap: 0.15rem;
+    margin-left: 1.5rem;
 }
 
-nav a.logout-btn {
-    margin-left: auto;
-    margin-right: 0;
-    background-color: #dc2626;
-    /* Rojo para cerrar sesión */
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+.app-navbar__links .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: rgba(255, 255, 255, 0.82) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.55rem 0.85rem !important;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    white-space: nowrap;
 }
 
-nav a.logout-btn:hover {
-    background-color: #b91c1c;
+.app-navbar__links .nav-link svg {
+    width: 17px;
+    height: 17px;
+    opacity: 0.85;
+    transition: var(--transition);
 }
 
-/* =========================================
-   Componentes Reutilizables (XSLT)
-   ========================================= */
-.tarjeta {
-    background: #ffffff;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border: 1px solid #e5e7eb;
-    transition: box-shadow 0.2s ease;
+.app-navbar__links .nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff !important;
 }
 
-.tarjeta:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+.app-navbar__links .nav-link:hover svg {
+    opacity: 1;
+    transform: scale(1.08);
 }
 
-/* =========================================
-   Utilidades y Ajustes
-   ========================================= */
-/* Asegura que el contenido principal tenga un límite de ancho legible */
-main.contenedor-principal {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+/* Link de acento (SPARQL) */
+.app-navbar__link--accent {
+    color: var(--buap-gold-soft) !important;
 }
 
-/* Transición suave para el fondo oscuro de los modales */
-#modalNuevoAlumno {
-    backdrop-filter: blur(2px);
-    transition: opacity 0.3s ease-in-out;
+.app-navbar__link--accent:hover {
+    background: rgba(201, 162, 39, 0.15) !important;
+    color: var(--buap-gold) !important;
 }
 
-/* Scroll horizontal suave para tablas en pantallas pequeñas */
-.table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* Zona de usuario */
+.app-navbar__user {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.app-navbar__user-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0.75rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-pill);
+}
+
+.app-navbar__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--buap-blue-400), var(--buap-blue-300));
+    border-radius: 50%;
+    color: var(--buap-blue-900);
+    flex-shrink: 0;
+}
+
+.app-navbar__avatar svg {
+    width: 18px;
+    height: 18px;
+}
+
+.app-navbar__user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.app-navbar__user-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.app-navbar__user-role {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--buap-gold-soft);
+}
+
+/* Botones de sesión */
+.app-navbar__logout,
+.app-navbar__login {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.45rem 0.95rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.app-navbar__logout svg,
+.app-navbar__login svg {
+    width: 15px;
+    height: 15px;
+}
+
+.app-navbar__logout {
+    color: #fff;
+    background: rgba(220, 53, 69, 0.85);
+    border-color: rgba(220, 53, 69, 1);
+}
+
+.app-navbar__logout:hover {
+    background: #c82333;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(200, 35, 51, 0.35);
+}
+
+.app-navbar__login {
+    color: var(--buap-blue-900);
+    background: var(--buap-gold-soft);
+    border-color: var(--buap-gold);
+}
+
+.app-navbar__login:hover {
+    background: var(--buap-gold);
+    color: var(--buap-blue-900);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(201, 162, 39, 0.4);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.app-footer {
+    background: var(--buap-blue-900);
+    color: rgba(255, 255, 255, 0.75);
+    border-top: 3px solid var(--buap-gold);
+    padding: 1.25rem 0;
+    margin-top: 2rem;
+}
+
+.app-footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.app-footer__brand strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+.app-footer__meta {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.8rem;
+}
+
+/* ============================================================
+   TOGGLER (navbar colapsada)
+   ============================================================ */
+
+.app-navbar .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.35rem 0.55rem;
+}
+
+.app-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.35);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+    .app-navbar__links {
+        margin-left: 0;
+        margin-top: 1rem;
+        gap: 0.15rem;
+    }
+
+    .app-navbar__links .nav-link {
+        padding: 0.7rem 0.85rem !important;
+    }
+
+    .app-navbar__user {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .app-footer__inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .layout-main {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .app-navbar__brand-text {
+        font-size: 1rem;
+    }
 }

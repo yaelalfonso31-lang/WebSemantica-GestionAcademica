@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:acad="http://academico.edu.mx/ontologia#">
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I001">
+    <acad:id>I001</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A001"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/M001"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A001">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/M001"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I002">
+    <acad:id>I002</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.5</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A001"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/M003"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A001">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/M003"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I003">
+    <acad:id>I003</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Reprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A004"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/M002"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A004">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/M002"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I004">
+    <acad:id>I004</acad:id>
+    <acad:periodo>Primavera 2027</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/M005"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/M005"/>
+  </acad:Alumno>
+</rdf:RDF>

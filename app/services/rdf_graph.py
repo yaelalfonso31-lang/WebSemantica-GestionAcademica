@@ -95,6 +95,10 @@ class SemanticEngine:
             ("profesores.xml", "profesores2rdf.xsl", "profesores.rdf"),
         ]
 
+        inscripciones_rdf = cls.transformar_xml_a_rdf('inscripciones.xml', 'inscripciones2rdf.xsl', 'inscripciones.rdf')
+        if inscripciones_rdf and os.path.exists(inscripciones_rdf):
+            g.parse(inscripciones_rdf, format='xml')
+
         # 3. Incorporar los RDF generados al grafo maestro.
         for xml_filename, xslt_filename, rdf_filename in transformaciones:
             rdf_path = cls.transformar_xml_a_rdf(

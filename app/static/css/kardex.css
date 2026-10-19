@@ -1,0 +1,63 @@
+/* =========================================
+   Estilos Específicos para el Kardex
+   ========================================= */
+
+/* Fuente monoespaciada para Folios y Claves de Materia */
+.badge-mono {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+/* Efecto hover suave en las tarjetas superiores */
+.card.shadow-sm {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.shadow-sm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+/* Redondear ligeramente los badges para un look más moderno */
+.badge {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* =========================================
+   Estilos de Impresión (Kardex Oficial)
+   ========================================= */
+@media print {
+
+    /* Ocultar elementos no relevantes al imprimir (navbar y fondos) */
+    nav.navbar {
+        display: none !important;
+    }
+
+    body {
+        background-color: white !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Eliminar sombras y bordes en el papel */
+    .card {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Asegurar que la tabla negra de Bootstrap se imprima con texto oscuro para ahorrar tinta */
+    .table-dark {
+        color: #000 !important;
+        background-color: #f8f9fa !important;
+        border-bottom: 2px solid #000;
+    }
+
+    .table-dark th {
+        color: #000 !important;
+        background-color: #f8f9fa !important;
+    }
+}

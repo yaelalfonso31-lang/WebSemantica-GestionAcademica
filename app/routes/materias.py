@@ -1,6 +1,8 @@
 import os
+from lxml import etree
 from flask import Blueprint, current_app, session, request, jsonify
-from app.auth.decorators import login_requerido
+from app.auth.decorators import login_requerido, rol_requerido
+from app.services.rdf_graph import SemanticEngine
 from app.services.transformer import transformar_a_html
 from app.services.xml_repository import XMLRepository
 from app.services.sparql_engine import SPARQLEngine
@@ -73,6 +75,46 @@ def api_eliminar_materia(materia_id):
         return jsonify({"mensaje": "Materia eliminada correctamente"}), 200
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
+
+@materias_bp.route('/api/materias/<materia_id>', methods=["PUT"])
+@login_requerido
+@rol_requerido('admin')
+def api_editar_materia(materia_id):
+    datos = request.json
+    xml_path = os.path.join(current_app.config.get('XML_DIR', 'data/xml'), 'materias.xml')
+    
+    if not os.path.exists(xml_path):
+        return jsonify({"error": "Archivo de materias no encontrado"}), 404
+        
+    tree = etree.parse(xml_path)
+    root = tree.getroot()
+    
+    # Buscar la materia por su ID
+    nodos = root.xpath(f"//materia[@id='{materia_id}']")
+    if not nodos:
+        return jsonify({"error": "Materia no encontrada"}), 404
+        
+    materia = nodos[0]
+    
+    # Actualizar los campos clave de la materia
+    campos = ['nombre', 'creditos', 'prerrequisito']
+    for campo in campos:
+        if campo in datos:
+            nodo_campo = materia.find(campo)
+            if nodo_campo is not None:
+                # Si el dato viene vacío y es prerrequisito, podríamos querer borrar el texto
+                nodo_campo.text = str(datos[campo]) if datos[campo] else ""
+            else:
+                # Crear el nodo si no existía previamente
+                if datos[campo]:
+                    nuevo_nodo = etree.SubElement(materia, campo)
+                    nuevo_nodo.text = str(datos[campo])
+
+    # Guardar en el archivo físico y actualizar el motor semántico
+    tree.write(xml_path, encoding="UTF-8", xml_declaration=True, pretty_print=True)
+    SemanticEngine.construir_grafo()
+    
+    return jsonify({"mensaje": "Materia actualizada correctamente"}), 200
 
 
 # ==========================================

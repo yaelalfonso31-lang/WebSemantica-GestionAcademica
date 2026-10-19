@@ -17,35 +17,6 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     rdfs:domain acad:Materia ;
     rdfs:range acad:Materia .
 
-<http://academico.edu.mx/recurso/alumno/A001> a acad:Alumno ;
-    acad:apellidos "García López" ;
-    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS008> ;
-    acad:correo "maria.garcia@edusemantic.edu" ;
-    acad:estatus "Activo" ;
-    acad:id "A001" ;
-    acad:matricula "20230001" ;
-    acad:nombre "María" ;
-    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
-    acad:promedio 95.0 ;
-    acad:semestre 3 .
-
-<http://academico.edu.mx/recurso/alumno/A002> a acad:Alumno ;
-    acad:apellidos "Hernández Ruiz" ;
-    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
-        <http://academico.edu.mx/recurso/materia/CCOS008>,
-        <http://academico.edu.mx/recurso/materia/CCOS013>,
-        <http://academico.edu.mx/recurso/materia/CCOS252>,
-        <http://academico.edu.mx/recurso/materia/ICCS004>,
-        <http://academico.edu.mx/recurso/materia/ICCS007> ;
-    acad:correo "carlos.hernandez@alumno.buap.mx" ;
-    acad:estatus "Activo" ;
-    acad:id "A002" ;
-    acad:matricula "20230002" ;
-    acad:nombre "Carlos" ;
-    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
-    acad:promedio 87.3 ;
-    acad:semestre 6 .
-
 <http://academico.edu.mx/recurso/alumno/A003> a acad:Alumno ;
     acad:apellidos "Martínez Torres" ;
     acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS013>,
@@ -81,16 +52,36 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:promedio 9.0 ;
     acad:semestre 8 .
 
-<http://academico.edu.mx/recurso/materia/CCOS254> a acad:Materia ;
-    acad:clave "CCOS 254" ;
-    acad:creditos 6 ;
-    acad:descripcion "Administración avanzada de sistemas operativos y mecanismos de comunicación." ;
-    acad:id "CCOS254" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P005> ;
-    acad:nombre "Sistemas Operativos II" ;
-    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 6 ;
-    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS252> .
+<http://academico.edu.mx/recurso/inscripcion/I001> a acad:Inscripcion ;
+    acad:calificacionFinal 95.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I001" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/M001> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A001> .
+
+<http://academico.edu.mx/recurso/inscripcion/I002> a acad:Inscripcion ;
+    acad:calificacionFinal 92.5 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I002" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/M003> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A001> .
+
+<http://academico.edu.mx/recurso/inscripcion/I003> a acad:Inscripcion ;
+    acad:calificacionFinal 55.0 ;
+    acad:estatus "Reprobado" ;
+    acad:id "I003" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/M002> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A004> .
+
+<http://academico.edu.mx/recurso/inscripcion/I004> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:id "I004" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/M005> ;
+    acad:periodo "Primavera 2027" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A002> .
 
 <http://academico.edu.mx/recurso/materia/ICCS006> a acad:Materia ;
     acad:clave "ICCS 006" ;
@@ -169,6 +160,27 @@ ac:Prof_P1003 a ac:Profesor ;
     foaf:mbox <mailto:maria.garcia@universidad.edu.mx> ;
     foaf:name "María García" .
 
+<http://academico.edu.mx/recurso/alumno/A002> a acad:Alumno ;
+    acad:apellidos "Hernández Ruiz" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS007> ;
+    acad:correo "carlos.hernandez@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/M005> ;
+    acad:estatus "Activo" ;
+    acad:id "A002" ;
+    acad:matricula "20230002" ;
+    acad:nombre "Carlos" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 87.3 ;
+    acad:semestre 6 .
+
+<http://academico.edu.mx/recurso/alumno/A004> a acad:Alumno ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/M002> .
+
 <http://academico.edu.mx/recurso/materia/CCOS005> a acad:Materia ;
     acad:clave "CCOS 005" ;
     acad:creditos 6 ;
@@ -189,6 +201,20 @@ ac:Prof_P1003 a ac:Profesor ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
     acad:semestre 5 ;
     acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS013> .
+
+<http://academico.edu.mx/recurso/alumno/A001> a acad:Alumno ;
+    acad:apellidos "García López" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:correo "maria.garcia@edusemantic.edu" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/M001>,
+        <http://academico.edu.mx/recurso/materia/M003> ;
+    acad:estatus "Activo" ;
+    acad:id "A001" ;
+    acad:matricula "20230001" ;
+    acad:nombre "María" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 95.0 ;
+    acad:semestre 3 .
 
 <http://academico.edu.mx/recurso/materia/ICCS007> a acad:Materia ;
     acad:clave "ICCS 007" ;

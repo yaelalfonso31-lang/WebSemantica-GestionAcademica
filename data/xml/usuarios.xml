@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <usuarios>
-    <usuario id="U001" rol="admin" ref="P_001">
-        <username>admin_general</username>
-        <password_hash>pbkdf2:sha256:...</password_hash>
+    <!-- Cuenta Administrativa -->
+    <usuario id="U001">
+        <username>admin</username>
+        <password>1234</password>
+        <nombre>Administrador General</nombre>
+        <rol>admin</rol>
     </usuario>
-    <usuario id="U002" rol="alumno" ref="A_2026001">
-        <username>alumno_juan</username>
-        <password_hash>pbkdf2:sha256:...</password_hash>
+
+    <!-- Cuenta de Profesor -->
+    <usuario id="U002">
+        <username>profe</username>
+        <password>1234</password>
+        <nombre>Eduardo Profesor</nombre>
+        <rol>profesor</rol>
+    </usuario>
+
+    <!-- Cuenta de Alumno -->
+    <usuario id="U003">
+        <username>alumno</username>
+        <password>1234</password>
+        <nombre>Yael Serrano</nombre>
+        <rol>alumno</rol>
     </usuario>
 </usuarios>

@@ -1,0 +1,397 @@
+/* ============================================================
+   SISTEMA DE GESTIÓN ACADÉMICA - BUAP
+   Paleta de colores: Azul institucional
+   ============================================================ */
+
+:root {
+    /* Paleta principal */
+    --buap-blue-900: #0a1f44;
+    --buap-blue-800: #0f2d5c;
+    --buap-blue-700: #143d7a;
+    --buap-blue-600: #1a4d96;
+    --buap-blue-500: #2563b8;
+    --buap-blue-400: #4a8ad4;
+    --buap-blue-300: #7fb2e5;
+    --buap-blue-200: #b8d4f0;
+    --buap-blue-100: #e3eef9;
+    --buap-blue-50: #f2f7fc;
+
+    /* Acentos */
+    --buap-gold: #c9a227;
+    --buap-gold-soft: #f4e7b8;
+
+    /* Neutros */
+    --gray-900: #1a1f2e;
+    --gray-700: #4a5163;
+    --gray-500: #7a8194;
+    --gray-300: #c9cdd6;
+    --gray-100: #eef1f6;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 2px rgba(10, 31, 68, 0.06);
+    --shadow-md: 0 4px 12px rgba(10, 31, 68, 0.08);
+    --shadow-lg: 0 12px 32px rgba(10, 31, 68, 0.14);
+    --shadow-xl: 0 20px 48px rgba(10, 31, 68, 0.18);
+
+    /* Radios */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-pill: 999px;
+
+    /* Transiciones */
+    --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   CONTENEDOR DEL DASHBOARD
+   ============================================================ */
+
+.dashboard-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+/* ============================================================
+   BANNER / JUMBOTRON DE BIENVENIDA
+   ============================================================ */
+
+.welcome-banner {
+    position: relative;
+    background: linear-gradient(135deg, var(--buap-blue-800) 0%, var(--buap-blue-600) 55%, var(--buap-blue-500) 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    color: #fff;
+}
+
+.welcome-banner::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(127, 178, 229, 0.35) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.welcome-banner::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -40px;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(201, 162, 39, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.welcome-banner__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+}
+
+.welcome-banner__icon {
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(6px);
+    color: var(--buap-blue-200);
+}
+
+.welcome-banner__icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.welcome-banner__text {
+    flex: 1;
+    min-width: 240px;
+}
+
+.welcome-banner__title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.welcome-banner__subtitle {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 720px;
+}
+
+.welcome-banner__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding: 0.35rem 0.9rem;
+    background: rgba(201, 162, 39, 0.18);
+    border: 1px solid rgba(201, 162, 39, 0.45);
+    border-radius: var(--radius-pill);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--buap-gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.welcome-banner__badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ============================================================
+   GRID DE TARJETAS
+   ============================================================ */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ============================================================
+   TARJETA DE MÓDULO
+   ============================================================ */
+
+.module-card {
+    position: relative;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 2.25rem 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-100);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.module-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--buap-blue-500), var(--buap-blue-300));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.module-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--buap-blue-200);
+}
+
+.module-card:hover::before {
+    opacity: 1;
+}
+
+.module-card__icon {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--buap-blue-100), var(--buap-blue-50));
+    color: var(--buap-blue-600);
+    margin-bottom: 1.25rem;
+    transition: var(--transition);
+}
+
+.module-card__icon svg {
+    width: 34px;
+    height: 34px;
+}
+
+.module-card:hover .module-card__icon {
+    background: linear-gradient(135deg, var(--buap-blue-600), var(--buap-blue-500));
+    color: #fff;
+    transform: scale(1.06);
+}
+
+.module-card__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0 0 0.65rem 0;
+    letter-spacing: -0.01em;
+}
+
+.module-card__desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gray-500);
+    margin: 0 0 1.6rem 0;
+    flex: 1;
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+
+.btn-module {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.72rem 1.9rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-module svg {
+    width: 18px;
+    height: 18px;
+    transition: var(--transition);
+}
+
+.btn-module:hover svg {
+    transform: translateX(3px);
+}
+
+/* Primario */
+.btn-module--primary {
+    background: linear-gradient(135deg, var(--buap-blue-600), var(--buap-blue-500));
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(26, 77, 150, 0.32);
+}
+
+.btn-module--primary:hover {
+    background: linear-gradient(135deg, var(--buap-blue-700), var(--buap-blue-600));
+    box-shadow: 0 6px 20px rgba(26, 77, 150, 0.42);
+    transform: translateY(-2px);
+}
+
+/* Secundario (outline azul) */
+.btn-module--secondary {
+    background: transparent;
+    color: var(--buap-blue-600);
+    border-color: var(--buap-blue-300);
+}
+
+.btn-module--secondary:hover {
+    background: var(--buap-blue-600);
+    color: #fff;
+    border-color: var(--buap-blue-600);
+    transform: translateY(-2px);
+}
+
+/* Acento dorado (para admin/docente) */
+.btn-module--accent {
+    background: linear-gradient(135deg, var(--buap-gold), #b8901f);
+    color: var(--buap-blue-900);
+    box-shadow: 0 4px 14px rgba(201, 162, 39, 0.32);
+}
+
+.btn-module--accent:hover {
+    background: linear-gradient(135deg, #b8901f, var(--buap-gold));
+    box-shadow: 0 6px 20px rgba(201, 162, 39, 0.42);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   MÉTRICAS (para admin)
+   ============================================================ */
+
+.metricas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.metrica-card {
+    position: relative;
+    background: #fff;
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    border-left: 4px solid var(--buap-blue-500);
+    transition: var(--transition);
+}
+
+.metrica-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--buap-gold);
+}
+
+.metrica-card__label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gray-500);
+    margin: 0 0 0.5rem 0;
+}
+
+.metrica-card__value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--buap-blue-700);
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .welcome-banner {
+        padding: 2rem 1.5rem;
+    }
+
+    .welcome-banner__title {
+        font-size: 1.5rem;
+    }
+
+    .welcome-banner__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .welcome-banner__icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .module-card {
+        padding: 1.75rem 1.5rem;
+    }
+}
