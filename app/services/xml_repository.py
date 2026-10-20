@@ -1,13 +1,18 @@
 
 import os
 import shutil
+import threading
 from datetime import datetime
 
 from lxml import etree
 from flask import current_app
 
 from app.services.validator import XMLValidator
+from app.services.paths import ruta
 from app.services.rdf_graph import SemanticEngine
+
+# Serializa los ciclos leer-modificar-guardar sobre los XML (un solo proceso).
+LOCK_ESCRITURA = threading.RLock()
 
 
 class XMLRepository:
@@ -33,7 +38,7 @@ class XMLRepository:
 
     def _crear_backup(self, xml_path):
         """Crea una copia del XML antes de cualquier escritura."""
-        backup_dir = os.path.join("data", "backups")
+        backup_dir = ruta("BACKUP_DIR")
         os.makedirs(backup_dir, exist_ok=True)
 
         timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
@@ -44,14 +49,10 @@ class XMLRepository:
         if os.path.exists(xml_path):
             shutil.copy2(xml_path, backup_path)
 
-    def _guardar_xml(self, tree, xml_path):
+    def _guardar_xml(self, tree, xml_path, reconstruir_grafo=True):
         """Valida con XSD y DTD, respalda, guarda y actualiza el RDF."""
-        xsd_path = os.path.join(
-            "schemas", "xsd", f"{self.entidad}.xsd"
-        )
-        dtd_path = os.path.join(
-            "schemas", "dtd", f"{self.entidad}.dtd"
-        )
+        xsd_path = ruta("SCHEMAS_DIR", "xsd", f"{self.entidad}.xsd")
+        dtd_path = ruta("SCHEMAS_DIR", "dtd", f"{self.entidad}.dtd")
 
         XMLValidator.validar_contra_xsd(tree, xsd_path)
         XMLValidator.validar_contra_dtd(tree, dtd_path)
@@ -63,15 +64,18 @@ class XMLRepository:
             f'SYSTEM "../../schemas/dtd/{self.entidad}.dtd">'
         )
 
+        tmp_path = xml_path + ".tmp"
         tree.write(
-            xml_path,
+            tmp_path,
             encoding="UTF-8",
             xml_declaration=True,
             pretty_print=True,
             doctype=doctype,
         )
+        os.replace(tmp_path, xml_path)  # atómico: nunca queda un XML a medio escribir
 
-        SemanticEngine.construir_grafo()
+        if reconstruir_grafo:
+            SemanticEngine.construir_grafo()
 
     # ==========================
     # Operaciones CRUD Alumnos
@@ -106,7 +110,7 @@ class XMLRepository:
         tree = etree.parse(xml_path, parser)
         root = tree.getroot()
 
-        if root.xpath(f"//alumno[@id='{datos['id']}']"):
+        if root.xpath("//alumno[@id=$i]", i=str(datos["id"])):
             raise ValueError(
                 f"El alumno con ID {datos['id']} ya existe."
             )
@@ -132,7 +136,7 @@ class XMLRepository:
         tree = etree.parse(xml_path, parser)
         root = tree.getroot()
 
-        nodos = root.xpath(f"//alumno[@id='{alumno_id}']")
+        nodos = root.xpath("//alumno[@id=$i]", i=alumno_id)
 
         if not nodos:
             return False
@@ -205,7 +209,7 @@ class XMLRepository:
         materia_id = str(datos.get("id", "")).strip().upper()
         clave = str(datos.get("clave", "")).strip().upper()
 
-        if root.xpath(f"//materia[@id='{materia_id}']"):
+        if root.xpath("//materia[@id=$i]", i=materia_id):
             raise ValueError(
                 f"La materia con ID '{materia_id}' ya existe."
             )
@@ -262,9 +266,7 @@ class XMLRepository:
             ]
 
         for ref_id in prerreqs:
-            nodo_ref = root.xpath(
-                f"//materia[@id='{ref_id}']"
-            )
+            nodo_ref = root.xpath("//materia[@id=$i]", i=str(ref_id))
             nombre_ref = (
                 nodo_ref[0].findtext("nombre") or ""
             ).strip() if nodo_ref else ref_id
@@ -288,8 +290,8 @@ class XMLRepository:
         root = tree.getroot()
 
         dependientes = root.xpath(
-            "//materia[prerrequisitos/prerrequisito"
-            f"[@ref='{materia_id}']]/@id"
+            "//materia[prerrequisitos/prerrequisito[@ref=$i]]/@id",
+            i=materia_id,
         )
 
         if dependientes:
@@ -299,9 +301,7 @@ class XMLRepository:
                 f"{', '.join(dependientes)}"
             )
 
-        nodos = root.xpath(
-            f"//materia[@id='{materia_id}']"
-        )
+        nodos = root.xpath("//materia[@id=$i]", i=materia_id)
 
         if not nodos:
             return False

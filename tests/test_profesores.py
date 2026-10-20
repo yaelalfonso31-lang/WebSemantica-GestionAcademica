@@ -100,7 +100,7 @@ def test_xsd_permite_profesor_sin_materias(doc, xsd):
 # ---------- XSLT -> HTML ----------
 def test_xslt_html_genera_una_fila_por_profesor(doc):
     html = etree.XSLT(etree.parse(str(XSL_HTML)))(doc)
-    assert len(html.xpath("//tbody/tr")) == 3
+    assert len(html.xpath("//tbody/tr")) == 14      # 3 de ejemplo + 11 reales (seed_data.py)
     texto = str(html)
     assert "Ana López" in texto
     assert "Sin materias asignadas" in texto     # María García no tiene materias
@@ -109,7 +109,7 @@ def test_xslt_html_genera_una_fila_por_profesor(doc):
 # ---------- XSLT -> RDF ----------
 def test_rdf_numero_de_profesores_y_departamentos(grafo):
     assert len(list(grafo.subjects(predicate=URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-                                   object=URIRef(AC + "Profesor")))) == 3
+                                   object=URIRef(AC + "Profesor")))) == 14
     deps = set(grafo.subjects(predicate=URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
                               object=URIRef(AC + "Departamento")))
     assert len(deps) == 1      # los 3 profesores son de "Sistemas"

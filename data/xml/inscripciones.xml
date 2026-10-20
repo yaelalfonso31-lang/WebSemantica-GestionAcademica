@@ -1,37 +1,229 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE inscripciones SYSTEM "../../schemas/dtd/inscripciones.dtd">
 <inscripciones>
-    <!-- Alumno A001 con materias aprobadas -->
-    <inscripcion id="I001">
-        <alumno_id>A001</alumno_id>
-        <materia_id>M001</materia_id>
-        <periodo>Otoño 2026</periodo>
-        <calificacion_final>95.0</calificacion_final>
-        <estatus>Aprobado</estatus>
-    </inscripcion>
-
-    <inscripcion id="I002">
-        <alumno_id>A001</alumno_id>
-        <materia_id>M003</materia_id>
-        <periodo>Otoño 2026</periodo>
-        <calificacion_final>92.5</calificacion_final>
-        <estatus>Aprobado</estatus>
-    </inscripcion>
-
-    <!-- Alumno A004 (Diego) con una materia reprobada -->
-    <inscripcion id="I003">
-        <alumno_id>A004</alumno_id>
-        <materia_id>M002</materia_id>
-        <periodo>Otoño 2026</periodo>
-        <calificacion_final>55.0</calificacion_final>
-        <estatus>Reprobado</estatus>
-    </inscripcion>
-
-    <!-- Alumno A002 cursando actualmente (sin calificación final aún) -->
-    <inscripcion id="I004">
-        <alumno_id>A002</alumno_id>
-        <materia_id>M005</materia_id>
-        <periodo>Primavera 2027</periodo>
-        <estatus>Cursando</estatus>
-    </inscripcion>
+  <inscripcion id="I001">
+    <alumno_id>A001</alumno_id>
+    <materia_id>CCOS008</materia_id>
+    <periodo>Primavera 2026</periodo>
+    <calificacion_final>95.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I002">
+    <alumno_id>A001</alumno_id>
+    <materia_id>CCOS005</materia_id>
+    <grupo_id>G-CCOS005-02</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I003">
+    <alumno_id>A001</alumno_id>
+    <materia_id>CCOS013</materia_id>
+    <grupo_id>G-CCOS013-01</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I004">
+    <alumno_id>A001</alumno_id>
+    <materia_id>ICCS004</materia_id>
+    <grupo_id>G-ICCS004-01</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I005">
+    <alumno_id>A002</alumno_id>
+    <materia_id>CCOS005</materia_id>
+    <periodo>Otoño 2025</periodo>
+    <calificacion_final>85.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I006">
+    <alumno_id>A002</alumno_id>
+    <materia_id>CCOS008</materia_id>
+    <periodo>Otoño 2025</periodo>
+    <calificacion_final>90.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I007">
+    <alumno_id>A002</alumno_id>
+    <materia_id>CCOS013</materia_id>
+    <periodo>Primavera 2026</periodo>
+    <calificacion_final>88.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I008">
+    <alumno_id>A002</alumno_id>
+    <materia_id>CCOS252</materia_id>
+    <periodo>Primavera 2026</periodo>
+    <calificacion_final>84.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I009">
+    <alumno_id>A002</alumno_id>
+    <materia_id>ICCS004</materia_id>
+    <periodo>Otoño 2025</periodo>
+    <calificacion_final>92.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I010">
+    <alumno_id>A002</alumno_id>
+    <materia_id>ICCS007</materia_id>
+    <periodo>Primavera 2026</periodo>
+    <calificacion_final>85.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I011">
+    <alumno_id>A002</alumno_id>
+    <materia_id>ICCS250</materia_id>
+    <grupo_id>G-ICCS250-01</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I012">
+    <alumno_id>A002</alumno_id>
+    <materia_id>ICCS256</materia_id>
+    <grupo_id>G-ICCS256-02</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I013">
+    <alumno_id>A002</alumno_id>
+    <materia_id>ICCS258</materia_id>
+    <grupo_id>G-ICCS258-02</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I014">
+    <alumno_id>A003</alumno_id>
+    <materia_id>CCOS013</materia_id>
+    <periodo>Otoño 2025</periodo>
+    <calificacion_final>95.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I015">
+    <alumno_id>A003</alumno_id>
+    <materia_id>ICCS004</materia_id>
+    <periodo>Primavera 2026</periodo>
+    <calificacion_final>93.5</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I016">
+    <alumno_id>A003</alumno_id>
+    <materia_id>CCOS252</materia_id>
+    <grupo_id>G-CCOS252-01</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I017">
+    <alumno_id>A003</alumno_id>
+    <materia_id>ICCS007</materia_id>
+    <grupo_id>G-ICCS007-01</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I018">
+    <alumno_id>A003</alumno_id>
+    <materia_id>ICCS258</materia_id>
+    <grupo_id>G-ICCS258-02</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I019">
+    <alumno_id>A005</alumno_id>
+    <materia_id>CCOS005</materia_id>
+    <grupo_id>G-CCOS005-02</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I020">
+    <alumno_id>A005</alumno_id>
+    <materia_id>CCOS008</materia_id>
+    <grupo_id>G-CCOS008-01</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I021">
+    <alumno_id>A006</alumno_id>
+    <materia_id>CCOS005</materia_id>
+    <periodo>Otoño 2023</periodo>
+    <calificacion_final>90.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I022">
+    <alumno_id>A006</alumno_id>
+    <materia_id>CCOS008</materia_id>
+    <periodo>Otoño 2023</periodo>
+    <calificacion_final>85.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I023">
+    <alumno_id>A006</alumno_id>
+    <materia_id>CCOS013</materia_id>
+    <periodo>Primavera 2024</periodo>
+    <calificacion_final>88.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I024">
+    <alumno_id>A006</alumno_id>
+    <materia_id>CCOS252</materia_id>
+    <periodo>Otoño 2024</periodo>
+    <calificacion_final>92.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I025">
+    <alumno_id>A006</alumno_id>
+    <materia_id>ICCS004</materia_id>
+    <periodo>Primavera 2024</periodo>
+    <calificacion_final>80.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I026">
+    <alumno_id>A006</alumno_id>
+    <materia_id>ICCS006</materia_id>
+    <periodo>Otoño 2024</periodo>
+    <calificacion_final>86.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I027">
+    <alumno_id>A006</alumno_id>
+    <materia_id>ICCS007</materia_id>
+    <periodo>Otoño 2024</periodo>
+    <calificacion_final>90.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I028">
+    <alumno_id>A006</alumno_id>
+    <materia_id>ICCS250</materia_id>
+    <periodo>Primavera 2025</periodo>
+    <calificacion_final>94.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I029">
+    <alumno_id>A006</alumno_id>
+    <materia_id>ICCS256</materia_id>
+    <periodo>Primavera 2025</periodo>
+    <calificacion_final>89.0</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I030">
+    <alumno_id>A006</alumno_id>
+    <materia_id>ICCS257</materia_id>
+    <periodo>Primavera 2026</periodo>
+    <calificacion_final>55.0</calificacion_final>
+    <estatus>Reprobado</estatus>
+  </inscripcion>
+  <inscripcion id="I031">
+    <alumno_id>A006</alumno_id>
+    <materia_id>ICCS257</materia_id>
+    <grupo_id>G-ICCS257-01</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <estatus>Cursando</estatus>
+  </inscripcion>
+  <inscripcion id="I032">
+    <alumno_id>A006</alumno_id>
+    <materia_id>ICCS258</materia_id>
+    <grupo_id>G-ICCS258-02</grupo_id>
+    <periodo>Otoño 2026</periodo>
+    <calificacion_final>78.1</calificacion_final>
+    <estatus>Aprobado</estatus>
+  </inscripcion>
 </inscripciones>

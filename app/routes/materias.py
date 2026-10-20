@@ -54,9 +54,10 @@ def api_listar_materias():
 
 @materias_bp.route("/api/materias", methods=["POST"])
 @login_requerido
+@rol_requerido('admin')
 def api_crear_materia():
     """Recibe datos para crear una nueva materia, validando contra DTD y XSD."""
-    datos = request.get_json() or request.form.to_dict()
+    datos = request.get_json(silent=True) or request.form.to_dict()
     try:
         creada = repo.agregar_materia(datos)
         return jsonify({"mensaje": "Materia registrada correctamente", "materia": creada}), 201
@@ -66,6 +67,7 @@ def api_crear_materia():
 
 @materias_bp.route("/api/materias/<materia_id>", methods=["DELETE"])
 @login_requerido
+@rol_requerido('admin')
 def api_eliminar_materia(materia_id):
     """Elimina una materia por su atributo ID."""
     try:
@@ -90,7 +92,7 @@ def api_editar_materia(materia_id):
     root = tree.getroot()
     
     # Buscar la materia por su ID
-    nodos = root.xpath(f"//materia[@id='{materia_id}']")
+    nodos = root.xpath("//materia[@id=$i]", i=materia_id)
     if not nodos:
         return jsonify({"error": "Materia no encontrada"}), 404
         

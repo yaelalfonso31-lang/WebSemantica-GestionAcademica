@@ -21,6 +21,11 @@
                     <acad:estatus>
                         <xsl:value-of select="estatus"/>
                     </acad:estatus>
+                    <xsl:if test="grupo_id != ''">
+                        <acad:grupo>
+                            <xsl:value-of select="grupo_id"/>
+                        </acad:grupo>
+                    </xsl:if>
 
                     <xsl:if test="calificacion_final != ''">
                         <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">

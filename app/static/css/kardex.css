@@ -1,63 +1,246 @@
-/* =========================================
-   Estilos Específicos para el Kardex
-   ========================================= */
+/* ============================================================
+   MÓDULO KARDEX - Portal Alumno BUAP
+   Sin border-radius. Paleta azul institucional.
+   ============================================================ */
 
-/* Fuente monoespaciada para Folios y Claves de Materia */
-.badge-mono {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9em;
-    letter-spacing: 0.5px;
-}
+/* ============================================================
+   BADGE DEL ENCABEZADO
+   ============================================================ */
 
-/* Efecto hover suave en las tarjetas superiores */
-.card.shadow-sm {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card.shadow-sm:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-}
-
-/* Redondear ligeramente los badges para un look más moderno */
-.badge {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
+.page-header__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.78rem;
     font-weight: 600;
+    color: var(--buap-blue-900);
+    background: var(--buap-gold-soft);
+    border: 1px solid var(--buap-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
 }
 
-/* =========================================
-   Estilos de Impresión (Kardex Oficial)
-   ========================================= */
-@media print {
+.page-header__badge svg {
+    width: 14px;
+    height: 14px;
+}
 
-    /* Ocultar elementos no relevantes al imprimir (navbar y fondos) */
-    nav.navbar {
-        display: none !important;
+/* ============================================================
+   VARIANTES DE STAT-CARD
+   (reutiliza .stat-card de alumnos.css)
+   ============================================================ */
+
+.stat-card--success {
+    border-left-color: #1a7a3e !important;
+}
+
+.stat-card--success .stat-card__icon {
+    background: #e5f5eb;
+    color: #1a7a3e;
+}
+
+.stat-card--success .stat-card__value {
+    color: #1a7a3e;
+}
+
+.stat-card--gold {
+    border-left-color: var(--buap-gold) !important;
+}
+
+.stat-card--gold .stat-card__icon {
+    background: var(--buap-gold-soft);
+    color: #8a5a00;
+}
+
+.stat-card--gold .stat-card__value {
+    color: var(--buap-blue-900);
+}
+
+/* ============================================================
+   TABLA DE KARDEX
+   ============================================================ */
+
+.kardex-table {
+    font-size: 0.9rem;
+}
+
+.kardex-col-folio {
+    width: 130px;
+}
+
+.kardex-col-cred {
+    width: 100px;
+}
+
+.kardex-col-periodo {
+    width: 130px;
+}
+
+.kardex-col-calif {
+    width: 130px;
+}
+
+.kardex-col-estatus {
+    width: 150px;
+}
+
+/* Folio */
+.folio {
+    display: inline-block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    padding: 0.15rem 0.5rem;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+    letter-spacing: 0.02em;
+}
+
+/* Código de materia */
+.materia-code {
+    display: inline-block;
+    padding: 0.12rem 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--buap-blue-700);
+    background: var(--buap-blue-50);
+    border-left: 3px solid var(--buap-blue-500);
+    letter-spacing: 0.03em;
+}
+
+/* Créditos */
+.creditos {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    padding: 0.15rem 0.55rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--buap-blue-800);
+    background: var(--buap-blue-100);
+    border: 1px solid var(--buap-blue-200);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Periodo */
+.periodo-chip {
+    display: inline-block;
+    padding: 0.18rem 0.55rem;
+    font-size: 0.76rem;
+    font-weight: 600;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--buap-blue-700);
+    background: var(--buap-blue-50);
+    border: 1px solid var(--buap-blue-200);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+/* Calificación */
+.calificacion {
+    display: inline-block;
+    min-width: 48px;
+    padding: 0.2rem 0.55rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--buap-blue-800);
+    font-variant-numeric: tabular-nums;
+}
+
+.calificacion--empty {
+    color: var(--gray-300);
+    font-weight: 400;
+}
+
+/* ============================================================
+   BADGES DE ESTATUS
+   ============================================================ */
+
+.estatus-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    color: var(--gray-700);
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+}
+
+.estatus-badge::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.estatus-badge--cursando {
+    color: #8a5a00;
+    background: #fff4dd;
+    border: 1px solid #f0c97a;
+}
+
+.estatus-badge--aprobado {
+    color: #1a7a3e;
+    background: #e5f5eb;
+    border: 1px solid #b8e2c6;
+}
+
+.estatus-badge--reprobado {
+    color: #b02a37;
+    background: #fbe6e8;
+    border: 1px solid #f1c0c5;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .kardex-col-folio {
+        width: auto;
     }
 
-    body {
-        background-color: white !important;
-        margin: 0;
-        padding: 0;
+    .kardex-col-cred {
+        width: auto;
     }
 
-    /* Eliminar sombras y bordes en el papel */
-    .card {
-        border: none !important;
-        box-shadow: none !important;
+    .kardex-col-periodo {
+        width: auto;
     }
 
-    /* Asegurar que la tabla negra de Bootstrap se imprima con texto oscuro para ahorrar tinta */
-    .table-dark {
-        color: #000 !important;
-        background-color: #f8f9fa !important;
-        border-bottom: 2px solid #000;
+    .kardex-col-calif {
+        width: auto;
     }
 
-    .table-dark th {
-        color: #000 !important;
-        background-color: #f8f9fa !important;
+    .kardex-col-estatus {
+        width: auto;
+    }
+
+    .calificacion {
+        font-size: 0.9rem;
+        min-width: 40px;
+    }
+
+    .estatus-badge {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .page-header__badge {
+        display: none;
     }
 }

@@ -1,41 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:import href="layout.xsl"/>
 
-    <!-- Importamos el esqueleto principal -->
-    <xsl:import href="layout.xsl" />
-
-    <!-- Definimos el bloque de contenido -->
+    <!-- Los errores de acceso llegan como alertas flash (las inyecta el transformador en <main>). -->
     <xsl:template name="content">
-        <div class="tarjeta" style="max-width: 400px; margin: 2rem auto;">
-            <h2>Acceso al Sistema</h2>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+                    <div class="card shadow-sm border-0 border-top border-primary border-4">
+                        <div class="card-body p-4">
+                            <h2 class="fw-bold mb-1">Acceso al sistema</h2>
+                            <p class="text-muted mb-4">Ingresa con tu usuario institucional.</p>
 
-            <!-- Mostrar errores si el XML trae alguno (procesado desde auth_bp) -->
-            <xsl:if test="login/errores/error">
-                <div style="color: red; margin-bottom: 1rem;">
-                    <xsl:for-each select="login/errores/error">
-                        <p>&#9888; <xsl:value-of select="."/>
-                        </p>
-                    </xsl:for-each>
+                            <form action="/login" method="POST">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label fw-semibold">Usuario</label>
+                                    <input type="text" id="username" name="username" class="form-control"
+                                           required="required" autofocus="autofocus" autocomplete="username"/>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="password" class="form-label fw-semibold">Contraseña</label>
+                                    <input type="password" id="password" name="password" class="form-control"
+                                           required="required" autocomplete="current-password"/>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Ingresar</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </xsl:if>
-
-            <!-- Formulario HTML puro, sin Jinja -->
-            <form action="/login" method="POST">
-                <div style="margin-bottom: 1rem;">
-                    <label for="username">Usuario:</label>
-                    <br/>
-                    <input type="text" id="username" name="username" required="required" style="width: 100%; padding: 0.5rem;"/>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <label for="password">Contraseña:</label>
-                    <br/>
-                    <input type="password" id="password" name="password" required="required" style="width: 100%; padding: 0.5rem;"/>
-                </div>
-                <button type="submit" style="width: 100%; padding: 0.7rem; background-color: #003b5c; color: white; border: none; cursor: pointer;">
-                    Ingresar
-                </button>
-            </form>
+            </div>
         </div>
     </xsl:template>
 </xsl:stylesheet>

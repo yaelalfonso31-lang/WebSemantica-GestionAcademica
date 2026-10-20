@@ -8,6 +8,8 @@
                         <xs:sequence>
                             <xs:element name="alumno_id" type="xs:string"/>
                             <xs:element name="materia_id" type="xs:string"/>
+                            <!-- Grupo concreto en el que está inscrito (opcional por compatibilidad con registros antiguos) -->
+                            <xs:element name="grupo_id" type="xs:string" minOccurs="0"/>
                             <xs:element name="periodo" type="xs:string"/>
                             <!-- minOccurs="0" permite que la calificación esté vacía si está Cursando -->
                             <xs:element name="calificacion_final" type="xs:decimal" minOccurs="0"/>

@@ -1,77 +1,111 @@
-import os
-from flask import Blueprint, current_app, session, request, jsonify
+from flask import Blueprint, flash, jsonify, redirect, request, session, url_for
+
 from app.auth.decorators import login_requerido, rol_requerido
+from app.services import academic_metrics as metricas
 from app.services.transformer import transformar_a_html
-from app.services.rdf_graph import SemanticEngine
+from app.services.xml_repository import LOCK_ESCRITURA, XMLRepository
+from app.services.xml_utils import cargar, ruta_xml, texto, xpath
 from lxml import etree
 
 calificaciones_bp = Blueprint('calificaciones', __name__)
 
-@calificaciones_bp.route('/calificar', methods=["GET"])
+
+@calificaciones_bp.route('/calificar', methods=['GET'])
 @login_requerido
 @rol_requerido('profesor')
 def vista_calificar():
-    # Obtenemos los parámetros de la URL enviados desde el botón "Calificar Alumnos"
-    grupo_id = request.args.get('grupo', '')
-    materia_id = request.args.get('materia', '')
-    
-    xml_insc = os.path.join(current_app.config.get('XML_DIR', 'data/xml'), 'inscripciones.xml')
-    rol_actual = session.get('rol')
-    nombre_actual = session.get('username')
-    
-    # Creamos un nodo raíz temporal para enviar al XSLT
-    nuevo_root = etree.Element("evaluacion", grupo=grupo_id, materia=materia_id)
-    
-    if os.path.exists(xml_insc) and materia_id:
-        tree = etree.parse(xml_insc)
-        # Filtramos a los alumnos inscritos en esta materia en particular
-        inscripciones = tree.xpath(f"//inscripcion[materia_id='{materia_id}']")
-        for insc in inscripciones:
-            nuevo_root.append(insc)
-            
-    xml_data = etree.tostring(nuevo_root, encoding='unicode')
-    
+    profesor_id = session.get('ref_id')
+    grupo_id = request.args.get('grupo', '').strip()
+
+    if not grupo_id:
+        # Sin grupo no hay nada que calificar: si solo tiene uno vamos directo, si no, que elija
+        propios = metricas.grupos_de_profesor(profesor_id)
+        if len(propios) == 1:
+            return redirect(url_for('calificaciones.vista_calificar', grupo=propios[0].get('id')))
+        flash('Elige el grupo que quieres calificar.', 'info')
+        return redirect(url_for('grupos.vista_mis_grupos'))
+
+    grupo = metricas.grupo_de_profesor(profesor_id, grupo_id)
+    if grupo is None:  # no existe o es de otro profesor
+        flash('Ese grupo no existe o no está asignado a ti.', 'danger')
+        return redirect(url_for('grupos.vista_mis_grupos'))
+
     return transformar_a_html(
-        xml_path_or_string=xml_data,
+        xml_path_or_string=metricas.xml_evaluacion(grupo),
         xslt_filename='calificaciones.xsl',
-        params={'rol_usuario': rol_actual, 'nombre_usuario': nombre_actual}
+        params={'rol_usuario': session.get('rol'),
+                'nombre_usuario': session.get('nombre') or session.get('username')},
     )
 
-@calificaciones_bp.route('/api/calificar', methods=["POST"])
+
+@calificaciones_bp.route('/api/calificar', methods=['POST'])
 @login_requerido
 @rol_requerido('profesor')
 def guardar_calificaciones():
-    datos = request.json
-    xml_insc = os.path.join(current_app.config.get('XML_DIR', 'data/xml'), 'inscripciones.xml')
-    
-    if not os.path.exists(xml_insc):
-        return jsonify({"error": "No se encontró la base de datos de inscripciones."}), 404
-        
-    tree = etree.parse(xml_insc)
-    root = tree.getroot()
-    
-    # Recorremos el diccionario de datos enviados desde el navegador
-    for insc_id, valores in datos.items():
-        nodo = root.xpath(f"//inscripcion[@id='{insc_id}']")
-        if nodo:
-            insc_node = nodo[0]
-            
-            # Actualizar o crear nodo de calificación
-            calif_node = insc_node.find('calificacion_final')
+    """Recibe {"grupo": "G-...", "calificaciones": {"I001": "90", "I002": ""}}.
+
+    El estatus se deriva de la calificación (>= mínima aprueba); el profesor solo puede
+    modificar inscripciones de sus propios grupos; todo se valida antes de escribir.
+    """
+    datos = request.get_json(silent=True) or {}
+    grupo = metricas.grupo_de_profesor(session.get('ref_id'), str(datos.get('grupo', '')))
+    califs = datos.get('calificaciones')
+    if grupo is None:
+        return jsonify({'error': 'El grupo no existe o no está asignado a ti.'}), 403
+    if not isinstance(califs, dict) or not califs:
+        return jsonify({'error': 'No se recibieron calificaciones.'}), 400
+
+    with LOCK_ESCRITURA:
+        arbol = cargar('inscripciones')
+        if arbol is None:
+            return jsonify({'error': 'No se encontró la base de datos de inscripciones.'}), 404
+        permitidas = {i.get('id'): i for i in metricas.inscripciones_de_grupo(grupo, arbol)}
+
+        # 1) Validar TODO antes de modificar nada
+        nuevas, errores = {}, []
+        for insc_id, valor in califs.items():
+            if insc_id not in permitidas:
+                errores.append(f'{insc_id}: no pertenece a tu grupo.')
+                continue
+            try:
+                nuevas[insc_id] = metricas.parsear_calificacion(valor)
+            except ValueError as e:
+                errores.append(f'{insc_id}: {e}')
+        if errores:
+            return jsonify({'error': 'No se guardó nada. ' + ' '.join(errores)}), 400
+
+        # 2) Aplicar cambios respetando el orden que exige el XSD (calificacion_final antes de estatus)
+        for insc_id, cal in nuevas.items():
+            nodo = permitidas[insc_id]
+            calif_node = nodo.find('calificacion_final')
+            estatus_node = nodo.find('estatus')
+            if cal is None:
+                if calif_node is not None:
+                    nodo.remove(calif_node)
+                estatus_node.text = 'Cursando'
+                continue
             if calif_node is None:
-                calif_node = etree.SubElement(insc_node, 'calificacion_final')
-            calif_node.text = str(valores.get('calificacion', ''))
-            
-            # Actualizar nodo de estatus
-            estatus_node = insc_node.find('estatus')
-            if estatus_node is None:
-                estatus_node = etree.SubElement(insc_node, 'estatus')
-            estatus_node.text = str(valores.get('estatus', 'Cursando'))
-            
-    # Guardamos los cambios físicos en el XML
-    tree.write(xml_insc, encoding="UTF-8", xml_declaration=True, pretty_print=True)
-    
-    # ¡MAGIA SEMÁNTICA! Reconstruimos el grafo para que asimile las nuevas calificaciones
-    SemanticEngine.construir_grafo()
-    
-    return jsonify({"mensaje": "Calificaciones guardadas y Grafo RDF actualizado con éxito."})
+                calif_node = etree.Element('calificacion_final')
+                estatus_node.addprevious(calif_node)
+            calif_node.text = str(cal)
+            estatus_node.text = metricas.estatus_por_calificacion(cal)
+
+        # 3) Guardar con validación XSD/DTD + respaldo; mantener alumnos.promedio al día
+        try:
+            XMLRepository('inscripciones')._guardar_xml(arbol, ruta_xml('inscripciones'), reconstruir_grafo=False)
+            _actualizar_promedios({texto(permitidas[i], 'alumno_id') for i in nuevas}, arbol)
+        except ValueError as e:
+            return jsonify({'error': str(e)}), 400
+
+    return jsonify({'mensaje': f'{len(nuevas)} calificación(es) guardada(s) y grafo RDF actualizado.'})
+
+
+def _actualizar_promedios(alumnos_ids, inscripciones):
+    """Recalcula alumnos.promedio (lo usan SPARQL y el dashboard) y reconstruye el grafo una vez."""
+    alumnos = cargar('alumnos')
+    for aid in alumnos_ids:
+        promedio = metricas.promedio_de(aid, inscripciones)
+        nodo = xpath(alumnos, '//alumno[@id=$a]', a=aid)
+        if promedio is not None and nodo:
+            nodo[0].find('promedio').text = str(promedio)
+    XMLRepository('alumnos')._guardar_xml(alumnos, ruta_xml('alumnos'))  # reconstruye el grafo

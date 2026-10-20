@@ -23,8 +23,7 @@
                             Portal Docente
                         </h1>
                         <p class="welcome-banner__subtitle">
-                            Bienvenido, Profesor <xsl:value-of select="$nombre_usuario"/>
-.
+                            Bienvenido, <xsl:value-of select="$nombre_usuario"/>.
                             Gestiona tus grupos asignados y captura las calificaciones de tus alumnos.
                         </p>
                         <span class="welcome-banner__badge">
@@ -35,6 +34,10 @@
                         </span>
                     </div>
                 </div>
+            </div>
+
+                        <div class="metricas-container">
+                <xsl:apply-templates select="dashboard/metricas/metrica"/>
             </div>
 
             <div class="card-grid">
@@ -77,6 +80,12 @@
                 </div>
 
             </div>
+        </div>
+    </xsl:template>
+    <xsl:template match="metrica">
+        <div class="metrica-card">
+            <p class="metrica-card__label"><xsl:value-of select="@nombre"/></p>
+            <p class="metrica-card__value"><xsl:value-of select="."/></p>
         </div>
     </xsl:template>
 </xsl:stylesheet>

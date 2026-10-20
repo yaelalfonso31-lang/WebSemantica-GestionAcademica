@@ -1,9 +1,10 @@
 <!ELEMENT inscripciones (inscripcion*)>
-<!ELEMENT inscripcion (alumno_id, materia_id, periodo, calificacion_final?, estatus)>
+<!ELEMENT inscripcion (alumno_id, materia_id, grupo_id?, periodo, calificacion_final?, estatus)>
 <!ATTLIST inscripcion
     id ID #REQUIRED>
 <!ELEMENT alumno_id (#PCDATA)>
 <!ELEMENT materia_id (#PCDATA)>
+<!ELEMENT grupo_id (#PCDATA)>
 <!ELEMENT periodo (#PCDATA)>
 <!ELEMENT calificacion_final (#PCDATA)>
 <!ELEMENT estatus (#PCDATA)>

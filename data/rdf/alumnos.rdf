@@ -51,7 +51,7 @@
     <acad:apellidos>Serrano</acad:apellidos>
     <acad:correo>efewf@dfvs.como</acad:correo>
     <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</acad:semestre>
-    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9</acad:promedio>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.3</acad:promedio>
     <acad:estatus>Activo</acad:estatus>
     <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
   </acad:Alumno>

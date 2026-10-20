@@ -1,26 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <usuarios>
-    <!-- Cuenta Administrativa -->
-    <usuario id="U001">
-        <username>admin</username>
-        <password>1234</password>
-        <nombre>Administrador General</nombre>
-        <rol>admin</rol>
-    </usuario>
-
-    <!-- Cuenta de Profesor -->
-    <usuario id="U002">
-        <username>profe</username>
-        <password>1234</password>
-        <nombre>Eduardo Profesor</nombre>
-        <rol>profesor</rol>
-    </usuario>
-
-    <!-- Cuenta de Alumno -->
-    <usuario id="U003">
-        <username>alumno</username>
-        <password>1234</password>
-        <nombre>Yael Serrano</nombre>
-        <rol>alumno</rol>
-    </usuario>
+  <usuario id="U001">
+    <username>admin</username>
+    <password>scrypt:32768:8:1$1i0zxk4JAWjhAxQR$584ea98d6fa2d61cad0a8b4e733ba045f318bed0d7f9f3998a77e80bf8816f116020e673160ea025b188cc5ff8df89e8c43a38232c56b3bd5753104ca2814052</password>
+    <nombre>Administrador General</nombre>
+    <rol>admin</rol>
+  </usuario>
+  <usuario id="U002">
+    <username>profe</username>
+    <password>scrypt:32768:8:1$NEtvndMVlWqH8vs2$11ae503608359b7d73debadb1152c03f6644bfdf4b25f87906230870fa1fb0437a204a55ae9749b4794bce3681bf68446dc32aae668368cc300d5f44cfccf639</password>
+    <nombre>Eduardo Profesor</nombre>
+    <rol>profesor</rol>
+    <ref>P012</ref>
+  </usuario>
+  <usuario id="U003">
+    <username>alumno</username>
+    <password>scrypt:32768:8:1$SxGwn9XPjgIJyJwJ$67fd85560383313c53b2767a24fb6781be8a75d118bc15f4d34e418f45e5c9377dba055513aa3c0226702e91cbc806ae6040d3c9a28bdbc643123bf809525925</password>
+    <nombre>Yael Serrano</nombre>
+    <rol>alumno</rol>
+    <ref>A006</ref>
+  </usuario>
 </usuarios>

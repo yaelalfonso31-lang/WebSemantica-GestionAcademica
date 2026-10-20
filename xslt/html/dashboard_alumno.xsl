@@ -20,8 +20,7 @@
                     </div>
                     <div class="welcome-banner__text">
                         <h1 class="welcome-banner__title">
-                            ¡Bienvenido, <xsl:value-of select="$nombre_usuario"/>
-!
+                            ¡Bienvenido, <xsl:value-of select="$nombre_usuario"/>!
                         </h1>
                         <p class="welcome-banner__subtitle">
                             Este es tu panel de estudiante. Desde aquí podrás consultar tu avance académico,
@@ -35,6 +34,10 @@
                         </span>
                     </div>
                 </div>
+            </div>
+
+                        <div class="metricas-container">
+                <xsl:apply-templates select="dashboard/metricas/metrica"/>
             </div>
 
             <div class="card-grid">
@@ -76,6 +79,12 @@
                 </div>
 
             </div>
+        </div>
+    </xsl:template>
+    <xsl:template match="metrica">
+        <div class="metrica-card">
+            <p class="metrica-card__label"><xsl:value-of select="@nombre"/></p>
+            <p class="metrica-card__value"><xsl:value-of select="."/></p>
         </div>
     </xsl:template>
 </xsl:stylesheet>

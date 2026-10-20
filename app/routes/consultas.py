@@ -29,12 +29,12 @@ def vista_consultas():
 @rol_requerido('admin')
 def api_ejecutar_consulta():
     """Recibe el nombre del archivo .rq, lo ejecuta en rdflib y devuelve JSON."""
-    datos = request.json
+    datos = request.get_json(silent=True) or {}
     archivo_rq = datos.get('archivo')
-    
+
     if not archivo_rq:
         return jsonify({"error": "No se especificó ningún archivo de consulta."}), 400
-        
+
     try:
         # El motor SPARQL lee el archivo y consulta el grafo en memoria
         resultados = SPARQLEngine.ejecutar_consulta(archivo_rq)
@@ -43,6 +43,10 @@ def api_ejecutar_consulta():
             "total_resultados": len(resultados),
             "data": resultados
         }), 200
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+    except FileNotFoundError as e:
+        return jsonify({"error": str(e)}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

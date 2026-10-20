@@ -21,6 +21,8 @@
                 <link rel="stylesheet" href="/static/css/profesores.css" />
                 <link rel="stylesheet" href="/static/css/materias.css" />
                 <link rel="stylesheet" href="/static/css/consultas.css" />
+                <link rel="stylesheet" href="/static/css/mis_grupos.css" />
+                <link rel="stylesheet" href="/static/css/calificaciones.css" />
             </head>
             <body class="layout-body">
 

@@ -1,11 +1,10 @@
 # run.py
+import os
 
 from app import create_app
 
-# Crea la instancia de la aplicación Flask utilizando la fábrica
 app = create_app()
 
 if __name__ == '__main__':
-    # Ejecuta el servidor de desarrollo de Flask
-    # debug=True reiniciará el servidor automáticamente si haces cambios en el código
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    # debug solo si lo pides: FLASK_DEBUG=1 python run.py (nunca en producción)
+    app.run(debug=os.environ.get('FLASK_DEBUG') == '1', host='127.0.0.1', port=5000)

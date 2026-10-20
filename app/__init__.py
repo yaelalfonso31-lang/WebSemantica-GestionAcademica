@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, session
 import os
 
 def create_app():
@@ -7,6 +7,8 @@ def create_app():
     
     # 1. Cargar configuración desde config.py en la raíz del proyecto
     app.config.from_object('config')
+    if app.config.get('SECRET_KEY_ES_DE_DESARROLLO'):
+        print("Advertencia: usando SECRET_KEY de desarrollo. Define la variable de entorno SECRET_KEY en producción.")
 
     # Asegurar que las carpetas de datos existan al arrancar
     os.makedirs(app.config.get('XML_DIR', 'data/xml'), exist_ok=True)
@@ -53,5 +55,28 @@ def create_app():
         app.register_blueprint(materias_bp)
         app.register_blueprint(carreras_bp)
         app.register_blueprint(grupos_bp)
+
+    # 5. Páginas de error con el mismo diseño del sistema (en lugar del HTML crudo de Flask)
+    from app.services.transformer import transformar_a_html
+
+    def _pagina_error(codigo, titulo, detalle):
+        html = transformar_a_html(
+            '<error/>', 'error.xsl',
+            {'codigo': codigo, 'titulo': titulo, 'detalle': detalle,
+             'rol_usuario': session.get('rol', 'visitante'),
+             'nombre_usuario': session.get('nombre', 'Invitado')})
+        return (html[0] if isinstance(html, tuple) else html), codigo
+
+    @app.errorhandler(403)
+    def _403(e):
+        return _pagina_error(403, 'Acceso denegado', 'No tienes permiso para ver esta página.')
+
+    @app.errorhandler(404)
+    def _404(e):
+        return _pagina_error(404, 'Página no encontrada', 'La dirección que buscas no existe o fue movida.')
+
+    @app.errorhandler(500)
+    def _500(e):
+        return _pagina_error(500, 'Algo salió mal', 'Ocurrió un error inesperado. Ya quedó registrado en el servidor.')
 
     return app

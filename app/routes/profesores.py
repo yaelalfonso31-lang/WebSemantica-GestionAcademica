@@ -1,7 +1,7 @@
 import os
 from flask import (Blueprint, current_app, session, request, jsonify)
 from lxml import etree
-from app.auth.decorators import login_requerido
+from app.auth.decorators import login_requerido, rol_requerido
 from app.services.transformer import transformar_a_html
 from app.services.xml_repository import XMLRepository
 profesores_bp = Blueprint("profesores", __name__)
@@ -14,6 +14,7 @@ repo = XMLRepository(entidad="profesores")
 
 @profesores_bp.route("/profesores", methods=["GET"])
 @login_requerido
+@rol_requerido('admin')
 def vista_profesores():
     """Renderiza la vista de profesores mediante XSLT."""
 
@@ -72,6 +73,7 @@ def api_obtener_profesor(profesor_id):
 
 @profesores_bp.route("/api/profesores", methods=["POST"])
 @login_requerido
+@rol_requerido('admin')
 def api_crear_profesor():
     datos = request.get_json(silent=True)
 
@@ -110,6 +112,7 @@ def api_crear_profesor():
     methods=["PUT"]
 )
 @login_requerido
+@rol_requerido('admin')
 def api_actualizar_profesor(profesor_id):
     datos = request.get_json(silent=True)
 
@@ -153,6 +156,7 @@ def api_actualizar_profesor(profesor_id):
     methods=["DELETE"]
 )
 @login_requerido
+@rol_requerido('admin')
 def api_eliminar_profesor(profesor_id):
     eliminado = repo.eliminar_profesor(profesor_id)
 

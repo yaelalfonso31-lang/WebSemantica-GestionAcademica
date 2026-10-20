@@ -2,45 +2,355 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:acad="http://academico.edu.mx/ontologia#">
   <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I001">
     <acad:id>I001</acad:id>
-    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:periodo>Primavera 2026</acad:periodo>
     <acad:estatus>Aprobado</acad:estatus>
     <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.0</acad:calificacionFinal>
     <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A001"/>
-    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/M001"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
   </acad:Inscripcion>
   <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A001">
-    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/M001"/>
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
   </acad:Alumno>
   <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I002">
     <acad:id>I002</acad:id>
     <acad:periodo>Otoño 2026</acad:periodo>
-    <acad:estatus>Aprobado</acad:estatus>
-    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.5</acad:calificacionFinal>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-CCOS005-02</acad:grupo>
     <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A001"/>
-    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/M003"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
   </acad:Inscripcion>
   <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A001">
-    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/M003"/>
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
   </acad:Alumno>
   <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I003">
     <acad:id>I003</acad:id>
     <acad:periodo>Otoño 2026</acad:periodo>
-    <acad:estatus>Reprobado</acad:estatus>
-    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55.0</acad:calificacionFinal>
-    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A004"/>
-    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/M002"/>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-CCOS013-01</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A001"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
   </acad:Inscripcion>
-  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A004">
-    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/M002"/>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A001">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
   </acad:Alumno>
   <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I004">
     <acad:id>I004</acad:id>
-    <acad:periodo>Primavera 2027</acad:periodo>
+    <acad:periodo>Otoño 2026</acad:periodo>
     <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-ICCS004-01</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A001"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A001">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I005">
+    <acad:id>I005</acad:id>
+    <acad:periodo>Otoño 2025</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85.0</acad:calificacionFinal>
     <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
-    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/M005"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
   </acad:Inscripcion>
   <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
-    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/M005"/>
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I006">
+    <acad:id>I006</acad:id>
+    <acad:periodo>Otoño 2025</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I007">
+    <acad:id>I007</acad:id>
+    <acad:periodo>Primavera 2026</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I008">
+    <acad:id>I008</acad:id>
+    <acad:periodo>Primavera 2026</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I009">
+    <acad:id>I009</acad:id>
+    <acad:periodo>Otoño 2025</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I010">
+    <acad:id>I010</acad:id>
+    <acad:periodo>Primavera 2026</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS007"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS007"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I011">
+    <acad:id>I011</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-ICCS250-01</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS250"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS250"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I012">
+    <acad:id>I012</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-ICCS256-02</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS256"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS256"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I013">
+    <acad:id>I013</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-ICCS258-02</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A002">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I014">
+    <acad:id>I014</acad:id>
+    <acad:periodo>Otoño 2025</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A003"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A003">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I015">
+    <acad:id>I015</acad:id>
+    <acad:periodo>Primavera 2026</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">93.5</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A003"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A003">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I016">
+    <acad:id>I016</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-CCOS252-01</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A003"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A003">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I017">
+    <acad:id>I017</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-ICCS007-01</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A003"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS007"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A003">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS007"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I018">
+    <acad:id>I018</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-ICCS258-02</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A003"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A003">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I019">
+    <acad:id>I019</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-CCOS005-02</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A005"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A005">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I020">
+    <acad:id>I020</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-CCOS008-01</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A005"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A005">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I021">
+    <acad:id>I021</acad:id>
+    <acad:periodo>Otoño 2023</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I022">
+    <acad:id>I022</acad:id>
+    <acad:periodo>Otoño 2023</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I023">
+    <acad:id>I023</acad:id>
+    <acad:periodo>Primavera 2024</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I024">
+    <acad:id>I024</acad:id>
+    <acad:periodo>Otoño 2024</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I025">
+    <acad:id>I025</acad:id>
+    <acad:periodo>Primavera 2024</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I026">
+    <acad:id>I026</acad:id>
+    <acad:periodo>Otoño 2024</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS006"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS006"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I027">
+    <acad:id>I027</acad:id>
+    <acad:periodo>Otoño 2024</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS007"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS007"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I028">
+    <acad:id>I028</acad:id>
+    <acad:periodo>Primavera 2025</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">94.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS250"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS250"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I029">
+    <acad:id>I029</acad:id>
+    <acad:periodo>Primavera 2025</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">89.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS256"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS256"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I030">
+    <acad:id>I030</acad:id>
+    <acad:periodo>Primavera 2026</acad:periodo>
+    <acad:estatus>Reprobado</acad:estatus>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55.0</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS257"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS257"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I031">
+    <acad:id>I031</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Cursando</acad:estatus>
+    <acad:grupo>G-ICCS257-01</acad:grupo>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS257"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS257"/>
+  </acad:Alumno>
+  <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I032">
+    <acad:id>I032</acad:id>
+    <acad:periodo>Otoño 2026</acad:periodo>
+    <acad:estatus>Aprobado</acad:estatus>
+    <acad:grupo>G-ICCS258-02</acad:grupo>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">78.1</acad:calificacionFinal>
+    <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A006"/>
+    <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
+  </acad:Inscripcion>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
   </acad:Alumno>
 </rdf:RDF>

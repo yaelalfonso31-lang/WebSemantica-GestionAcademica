@@ -16,8 +16,9 @@
                     <table class="table table-hover table-striped mb-0 align-middle">
                         <thead class="table-dark">
                             <tr>
-                                <th class="px-4">Grupo ID</th>
-                                <th>Clave Materia</th>
+                                <th class="px-4">Grupo</th>
+                                <th>Materia</th>
+                                <th>Profesor</th>
                                 <th>Días</th>
                                 <th>Horario</th>
                                 <th>Aula</th>
@@ -33,15 +34,16 @@
                                         </span>
                                     </td>
                                     <td class="fw-bold text-dark">
-                                        <xsl:value-of select="materia_id"/>
+                                        <xsl:value-of select="materia_nombre"/>
+                                        <div class="small text-muted fw-normal"><xsl:value-of select="materia_id"/></div>
                                     </td>
+                                    <td><xsl:value-of select="profesor_nombre"/></td>
                                     <td>
                                         <xsl:value-of select="dia"/>
                                     </td>
                                     <td>
                                         <span class="text-muted">
-                                            <xsl:value-of select="hora_inicio"/>
- -                                            <xsl:value-of select="hora_fin"/>
+                                            <xsl:value-of select="hora_inicio"/> – <xsl:value-of select="hora_fin"/>
                                         </span>
                                     </td>
                                     <td>
@@ -55,7 +57,7 @@
                             <!-- Mensaje si no hay materias inscritas en este periodo -->
                             <xsl:if test="count(horario_alumno/grupo) = 0">
                                 <tr>
-                                    <td colspan="5" class="text-center py-5 text-muted">
+                                    <td colspan="6" class="text-center py-5 text-muted">
                                         <div class="display-6 mb-3">📭</div>
                                         <em>No tienes materias inscritas con estatus "Cursando" en este momento.</em>
                                     </td>

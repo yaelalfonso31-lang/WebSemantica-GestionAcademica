@@ -38,23 +38,28 @@ def vista_alumnos():
 
 @alumnos_bp.route("/api/alumnos", methods=["GET"])
 @login_requerido
+@rol_requerido('admin', 'profesor')
 def api_listar_alumnos():
     """Devuelve la lista de alumnos en formato JSON."""
     return jsonify(repo.listar_alumnos()), 200
 
 @alumnos_bp.route("/api/alumnos", methods=["POST"])
 @login_requerido
+@rol_requerido('admin')
 def api_crear_alumno():
     """Recibe datos para crear un nuevo alumno, validando contra DTD y XSD."""
-    datos = request.get_json() or request.form.to_dict()
+    datos = request.get_json(silent=True) or request.form.to_dict()
     try:
         creado = repo.agregar_alumno(datos)
         return jsonify({"mensaje": "Alumno registrado correctamente", "alumno": creado}), 201
+    except KeyError as e:
+        return jsonify({"error": f"Falta el campo obligatorio {e}."}), 400
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
 @alumnos_bp.route("/api/alumnos/<alumno_id>", methods=["DELETE"])
 @login_requerido
+@rol_requerido('admin')
 def api_eliminar_alumno(alumno_id):
     """Elimina un alumno por su atributo ID."""
     eliminado = repo.eliminar_alumno(alumno_id)
@@ -66,7 +71,7 @@ def api_eliminar_alumno(alumno_id):
 @login_requerido
 @rol_requerido('admin')
 def api_editar_alumno(alumno_id):
-    datos = request.json
+    datos = request.get_json(silent=True) or {}
     xml_path = os.path.join(current_app.config.get('XML_DIR', 'data/xml'), 'alumnos.xml')
     
     if not os.path.exists(xml_path):
@@ -76,7 +81,7 @@ def api_editar_alumno(alumno_id):
     root = tree.getroot()
     
     # Buscar el alumno por su atributo ID
-    nodos = root.xpath(f"//alumno[@id='{alumno_id}']")
+    nodos = root.xpath("//alumno[@id=$i]", i=alumno_id)
     if not nodos:
         return jsonify({"error": "Alumno no encontrado"}), 404
         

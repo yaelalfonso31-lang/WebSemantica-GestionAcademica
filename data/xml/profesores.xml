@@ -2,35 +2,133 @@
 <!DOCTYPE profesores SYSTEM "../../schemas/dtd/profesores.dtd">
 <?xml-stylesheet type="text/xsl" href="../../xslt/html/profesores.xsl"?>
 <profesores>
-
-    <profesor id="P1001">
-        <nombre>Ana López</nombre>
-        <especialidad>Desarrollo Web</especialidad>
-        <correo>ana.lopez@universidad.edu.mx</correo>
-        <departamento>Sistemas</departamento>
-        <materias_impartidas>
-            <materia codigo="CS201">Programación Web</materia>
-            <materia codigo="CS205">Arquitectura Frontend</materia>
-        </materias_impartidas>
-    </profesor>
-
-    <profesor id="P1002">
-        <nombre>Juan Pérez</nombre>
-        <especialidad>Bases de Datos</especialidad>
-        <correo>juan.perez@universidad.edu.mx</correo>
-        <departamento>Sistemas</departamento>
-        <materias_impartidas>
-            <materia codigo="CS105">Bases de Datos Relacionales</materia>
-        </materias_impartidas>
-    </profesor>
-
-    <profesor id="P1003">
-        <nombre>María García</nombre>
-        <especialidad>Inteligencia Artificial</especialidad>
-        <correo>maria.garcia@universidad.edu.mx</correo>
-        <departamento>Sistemas</departamento>
-        <!-- Un profesor puede estar registrado aunque aún no tenga materias asignadas -->
-        <materias_impartidas/>
-    </profesor>
-
+  <profesor id="P1001">
+    <nombre>Ana López</nombre>
+    <especialidad>Desarrollo Web</especialidad>
+    <correo>ana.lopez@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="CS201">Programación Web</materia>
+      <materia codigo="CS205">Arquitectura Frontend</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P1002">
+    <nombre>Juan Pérez</nombre>
+    <especialidad>Bases de Datos</especialidad>
+    <correo>juan.perez@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="CS105">Bases de Datos Relacionales</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P1003">
+    <nombre>María García</nombre>
+    <especialidad>Inteligencia Artificial</especialidad>
+    <correo>maria.garcia@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <!-- Un profesor puede estar registrado aunque aún no tenga materias asignadas -->
+    <materias_impartidas/>
+  </profesor>
+  <profesor id="P001">
+    <nombre>José Fernando Contreras-Monsalvo</nombre>
+    <especialidad>Ensamblador</especialidad>
+    <correo>jose.fernando.contreras.monsalvo@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="CCOS005">Ensamblador</materia>
+      <materia codigo="ICCS007">Circuitos Eléctricos</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P002">
+    <nombre>Carlos Palomino-Jiménez</nombre>
+    <especialidad>Cálculo Integral</especialidad>
+    <correo>carlos.palomino.jimenez@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="CCOS008">Cálculo Integral</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P003">
+    <nombre>Beatriz Beltrán-Martínez</nombre>
+    <especialidad>Estructuras de Datos</especialidad>
+    <correo>beatriz.beltran.martinez@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="CCOS013">Estructuras de Datos</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P004">
+    <nombre>Gilberto López-Poblano</nombre>
+    <especialidad>Sistemas Operativos I</especialidad>
+    <correo>gilberto.lopez.poblano@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="CCOS252">Sistemas Operativos I</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P006">
+    <nombre>Ernest Cortez</nombre>
+    <especialidad>Física II</especialidad>
+    <correo>ernest.cortez@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="ICCS004">Física II</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P007">
+    <nombre>María del Consuelo Molina-García</nombre>
+    <especialidad>Ecuaciones Diferenciales</especialidad>
+    <correo>maria.del.consuelo.molina.garcia@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="ICCS006">Ecuaciones Diferenciales</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P008">
+    <nombre>Berenice Rodríguez-Pedroza</nombre>
+    <especialidad>Circuitos Electrónicos</especialidad>
+    <correo>berenice.rodriguez.pedroza@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="ICCS250">Circuitos Electrónicos</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P009">
+    <nombre>María de la Concepción Pérez de Celis-Herrero</nombre>
+    <especialidad>Bases de Datos para Ingeniería</especialidad>
+    <correo>maria.de.la.concepcion.perez.de.celis.herrero@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="ICCS256">Bases de Datos para Ingeniería</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P010">
+    <nombre>Adolfo Aguilar-Rico</nombre>
+    <especialidad>Minería de Datos</especialidad>
+    <correo>adolfo.aguilar.rico@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="ICCS257">Minería de Datos</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P011">
+    <nombre>Eugenia Erica Vera-Cervantes</nombre>
+    <especialidad>Desarrollo de Aplicaciones Web</especialidad>
+    <correo>eugenia.erica.vera.cervantes@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="ICCS258">Desarrollo de Aplicaciones Web</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P012">
+    <nombre>Eduardo Profesor</nombre>
+    <especialidad>Ensamblador</especialidad>
+    <correo>eduardo.profesor@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="CCOS005">Ensamblador</materia>
+      <materia codigo="ICCS256">Bases de Datos para Ingeniería</materia>
+      <materia codigo="ICCS258">Desarrollo de Aplicaciones Web</materia>
+    </materias_impartidas>
+  </profesor>
 </profesores>

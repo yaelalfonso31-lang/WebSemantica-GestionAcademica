@@ -1,0 +1,344 @@
+/* ============================================================
+   MÓDULO DE CALIFICACIONES - Portal Docente BUAP
+   Sin border-radius. Paleta azul institucional.
+   ============================================================ */
+
+/* ============================================================
+   ENCABEZADO: chips de materia y grupo
+   ============================================================ */
+
+.subject-name {
+    color: #fff;
+    font-weight: 600;
+}
+
+.subject-sep {
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0 0.3rem;
+}
+
+.subject-chip {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: 0.03em;
+    color: var(--buap-blue-900);
+    background: var(--buap-gold-soft);
+    border: 1px solid var(--buap-gold);
+}
+
+.page-header__subtitle strong {
+    color: var(--buap-gold-soft);
+    font-weight: 700;
+}
+
+/* ============================================================
+   BANNER INFORMATIVO
+   ============================================================ */
+
+.info-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem 1.35rem;
+    background: var(--buap-blue-50);
+    border: 1px solid var(--buap-blue-200);
+    border-left: 4px solid var(--buap-blue-500);
+    margin-bottom: 1.5rem;
+}
+
+.info-banner__icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--buap-blue-600);
+    margin-top: 1px;
+}
+
+.info-banner__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.info-banner__text {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--buap-blue-800);
+}
+
+.info-banner__text strong {
+    color: var(--buap-blue-900);
+    font-weight: 700;
+}
+
+.info-banner__text em {
+    color: var(--buap-blue-700);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* ============================================================
+   TABLA DE CALIFICACIONES
+   ============================================================ */
+
+.calif-table {
+    font-size: 0.9rem;
+}
+
+/* Anchos de columna */
+.calif-col-matricula {
+    width: 140px;
+}
+
+.calif-col-periodo {
+    width: 110px;
+}
+
+.calif-col-input {
+    width: 150px;
+}
+
+.calif-col-estatus {
+    width: 150px;
+}
+
+/* Matrícula */
+.matricula {
+    display: inline-block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    padding: 0.15rem 0.5rem;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+    letter-spacing: 0.02em;
+}
+
+/* Chip de periodo */
+.periodo-chip {
+    display: inline-block;
+    padding: 0.18rem 0.55rem;
+    font-size: 0.76rem;
+    font-weight: 600;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--buap-blue-700);
+    background: var(--buap-blue-50);
+    border: 1px solid var(--buap-blue-200);
+    letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   INPUTS DE CALIFICACIÓN
+   ============================================================ */
+
+.calif-input {
+    width: 100%;
+    max-width: 110px;
+    margin: 0 auto;
+    padding: 0.55rem 0.6rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    text-align: center;
+    color: var(--gray-900);
+    background: #fff;
+    border: 2px solid var(--gray-300);
+    outline: none;
+    transition: var(--transition);
+    font-variant-numeric: tabular-nums;
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+/* Quitar flechas del number input en Chrome/Safari */
+.calif-input::-webkit-outer-spin-button,
+.calif-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.calif-input:hover {
+    border-color: var(--buap-blue-300);
+}
+
+.calif-input:focus {
+    border-color: var(--buap-blue-500);
+    box-shadow: 0 0 0 3px rgba(37, 99, 184, 0.15);
+}
+
+/* Feedback visual según valor */
+.calif-input.is-aprobado {
+    border-color: #1a7a3e;
+    background: #f0faf3;
+    color: #1a7a3e;
+}
+
+.calif-input.is-aprobado:focus {
+    border-color: #1a7a3e;
+    box-shadow: 0 0 0 3px rgba(26, 122, 62, 0.15);
+}
+
+.calif-input.is-reprobado {
+    border-color: #b02a37;
+    background: #fdf2f3;
+    color: #b02a37;
+}
+
+.calif-input.is-reprobado:focus {
+    border-color: #b02a37;
+    box-shadow: 0 0 0 3px rgba(176, 42, 55, 0.15);
+}
+
+/* ============================================================
+   BADGES DE ESTATUS
+   ============================================================ */
+
+.estatus-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.estatus-badge::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.estatus-badge--cursando {
+    color: #8a5a00;
+    background: #fff4dd;
+    border: 1px solid #f0c97a;
+}
+
+.estatus-badge--aprobado {
+    color: #1a7a3e;
+    background: #e5f5eb;
+    border: 1px solid #b8e2c6;
+}
+
+.estatus-badge--reprobado {
+    color: #b02a37;
+    background: #fbe6e8;
+    border: 1px solid #f1c0c5;
+}
+
+/* ============================================================
+   BARRA DE ACCIONES (footer de la tabla)
+   ============================================================ */
+
+.table-card__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.35rem;
+    background: var(--buap-blue-50);
+    border-top: 1px solid var(--buap-blue-100);
+    flex-wrap: wrap;
+}
+
+.table-card__actions-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+.table-card__actions-meta svg {
+    width: 15px;
+    height: 15px;
+    color: var(--buap-blue-500);
+    flex-shrink: 0;
+}
+
+.table-card__actions .btn-app {
+    flex-shrink: 0;
+    color: #fff;
+}
+
+.btn-app.btn-app--ghost {
+    background: #f0c97a;
+    border: 1px solid var(--buap-blue-500);
+    color: #fff;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .calif-col-matricula {
+        width: auto;
+    }
+
+    .calif-col-periodo {
+        width: auto;
+    }
+
+    .calif-col-input {
+        width: 110px;
+    }
+
+    .calif-col-estatus {
+        width: auto;
+    }
+
+    .calif-input {
+        max-width: 90px;
+        font-size: 0.9rem;
+        padding: 0.45rem 0.4rem;
+    }
+
+    .table-card__actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        padding: 1rem;
+    }
+
+    .table-card__actions .btn-app {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .table-card__actions-meta {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .info-banner {
+        padding: 0.85rem 1rem;
+    }
+
+    .info-banner__text {
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .subject-sep {
+        display: none;
+    }
+
+    .subject-chip {
+        display: inline-block;
+        margin-top: 0.25rem;
+    }
+}

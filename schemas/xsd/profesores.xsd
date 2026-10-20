@@ -41,11 +41,11 @@
                                                 <!-- simpleContent permite texto dentro de la etiqueta + atributos -->
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">
-                                                        <!-- Validación: El código de materia debe ser 2 letras y 3 números (Ej. CS201) -->
+                                                        <!-- Validación: código de materia = 2 letras + 3 números (CS201) o el formato del catálogo (CCOS005, ICCS004) -->
                                                         <xs:attribute name="codigo" use="required">
                                                             <xs:simpleType>
                                                                 <xs:restriction base="xs:string">
-                                                                    <xs:pattern value="[A-Z]{2}[0-9]{3}"/>
+                                                                    <xs:pattern value="[A-Z]{2}[0-9]{3}|(CCOS|ICCS)[0-9]{3}"/>
                                                                 </xs:restriction>
                                                             </xs:simpleType>
                                                         </xs:attribute>
@@ -58,11 +58,11 @@
                             </xs:element>
                         </xs:sequence>
 
-                        <!-- Validación: El ID del profesor debe ser tipo ID y seguir el patrón P + 4 dígitos (Ej. P1001) -->
+                        <!-- Validación: El ID del profesor debe ser tipo ID y seguir el patrón P + 3 o 4 dígitos (Ej. P001, P1001); P001 es el formato que usa materias.xml -->
                         <xs:attribute name="id" use="required">
                             <xs:simpleType>
                                 <xs:restriction base="xs:ID">
-                                    <xs:pattern value="P[0-9]{4}"/>
+                                    <xs:pattern value="P[0-9]{3,4}"/>
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:attribute>

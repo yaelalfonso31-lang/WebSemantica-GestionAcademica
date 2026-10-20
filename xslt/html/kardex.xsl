@@ -5,135 +5,193 @@
     <xsl:import href="layout.xsl"/>
 
     <xsl:template name="content">
-        <!-- CSS Específico del Kardex -->
-        <link rel="stylesheet" href="/static/css/kardex.css" />
+        <div class="alumnos-page">
 
-        <div class="row mb-4 align-items-center">
-            <div class="col-md-8">
-                <h1 class="text-primary fw-bold">Mi Kardex Académico</h1>
-                <p class="text-secondary mb-0">Historial oficial de materias y calificaciones cursadas.</p>
+            <div class="page-header">
+                <div class="page-header__text">
+                    <div class="page-header__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="page-header__title">Mi Kardex Académico</h1>
+                        <p class="page-header__subtitle">
+                            Historial oficial de materias y calificaciones cursadas
+                        </p>
+                    </div>
+                </div>
+                <span class="page-header__badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Historial oficial
+                </span>
             </div>
-        </div>
 
-        <!-- Tarjetas de Estadísticas usando Grid de Bootstrap -->
-        <div class="row mb-4">
-            <div class="col-md-4 mb-3">
-                <div class="card shadow-sm border-0 border-start border-primary border-4 h-100">
-                    <div class="card-body">
-                        <h6 class="text-muted text-uppercase mb-1">Total Materias</h6>
-                        <h3 class="fw-bold mb-0 text-dark">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__body">
+                        <span class="stat-card__label">Total Materias</span>
+                        <span class="stat-card__value">
                             <xsl:value-of select="count(inscripciones/inscripcion)"/>
-                        </h3>
+                        </span>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card shadow-sm border-0 border-start border-success border-4 h-100">
-                    <div class="card-body">
-                        <h6 class="text-muted text-uppercase mb-1">Materias Aprobadas</h6>
-                        <h3 class="fw-bold mb-0 text-success">
+
+                <div class="stat-card stat-card--success">
+                    <div class="stat-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__body">
+                        <span class="stat-card__label">Materias Aprobadas</span>
+                        <span class="stat-card__value">
                             <xsl:value-of select="count(inscripciones/inscripcion[estatus='Aprobado'])"/>
-                        </h3>
+                        </span>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card shadow-sm border-0 border-start border-info border-4 h-100">
-                    <div class="card-body">
-                        <h6 class="text-muted text-uppercase mb-1">Promedio General</h6>
-                        <h3 class="fw-bold mb-0 text-info">
-                            <!-- XPath para calcular el promedio dinámicamente ignorando las materias 'Cursando' -->
+
+                <div class="stat-card stat-card--gold">
+                    <div class="stat-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__body">
+                        <span class="stat-card__label">Promedio General</span>
+                        <span class="stat-card__value">
                             <xsl:choose>
                                 <xsl:when test="count(inscripciones/inscripcion[calificacion_final != '']) &gt; 0">
                                     <xsl:value-of select="format-number(sum(inscripciones/inscripcion[calificacion_final != '']/calificacion_final) div count(inscripciones/inscripcion[calificacion_final != '']), '0.0')"/>
                                 </xsl:when>
                                 <xsl:otherwise>0.0</xsl:otherwise>
                             </xsl:choose>
-                        </h3>
+                        </span>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tabla del Historial -->
-        <div class="card shadow-sm border-0">
-            <div class="card-header bg-white py-3">
-                <h5 class="mb-0 fw-bold">Desglose de Calificaciones</h5>
-            </div>
-            <div class="card-body p-0 table-responsive">
-                <table class="table table-hover table-striped mb-0 align-middle">
-                    <thead class="table-dark">
-                        <tr>
-                            <th class="px-4">Folio Ins.</th>
-                            <th>Clave Materia</th>
-                            <th>Periodo</th>
-                            <th class="text-center">Calificación</th>
-                            <th class="text-center">Estatus</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Ordenamos las inscripciones por periodo de manera descendente -->
-                        <xsl:for-each select="inscripciones/inscripcion">
-                            <xsl:sort select="periodo" order="descending"/>
+            <!-- ============================
+                 TABLA DE HISTORIAL
+                 ============================ -->
+            <div class="table-card">
+                <div class="table-card__header">
+                    <h2 class="table-card__title">Desglose de Calificaciones</h2>
+                    <span class="table-card__badge">
+                        <xsl:value-of select="count(inscripciones/inscripcion)"/>
+                        <xsl:text> registros</xsl:text>
+                    </span>
+                </div>
 
+                <div class="table-scroll">
+                    <table class="data-table kardex-table">
+                        <thead>
                             <tr>
-                                <td class="px-4 text-muted badge-mono">
-                                    <xsl:value-of select="@id"/>
-                                </td>
-                                <td>
-                                    <span class="badge bg-secondary badge-mono">
-                                        <xsl:value-of select="materia_id"/>
-                                    </span>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="periodo"/>
-                                </td>
+                                <th class="kardex-col-folio">Folio Ins.</th>
+                                <th>Materia</th>
+                                <th class="kardex-col-cred text-center">Créditos</th>
+                                <th class="kardex-col-periodo">Periodo</th>
+                                <th class="kardex-col-calif text-center">Calificación</th>
+                                <th class="kardex-col-estatus text-center">Estatus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <xsl:for-each select="inscripciones/inscripcion">
+                                <xsl:sort select="periodo" order="descending"/>
 
-                                <td class="text-center fw-bold">
-                                    <xsl:choose>
-                                        <xsl:when test="calificacion_final != ''">
-                                            <xsl:value-of select="calificacion_final"/>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <span class="text-muted">-</span>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </td>
+                                <tr>
+                                    <td class="kardex-col-folio">
+                                        <span class="folio">
+                                            <xsl:value-of select="@id"/>
+                                        </span>
+                                    </td>
 
-                                <td class="text-center">
-                                    <!-- Lógica para aplicar colores a los badges de Bootstrap -->
-                                    <xsl:choose>
-                                        <xsl:when test="estatus = 'Aprobado'">
-                                            <span class="badge bg-success px-3 py-2">Aprobado</span>
-                                        </xsl:when>
-                                        <xsl:when test="estatus = 'Reprobado'">
-                                            <span class="badge bg-danger px-3 py-2">Reprobado</span>
-                                        </xsl:when>
-                                        <xsl:when test="estatus = 'Cursando'">
-                                            <span class="badge bg-warning text-dark px-3 py-2">Cursando</span>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <span class="badge bg-secondary px-3 py-2">
-                                                <xsl:value-of select="estatus"/>
+                                    <td>
+                                        <div class="cell-primary">
+                                            <xsl:choose>
+                                                <xsl:when test="materia_nombre != ''">
+                                                    <xsl:value-of select="materia_nombre"/>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <xsl:value-of select="materia_id"/>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </div>
+                                        <div class="cell-secondary">
+                                            <span class="materia-code">
+                                                <xsl:value-of select="materia_id"/>
                                             </span>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </td>
-                            </tr>
-                        </xsl:for-each>
+                                        </div>
+                                    </td>
 
-                        <!-- Si el alumno es nuevo y no tiene materias -->
-                        <xsl:if test="count(inscripciones/inscripcion) = 0">
-                            <tr>
-                                <td colspan="5" class="text-center py-5 text-muted">
-                                    <em>Aún no tienes registros en tu historial académico.</em>
-                                </td>
-                            </tr>
-                        </xsl:if>
-                    </tbody>
-                </table>
+                                    <td class="kardex-col-cred text-center">
+                                        <span class="creditos">
+                                            <xsl:value-of select="creditos"/>
+                                        </span>
+                                    </td>
+
+                                    <td class="kardex-col-periodo">
+                                        <span class="periodo-chip">
+                                            <xsl:value-of select="periodo"/>
+                                        </span>
+                                    </td>
+
+                                    <td class="kardex-col-calif text-center">
+                                        <xsl:choose>
+                                            <xsl:when test="calificacion_final != ''">
+                                                <span class="calificacion">
+                                                    <xsl:value-of select="calificacion_final"/>
+                                                </span>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <span class="calificacion calificacion--empty">—</span>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </td>
+
+                                    <td class="kardex-col-estatus text-center">
+                                        <xsl:choose>
+                                            <xsl:when test="estatus = 'Aprobado'">
+                                                <span class="estatus-badge estatus-badge--aprobado">Aprobado</span>
+                                            </xsl:when>
+                                            <xsl:when test="estatus = 'Reprobado'">
+                                                <span class="estatus-badge estatus-badge--reprobado">Reprobado</span>
+                                            </xsl:when>
+                                            <xsl:when test="estatus = 'Cursando'">
+                                                <span class="estatus-badge estatus-badge--cursando">Cursando</span>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <span class="estatus-badge">
+                                                    <xsl:value-of select="estatus"/>
+                                                </span>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </td>
+                                </tr>
+                            </xsl:for-each>
+
+                            <xsl:if test="count(inscripciones/inscripcion) = 0">
+                                <tr>
+                                    <td colspan="6" class="empty-row">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        </svg>
+                                        <p>Aún no tienes registros en tu historial académico.</p>
+                                    </td>
+                                </tr>
+                            </xsl:if>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
 
+        </div>
     </xsl:template>
 </xsl:stylesheet>

@@ -4,6 +4,8 @@ from lxml import etree
 from rdflib import Graph
 from flask import current_app
 
+from app.services.paths import ruta
+
 
 class SemanticEngine:
     _grafo_memoria = None
@@ -25,7 +27,7 @@ class SemanticEngine:
         rdf_dir = cls._get_config_dir("RDF_DIR", "data/rdf")
 
         xml_path = os.path.join(xml_dir, xml_filename)
-        xslt_path = os.path.join("xslt", "rdf", xslt_filename)
+        xslt_path = ruta("XSLT_DIR", "rdf", xslt_filename)
         output_path = os.path.join(rdf_dir, output_rdf_filename)
 
         if not os.path.exists(xml_path):
@@ -74,8 +76,8 @@ class SemanticEngine:
         rdf_dir = cls._get_config_dir("RDF_DIR", "data/rdf")
 
         # 1. Cargar la ontología y las reglas semánticas.
-        onto_path = os.path.join("ontology", "academico.ttl")
-        reglas_path = os.path.join("ontology", "reglas.ttl")
+        onto_path = ruta("ONTOLOGY_DIR", "academico.ttl")
+        reglas_path = ruta("ONTOLOGY_DIR", "reglas.ttl")
 
         for path in (onto_path, reglas_path):
             if os.path.exists(path) and os.path.getsize(path) > 0:
