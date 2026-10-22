@@ -3,7 +3,6 @@
     <!-- Importar la navegación y estructura base -->
     <xsl:import href="layout.xsl"/>
 
-    <!-- Definir el contenido que se inyectará en el 'main' del layout -->
     <xsl:template name="content">
         <h1>Resumen General</h1>
         <p>Bienvenido al sistema. Tu nivel de acceso es: <strong>
@@ -11,7 +10,6 @@
         </strong>.
     </p>
 
-    <!-- Procesar los datos que vengan en el XML dinámico del dashboard -->
     <div class="metricas-container">
         <xsl:apply-templates select="dashboard/metricas/metrica" />
     </div>

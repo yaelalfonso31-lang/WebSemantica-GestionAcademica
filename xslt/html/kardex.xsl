@@ -78,9 +78,6 @@
                 </div>
             </div>
 
-            <!-- ============================
-                 TABLA DE HISTORIAL
-                 ============================ -->
             <div class="table-card">
                 <div class="table-card__header">
                     <h2 class="table-card__title">Desglose de Calificaciones</h2>

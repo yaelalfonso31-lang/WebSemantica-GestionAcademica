@@ -355,7 +355,7 @@
 
         <!-- Scripts del módulo -->
         <script type="text/javascript">
-            //                                                                        <![CDATA[
+            //                                                                                    <![CDATA[
             function abrirModalMateria() {
                 document.getElementById('modalNuevaMateria').classList.remove('hidden');
                 document.body.classList.add('modal-open');

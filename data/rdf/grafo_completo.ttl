@@ -17,6 +17,17 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     rdfs:domain acad:Materia ;
     rdfs:range acad:Materia .
 
+<http://academico.edu.mx/recurso/alumno/A011> a acad:Alumno ;
+    acad:apellidos "Aparicio" ;
+    acad:correo "rubi@gmail.com" ;
+    acad:estatus "Activo" ;
+    acad:id "A011" ;
+    acad:matricula "202254023" ;
+    acad:nombre "Rubi " ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C003> ;
+    acad:promedio 50.0 ;
+    acad:semestre 10 .
+
 <http://academico.edu.mx/recurso/inscripcion/I001> a acad:Inscripcion ;
     acad:calificacionFinal 95.0 ;
     acad:estatus "Aprobado" ;
@@ -114,7 +125,8 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A002> .
 
 <http://academico.edu.mx/recurso/inscripcion/I013> a acad:Inscripcion ;
-    acad:estatus "Cursando" ;
+    acad:calificacionFinal 50.0 ;
+    acad:estatus "Reprobado" ;
     acad:grupo "G-ICCS258-02" ;
     acad:id "I013" ;
     acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS258> ;
@@ -154,7 +166,8 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A003> .
 
 <http://academico.edu.mx/recurso/inscripcion/I018> a acad:Inscripcion ;
-    acad:estatus "Cursando" ;
+    acad:calificacionFinal 3.3 ;
+    acad:estatus "Reprobado" ;
     acad:grupo "G-ICCS258-02" ;
     acad:id "I018" ;
     acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS258> ;
@@ -365,15 +378,6 @@ ac:Prof_P012 a ac:Profesor ;
     foaf:mbox <mailto:eduardo.profesor@universidad.edu.mx> ;
     foaf:name "Eduardo Profesor" .
 
-ac:Prof_P1001 a ac:Profesor ;
-    ac:especialidad "Desarrollo Web" ;
-    ac:idProfesor "P1001" ;
-    ac:imparte ac:Mat_CS201,
-        ac:Mat_CS205 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:ana.lopez@universidad.edu.mx> ;
-    foaf:name "Ana López" .
-
 ac:Prof_P1002 a ac:Profesor ;
     ac:especialidad "Bases de Datos" ;
     ac:idProfesor "P1002" ;
@@ -476,7 +480,7 @@ ac:Prof_P1003 a ac:Profesor ;
     acad:matricula "20230003" ;
     acad:nombre "Laura" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C002> ;
-    acad:promedio 94.2 ;
+    acad:promedio 63.9 ;
     acad:semestre 4 .
 
 <http://academico.edu.mx/recurso/materia/ICCS258> a acad:Materia ;
@@ -534,7 +538,7 @@ ac:Prof_P1003 a ac:Profesor ;
     acad:matricula "20230002" ;
     acad:nombre "Carlos" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
-    acad:promedio 87.3 ;
+    acad:promedio 82.0 ;
     acad:semestre 6 .
 
 <http://academico.edu.mx/recurso/materia/CCOS005> a acad:Materia ;
@@ -568,8 +572,6 @@ ac:Prof_P1003 a ac:Profesor ;
     acad:semestre 4 .
 
 <http://academico.edu.mx/recurso/alumno/A006> a acad:Alumno ;
-    acad:apellidos "Serrano" ;
-    acad:correo "efewf@dfvs.como" ;
     acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
         <http://academico.edu.mx/recurso/materia/CCOS008>,
         <http://academico.edu.mx/recurso/materia/CCOS013>,
@@ -580,14 +582,7 @@ ac:Prof_P1003 a ac:Profesor ;
         <http://academico.edu.mx/recurso/materia/ICCS250>,
         <http://academico.edu.mx/recurso/materia/ICCS256>,
         <http://academico.edu.mx/recurso/materia/ICCS257>,
-        <http://academico.edu.mx/recurso/materia/ICCS258> ;
-    acad:estatus "Activo" ;
-    acad:id "A006" ;
-    acad:matricula "202254021" ;
-    acad:nombre "Yael Alf" ;
-    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
-    acad:promedio 84.3 ;
-    acad:semestre 8 .
+        <http://academico.edu.mx/recurso/materia/ICCS258> .
 
 <http://academico.edu.mx/recurso/materia/CCOS013> a acad:Materia ;
     acad:clave "CCOS 013" ;

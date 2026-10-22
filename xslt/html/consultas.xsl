@@ -7,9 +7,6 @@
     <xsl:template name="content">
         <div class="alumnos-page">
 
-            <!-- ============================
-                 ENCABEZADO
-                 ============================ -->
             <div class="page-header">
                 <div class="page-header__text">
                     <div class="page-header__icon">
@@ -31,15 +28,8 @@
                     Consultas predefinidas
                 </span>
             </div>
-
-            <!-- ============================
-                 LAYOUT DE DOS COLUMNAS
-                 ============================ -->
             <div class="consultas-layout">
 
-                <!-- =====================
-                     PANEL DE CONTROL
-                     ===================== -->
                 <aside class="consultas-sidebar">
                     <div class="panel-card">
                         <div class="panel-card__header">

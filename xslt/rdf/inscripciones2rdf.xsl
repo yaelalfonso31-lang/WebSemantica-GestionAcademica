@@ -9,7 +9,6 @@
     <xsl:template match="/inscripciones">
         <rdf:RDF>
             <xsl:for-each select="inscripcion">
-                <!-- El sujeto de la tripleta es la Inscripción misma -->
                 <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/{@id}">
 
                     <acad:id>

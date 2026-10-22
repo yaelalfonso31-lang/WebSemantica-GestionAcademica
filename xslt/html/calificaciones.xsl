@@ -143,12 +143,8 @@
         </div>
 
     </div>
-
-    <!-- ============================
-             SCRIPT DEL MÓDULO
-             ============================ -->
     <script type="text/javascript">
-            //                                        <![CDATA[
+            //                                                <![CDATA[
             var CALIF_MINIMA = 70;
 
             /**

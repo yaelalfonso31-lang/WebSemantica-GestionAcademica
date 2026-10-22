@@ -18,7 +18,7 @@
     <acad:apellidos>Hernández Ruiz</acad:apellidos>
     <acad:correo>carlos.hernandez@alumno.buap.mx</acad:correo>
     <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:semestre>
-    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">87.3</acad:promedio>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">82.0</acad:promedio>
     <acad:estatus>Activo</acad:estatus>
     <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
   </acad:Alumno>
@@ -29,7 +29,7 @@
     <acad:apellidos>Martínez Torres</acad:apellidos>
     <acad:correo>laura.martinez@alumno.buap.mx</acad:correo>
     <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acad:semestre>
-    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">94.2</acad:promedio>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63.9</acad:promedio>
     <acad:estatus>Activo</acad:estatus>
     <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C002"/>
   </acad:Alumno>
@@ -44,15 +44,15 @@
     <acad:estatus>Activo</acad:estatus>
     <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C003"/>
   </acad:Alumno>
-  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
-    <acad:id>A006</acad:id>
-    <acad:matricula>202254021</acad:matricula>
-    <acad:nombre>Yael Alf</acad:nombre>
-    <acad:apellidos>Serrano</acad:apellidos>
-    <acad:correo>efewf@dfvs.como</acad:correo>
-    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</acad:semestre>
-    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.3</acad:promedio>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A011">
+    <acad:id>A011</acad:id>
+    <acad:matricula>202254023</acad:matricula>
+    <acad:nombre>Rubi </acad:nombre>
+    <acad:apellidos>Aparicio</acad:apellidos>
+    <acad:correo>rubi@gmail.com</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</acad:promedio>
     <acad:estatus>Activo</acad:estatus>
-    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C003"/>
   </acad:Alumno>
 </rdf:RDF>

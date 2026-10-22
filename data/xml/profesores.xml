@@ -2,16 +2,6 @@
 <!DOCTYPE profesores SYSTEM "../../schemas/dtd/profesores.dtd">
 <?xml-stylesheet type="text/xsl" href="../../xslt/html/profesores.xsl"?>
 <profesores>
-  <profesor id="P1001">
-    <nombre>Ana López</nombre>
-    <especialidad>Desarrollo Web</especialidad>
-    <correo>ana.lopez@universidad.edu.mx</correo>
-    <departamento>Sistemas</departamento>
-    <materias_impartidas>
-      <materia codigo="CS201">Programación Web</materia>
-      <materia codigo="CS205">Arquitectura Frontend</materia>
-    </materias_impartidas>
-  </profesor>
   <profesor id="P1002">
     <nombre>Juan Pérez</nombre>
     <especialidad>Bases de Datos</especialidad>

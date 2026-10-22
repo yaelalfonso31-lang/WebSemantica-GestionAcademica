@@ -135,8 +135,9 @@
   <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I013">
     <acad:id>I013</acad:id>
     <acad:periodo>Otoño 2026</acad:periodo>
-    <acad:estatus>Cursando</acad:estatus>
+    <acad:estatus>Reprobado</acad:estatus>
     <acad:grupo>G-ICCS258-02</acad:grupo>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.0</acad:calificacionFinal>
     <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A002"/>
     <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
   </acad:Inscripcion>
@@ -190,8 +191,9 @@
   <acad:Inscripcion rdf:about="http://academico.edu.mx/recurso/inscripcion/I018">
     <acad:id>I018</acad:id>
     <acad:periodo>Otoño 2026</acad:periodo>
-    <acad:estatus>Cursando</acad:estatus>
+    <acad:estatus>Reprobado</acad:estatus>
     <acad:grupo>G-ICCS258-02</acad:grupo>
+    <acad:calificacionFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.3</acad:calificacionFinal>
     <acad:realizadaPor rdf:resource="http://academico.edu.mx/recurso/alumno/A003"/>
     <acad:inscribeA rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
   </acad:Inscripcion>

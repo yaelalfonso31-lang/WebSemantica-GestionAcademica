@@ -29,9 +29,6 @@
                 </button>
             </div>
 
-            <!-- ============================
-                 TARJETAS DE RESUMEN
-                 ============================ -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-card__icon">

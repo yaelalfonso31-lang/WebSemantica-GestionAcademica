@@ -90,7 +90,8 @@
     <materia_id>ICCS258</materia_id>
     <grupo_id>G-ICCS258-02</grupo_id>
     <periodo>Otoño 2026</periodo>
-    <estatus>Cursando</estatus>
+    <calificacion_final>50.0</calificacion_final>
+    <estatus>Reprobado</estatus>
   </inscripcion>
   <inscripcion id="I014">
     <alumno_id>A003</alumno_id>
@@ -125,7 +126,8 @@
     <materia_id>ICCS258</materia_id>
     <grupo_id>G-ICCS258-02</grupo_id>
     <periodo>Otoño 2026</periodo>
-    <estatus>Cursando</estatus>
+    <calificacion_final>3.3</calificacion_final>
+    <estatus>Reprobado</estatus>
   </inscripcion>
   <inscripcion id="I019">
     <alumno_id>A005</alumno_id>

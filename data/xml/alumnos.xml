@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE alumnos SYSTEM "../../schemas/dtd/alumnos.dtd">
-<!-- Se omite la instrucción <?xml-stylesheet ... ?> porque la transformación ahora se hace en el servidor con lxml -->
 <alumnos>
   <alumno id="A001" matricula="20230001">
     <nombre>María</nombre>
@@ -17,7 +16,7 @@
     <correo>carlos.hernandez@alumno.buap.mx</correo>
     <carrera_id>C001</carrera_id>
     <semestre>6</semestre>
-    <promedio>87.3</promedio>
+    <promedio>82.0</promedio>
     <estatus>Activo</estatus>
   </alumno>
   <alumno id="A003" matricula="20230003">
@@ -26,7 +25,7 @@
     <correo>laura.martinez@alumno.buap.mx</correo>
     <carrera_id>C002</carrera_id>
     <semestre>4</semestre>
-    <promedio>94.2</promedio>
+    <promedio>63.9</promedio>
     <estatus>Activo</estatus>
   </alumno>
   <alumno id="A005" matricula="20230005">
@@ -38,13 +37,13 @@
     <promedio>89.7</promedio>
     <estatus>Activo</estatus>
   </alumno>
-  <alumno id="A006" matricula="202254021">
-    <nombre>Yael Alf</nombre>
-    <apellidos>Serrano</apellidos>
-    <correo>efewf@dfvs.como</correo>
-    <carrera_id>C001</carrera_id>
-    <semestre>8</semestre>
-    <promedio>84.3</promedio>
+  <alumno id="A011" matricula="202254023">
+    <nombre>Rubi </nombre>
+    <apellidos>Aparicio</apellidos>
+    <correo>rubi@gmail.com</correo>
+    <carrera_id>C003</carrera_id>
+    <semestre>10</semestre>
+    <promedio>50</promedio>
     <estatus>Activo</estatus>
   </alumno>
 </alumnos>
