@@ -1,11 +1,23 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX acad: <http://academico.edu.mx/ontologia#>
 
-SELECT ?clave ?nombre ?creditos
+# Materias que cada alumno PUEDE cursar: aún no las aprobó y ya aprobó todos sus
+# prerrequisitos directos (los prerrequisitos de los prerrequisitos quedan cubiertos porque
+# cada uno exigió los suyos al aprobarse). Devuelve una fila por alumno y materia.
+SELECT ?alumnoId ?materiaId ?clave ?nombre ?creditos ?semestre
 WHERE {
+    ?alumno a acad:Alumno ;
+            acad:id ?alumnoId .
     ?materia a acad:Materia ;
-             acad:id ?clave ;
+             acad:id ?materiaId ;
+             acad:clave ?clave ;
              acad:nombre ?nombre ;
-             acad:creditos ?creditos .
+             acad:creditos ?creditos ;
+             acad:semestre ?semestre .
+
+    FILTER NOT EXISTS { ?alumno acad:aproboMateria ?materia }
+    FILTER NOT EXISTS {
+        ?materia acad:tienePrerrequisito ?requisito .
+        FILTER NOT EXISTS { ?alumno acad:aproboMateria ?requisito }
+    }
 }
-ORDER BY ASC(?nombre)
+ORDER BY ?alumnoId ?semestre ?materiaId

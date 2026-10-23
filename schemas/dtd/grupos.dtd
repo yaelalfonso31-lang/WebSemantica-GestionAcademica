@@ -1,0 +1,10 @@
+<!ELEMENT grupos (grupo*)>
+<!ELEMENT grupo (materia_id, profesor_id, periodo, dia, hora_inicio, hora_fin, aula)>
+<!ATTLIST grupo id ID #REQUIRED>
+<!ELEMENT materia_id (#PCDATA)>
+<!ELEMENT profesor_id (#PCDATA)>
+<!ELEMENT periodo (#PCDATA)>
+<!ELEMENT dia (#PCDATA)>
+<!ELEMENT hora_inicio (#PCDATA)>
+<!ELEMENT hora_fin (#PCDATA)>
+<!ELEMENT aula (#PCDATA)>

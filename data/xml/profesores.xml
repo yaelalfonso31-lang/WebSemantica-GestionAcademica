@@ -36,6 +36,7 @@
     <departamento>Sistemas</departamento>
     <materias_impartidas>
       <materia codigo="CCOS008">Cálculo Integral</materia>
+      <materia codigo="ICCS260">Probabilidad y Estadística</materia>
     </materias_impartidas>
   </profesor>
   <profesor id="P003">
@@ -45,6 +46,7 @@
     <departamento>Sistemas</departamento>
     <materias_impartidas>
       <materia codigo="CCOS013">Estructuras de Datos</materia>
+      <materia codigo="ICCS262">Compiladores</materia>
     </materias_impartidas>
   </profesor>
   <profesor id="P004">
@@ -119,6 +121,40 @@
       <materia codigo="CCOS005">Ensamblador</materia>
       <materia codigo="ICCS256">Bases de Datos para Ingeniería</materia>
       <materia codigo="ICCS258">Desarrollo de Aplicaciones Web</materia>
+      <materia codigo="CCOS008">Cálculo Integral</materia>
+      <materia codigo="CCOS254">Sistemas Operativos II</materia>
+      <materia codigo="CCOS262">Ingeniería de Software</materia>
+      <materia codigo="CCOS275">Web Semántica</materia>
+      <materia codigo="ICCS257">Minería de Datos</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P013">
+    <nombre>Mariana Solís-Vega</nombre>
+    <especialidad>Redes y Seguridad</especialidad>
+    <correo>mariana.solis.vega@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="CCOS260">Redes de Computadoras</materia>
+      <materia codigo="CCOS280">Seguridad Informática</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P014">
+    <nombre>Ricardo Ochoa-Barrios</nombre>
+    <especialidad>Inteligencia Artificial</especialidad>
+    <correo>ricardo.ochoa.barrios@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="CCOS270">Inteligencia Artificial</materia>
+      <materia codigo="ICCS270">Computación en la Nube</materia>
+    </materias_impartidas>
+  </profesor>
+  <profesor id="P015">
+    <nombre>Daniela Fuentes-Rojas</nombre>
+    <especialidad>Desarrollo de Software Móvil</especialidad>
+    <correo>daniela.fuentes.rojas@universidad.edu.mx</correo>
+    <departamento>Sistemas</departamento>
+    <materias_impartidas>
+      <materia codigo="ICCS280">Desarrollo de Aplicaciones Móviles</materia>
     </materias_impartidas>
   </profesor>
 </profesores>

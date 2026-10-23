@@ -1,0 +1,12 @@
+PREFIX acad: <http://academico.edu.mx/ontologia#>
+
+# Profesores agrupados por departamento, con el número de materias que imparten.
+SELECT ?departamento ?nombre (COUNT(?materia) AS ?numMaterias)
+WHERE {
+    ?profesor a acad:Profesor ;
+              acad:nombre ?nombre ;
+              acad:departamento ?departamento .
+    OPTIONAL { ?profesor acad:imparte ?materia }
+}
+GROUP BY ?departamento ?nombre
+ORDER BY ?departamento ?nombre

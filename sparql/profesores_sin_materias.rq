@@ -1,0 +1,11 @@
+PREFIX acad: <http://academico.edu.mx/ontologia#>
+
+# Profesores registrados que todavía no tienen materias asignadas.
+SELECT ?id ?nombre
+WHERE {
+    ?profesor a acad:Profesor ;
+              acad:id ?id ;
+              acad:nombre ?nombre .
+    FILTER NOT EXISTS { ?profesor acad:imparte ?materia }
+}
+ORDER BY ?nombre

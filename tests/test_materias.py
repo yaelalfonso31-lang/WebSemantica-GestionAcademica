@@ -9,8 +9,11 @@ from lxml import etree
 from rdflib import Graph, URIRef
 
 ROOT = Path(__file__).resolve().parents[1]
-XML = ROOT / "data" / "xml" / "materias.xml"
-XML_ALUMNOS = ROOT / "data" / "xml" / "alumnos.xml"
+FIX = ROOT / "tests" / "fixtures" / "xml"
+XML = FIX / "materias.xml"
+XML_ALUMNOS = FIX / "alumnos.xml"
+XML_INSC = FIX / "inscripciones.xml"
+XSL_INSC_RDF = ROOT / "xslt" / "rdf" / "inscripciones2rdf.xsl"
 DTD = ROOT / "schemas" / "dtd" / "materias.dtd"
 XSD = ROOT / "schemas" / "xsd" / "materias.xsd"
 XSL_HTML = ROOT / "xslt" / "html" / "materias.xsl"
@@ -48,6 +51,9 @@ def grafo():
     if XML_ALUMNOS.exists() and XSL_ALUMNOS_RDF.exists():
         rdf_alumnos = etree.XSLT(etree.parse(str(XSL_ALUMNOS_RDF)))(etree.parse(str(XML_ALUMNOS)))
         g.parse(data=etree.tostring(rdf_alumnos), format="xml")
+    # Las materias aprobadas salen del historial real (inscripciones), no de hechos escritos a mano
+    rdf_insc = etree.XSLT(etree.parse(str(XSL_INSC_RDF)))(etree.parse(str(XML_INSC)))
+    g.parse(data=etree.tostring(rdf_insc), format="xml")
     return g
 
 
@@ -87,7 +93,7 @@ def test_xsd_rechaza_ref_prerrequisito_inexistente(doc, xsd):
 # ---------- 3. Transformación XSLT -> HTML ----------
 def test_xslt_html_genera_catalogo_materias(doc):
     html = etree.XSLT(etree.parse(str(XSL_HTML)))(doc)
-    assert len(html.xpath("//tbody/tr")) == 12
+    assert len(html.xpath("//tbody/tr")) == len(doc.xpath("//materia"))
     assert "Sistemas Operativos II" in str(html)
 
 

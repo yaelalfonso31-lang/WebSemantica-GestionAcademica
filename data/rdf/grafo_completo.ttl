@@ -1,6 +1,4 @@
-@prefix ac: <http://ejemplo.edu/academico#> .
 @prefix acad: <http://academico.edu.mx/ontologia#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -61,7 +59,7 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A001> .
 
 <http://academico.edu.mx/recurso/inscripcion/I005> a acad:Inscripcion ;
-    acad:calificacionFinal 85.0 ;
+    acad:calificacionFinal 100.0 ;
     acad:estatus "Aprobado" ;
     acad:id "I005" ;
     acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS005> ;
@@ -125,7 +123,7 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A002> .
 
 <http://academico.edu.mx/recurso/inscripcion/I013> a acad:Inscripcion ;
-    acad:calificacionFinal 50.0 ;
+    acad:calificacionFinal 68.6 ;
     acad:estatus "Reprobado" ;
     acad:grupo "G-ICCS258-02" ;
     acad:id "I013" ;
@@ -166,8 +164,8 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A003> .
 
 <http://academico.edu.mx/recurso/inscripcion/I018> a acad:Inscripcion ;
-    acad:calificacionFinal 3.3 ;
-    acad:estatus "Reprobado" ;
+    acad:calificacionFinal 79.6 ;
+    acad:estatus "Aprobado" ;
     acad:grupo "G-ICCS258-02" ;
     acad:id "I018" ;
     acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS258> ;
@@ -279,119 +277,775 @@ acad:tienePrerrequisito a owl:TransitiveProperty ;
     acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A006> .
 
 <http://academico.edu.mx/recurso/inscripcion/I032> a acad:Inscripcion ;
-    acad:calificacionFinal 78.1 ;
-    acad:estatus "Aprobado" ;
+    acad:estatus "Cursando" ;
     acad:grupo "G-ICCS258-02" ;
     acad:id "I032" ;
     acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS258> ;
     acad:periodo "Otoño 2026" ;
     acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A006> .
 
-ac:Prof_P001 a ac:Profesor ;
-    ac:especialidad "Ensamblador" ;
-    ac:idProfesor "P001" ;
-    ac:imparte ac:Mat_CCOS005,
-        ac:Mat_ICCS007 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:jose.fernando.contreras.monsalvo@universidad.edu.mx> ;
-    foaf:name "José Fernando Contreras-Monsalvo" .
+<http://academico.edu.mx/recurso/inscripcion/I033> a acad:Inscripcion ;
+    acad:calificacionFinal 88.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I033" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS005> ;
+    acad:periodo "Otoño 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
 
-ac:Prof_P002 a ac:Profesor ;
-    ac:especialidad "Cálculo Integral" ;
-    ac:idProfesor "P002" ;
-    ac:imparte ac:Mat_CCOS008 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:carlos.palomino.jimenez@universidad.edu.mx> ;
-    foaf:name "Carlos Palomino-Jiménez" .
+<http://academico.edu.mx/recurso/inscripcion/I034> a acad:Inscripcion ;
+    acad:calificacionFinal 91.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I034" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:periodo "Otoño 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
 
-ac:Prof_P003 a ac:Profesor ;
-    ac:especialidad "Estructuras de Datos" ;
-    ac:idProfesor "P003" ;
-    ac:imparte ac:Mat_CCOS013 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:beatriz.beltran.martinez@universidad.edu.mx> ;
-    foaf:name "Beatriz Beltrán-Martínez" .
+<http://academico.edu.mx/recurso/inscripcion/I035> a acad:Inscripcion ;
+    acad:calificacionFinal 84.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I035" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:periodo "Primavera 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
 
-ac:Prof_P004 a ac:Profesor ;
-    ac:especialidad "Sistemas Operativos I" ;
-    ac:idProfesor "P004" ;
-    ac:imparte ac:Mat_CCOS252 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:gilberto.lopez.poblano@universidad.edu.mx> ;
-    foaf:name "Gilberto López-Poblano" .
+<http://academico.edu.mx/recurso/inscripcion/I036> a acad:Inscripcion ;
+    acad:calificacionFinal 77.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I036" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:periodo "Primavera 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
 
-ac:Prof_P006 a ac:Profesor ;
-    ac:especialidad "Física II" ;
-    ac:idProfesor "P006" ;
-    ac:imparte ac:Mat_ICCS004 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:ernest.cortez@universidad.edu.mx> ;
-    foaf:name "Ernest Cortez" .
+<http://academico.edu.mx/recurso/inscripcion/I037> a acad:Inscripcion ;
+    acad:calificacionFinal 80.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I037" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS252> ;
+    acad:periodo "Otoño 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
 
-ac:Prof_P007 a ac:Profesor ;
-    ac:especialidad "Ecuaciones Diferenciales" ;
-    ac:idProfesor "P007" ;
-    ac:imparte ac:Mat_ICCS006 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:maria.del.consuelo.molina.garcia@universidad.edu.mx> ;
-    foaf:name "María del Consuelo Molina-García" .
+<http://academico.edu.mx/recurso/inscripcion/I038> a acad:Inscripcion ;
+    acad:calificacionFinal 82.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I038" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS007> ;
+    acad:periodo "Otoño 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
 
-ac:Prof_P008 a ac:Profesor ;
-    ac:especialidad "Circuitos Electrónicos" ;
-    ac:idProfesor "P008" ;
-    ac:imparte ac:Mat_ICCS250 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:berenice.rodriguez.pedroza@universidad.edu.mx> ;
-    foaf:name "Berenice Rodríguez-Pedroza" .
+<http://academico.edu.mx/recurso/inscripcion/I039> a acad:Inscripcion ;
+    acad:calificacionFinal 86.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I039" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS006> ;
+    acad:periodo "Primavera 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
 
-ac:Prof_P009 a ac:Profesor ;
-    ac:especialidad "Bases de Datos para Ingeniería" ;
-    ac:idProfesor "P009" ;
-    ac:imparte ac:Mat_ICCS256 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:maria.de.la.concepcion.perez.de.celis.herrero@universidad.edu.mx> ;
-    foaf:name "María de la Concepción Pérez de Celis-Herrero" .
+<http://academico.edu.mx/recurso/inscripcion/I040> a acad:Inscripcion ;
+    acad:calificacionFinal 93.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I040" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS005> ;
+    acad:periodo "Primavera 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A008> .
 
-ac:Prof_P010 a ac:Profesor ;
-    ac:especialidad "Minería de Datos" ;
-    ac:idProfesor "P010" ;
-    ac:imparte ac:Mat_ICCS257 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:adolfo.aguilar.rico@universidad.edu.mx> ;
-    foaf:name "Adolfo Aguilar-Rico" .
+<http://academico.edu.mx/recurso/inscripcion/I041> a acad:Inscripcion ;
+    acad:calificacionFinal 89.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I041" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:periodo "Primavera 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A008> .
 
-ac:Prof_P011 a ac:Profesor ;
-    ac:especialidad "Desarrollo de Aplicaciones Web" ;
-    ac:idProfesor "P011" ;
-    ac:imparte ac:Mat_ICCS258 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:eugenia.erica.vera.cervantes@universidad.edu.mx> ;
-    foaf:name "Eugenia Erica Vera-Cervantes" .
+<http://academico.edu.mx/recurso/inscripcion/I042> a acad:Inscripcion ;
+    acad:calificacionFinal 90.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I042" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:periodo "Otoño 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A008> .
 
-ac:Prof_P012 a ac:Profesor ;
-    ac:especialidad "Ensamblador" ;
-    ac:idProfesor "P012" ;
-    ac:imparte ac:Mat_CCOS005,
-        ac:Mat_ICCS256,
-        ac:Mat_ICCS258 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:eduardo.profesor@universidad.edu.mx> ;
-    foaf:name "Eduardo Profesor" .
+<http://academico.edu.mx/recurso/inscripcion/I043> a acad:Inscripcion ;
+    acad:calificacionFinal 85.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I043" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:periodo "Otoño 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A008> .
 
-ac:Prof_P1002 a ac:Profesor ;
-    ac:especialidad "Bases de Datos" ;
-    ac:idProfesor "P1002" ;
-    ac:imparte ac:Mat_CS105 ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:juan.perez@universidad.edu.mx> ;
-    foaf:name "Juan Pérez" .
+<http://academico.edu.mx/recurso/inscripcion/I044> a acad:Inscripcion ;
+    acad:calificacionFinal 72.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I044" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS005> ;
+    acad:periodo "Otoño 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A009> .
 
-ac:Prof_P1003 a ac:Profesor ;
-    ac:especialidad "Inteligencia Artificial" ;
-    ac:idProfesor "P1003" ;
-    ac:perteneceADepartamento ac:Dep_Sistemas ;
-    foaf:mbox <mailto:maria.garcia@universidad.edu.mx> ;
-    foaf:name "María García" .
+<http://academico.edu.mx/recurso/inscripcion/I045> a acad:Inscripcion ;
+    acad:calificacionFinal 70.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I045" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:periodo "Otoño 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A009> .
+
+<http://academico.edu.mx/recurso/inscripcion/I046> a acad:Inscripcion ;
+    acad:calificacionFinal 68.0 ;
+    acad:estatus "Reprobado" ;
+    acad:id "I046" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:periodo "Primavera 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A009> .
+
+<http://academico.edu.mx/recurso/inscripcion/I047> a acad:Inscripcion ;
+    acad:calificacionFinal 90.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I047" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS005> ;
+    acad:periodo "Primavera 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A010> .
+
+<http://academico.edu.mx/recurso/inscripcion/I048> a acad:Inscripcion ;
+    acad:calificacionFinal 87.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I048" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:periodo "Primavera 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A010> .
+
+<http://academico.edu.mx/recurso/inscripcion/I049> a acad:Inscripcion ;
+    acad:calificacionFinal 85.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I049" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS005> ;
+    acad:periodo "Otoño 2022" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I050> a acad:Inscripcion ;
+    acad:calificacionFinal 82.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I050" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:periodo "Otoño 2022" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I051> a acad:Inscripcion ;
+    acad:calificacionFinal 79.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I051" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:periodo "Primavera 2023" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I052> a acad:Inscripcion ;
+    acad:calificacionFinal 75.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I052" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:periodo "Primavera 2023" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I053> a acad:Inscripcion ;
+    acad:calificacionFinal 83.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I053" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS252> ;
+    acad:periodo "Otoño 2023" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I054> a acad:Inscripcion ;
+    acad:calificacionFinal 78.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I054" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS007> ;
+    acad:periodo "Otoño 2023" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I055> a acad:Inscripcion ;
+    acad:calificacionFinal 81.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I055" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS250> ;
+    acad:periodo "Primavera 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I056> a acad:Inscripcion ;
+    acad:calificacionFinal 88.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I056" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS256> ;
+    acad:periodo "Primavera 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I057> a acad:Inscripcion ;
+    acad:calificacionFinal 76.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I057" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS006> ;
+    acad:periodo "Otoño 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I058> a acad:Inscripcion ;
+    acad:calificacionFinal 84.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I058" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS254> ;
+    acad:periodo "Primavera 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I059> a acad:Inscripcion ;
+    acad:calificacionFinal 80.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I059" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:periodo "Primavera 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I060> a acad:Inscripcion ;
+    acad:calificacionFinal 70.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I060" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS005> ;
+    acad:periodo "Otoño 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A013> .
+
+<http://academico.edu.mx/recurso/inscripcion/I061> a acad:Inscripcion ;
+    acad:calificacionFinal 71.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I061" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:periodo "Otoño 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A013> .
+
+<http://academico.edu.mx/recurso/inscripcion/I062> a acad:Inscripcion ;
+    acad:calificacionFinal 65.0 ;
+    acad:estatus "Reprobado" ;
+    acad:id "I062" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:periodo "Primavera 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A013> .
+
+<http://academico.edu.mx/recurso/inscripcion/I063> a acad:Inscripcion ;
+    acad:calificacionFinal 73.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I063" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:periodo "Otoño 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A013> .
+
+<http://academico.edu.mx/recurso/inscripcion/I064> a acad:Inscripcion ;
+    acad:calificacionFinal 95.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I064" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS005> ;
+    acad:periodo "Primavera 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I065> a acad:Inscripcion ;
+    acad:calificacionFinal 92.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I065" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:periodo "Primavera 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I066> a acad:Inscripcion ;
+    acad:calificacionFinal 94.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I066" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:periodo "Otoño 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I067> a acad:Inscripcion ;
+    acad:calificacionFinal 90.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I067" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:periodo "Otoño 2024" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I068> a acad:Inscripcion ;
+    acad:calificacionFinal 91.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I068" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS252> ;
+    acad:periodo "Primavera 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I069> a acad:Inscripcion ;
+    acad:calificacionFinal 93.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I069" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS256> ;
+    acad:periodo "Primavera 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I070> a acad:Inscripcion ;
+    acad:calificacionFinal 88.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I070" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS007> ;
+    acad:periodo "Primavera 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I071> a acad:Inscripcion ;
+    acad:calificacionFinal 92.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I071" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS250> ;
+    acad:periodo "Otoño 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I072> a acad:Inscripcion ;
+    acad:calificacionFinal 90.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I072" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS254> ;
+    acad:periodo "Otoño 2025" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I073> a acad:Inscripcion ;
+    acad:calificacionFinal 89.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I073" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS260> ;
+    acad:periodo "Primavera 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I074> a acad:Inscripcion ;
+    acad:calificacionFinal 94.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I074" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:periodo "Primavera 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I075> a acad:Inscripcion ;
+    acad:calificacionFinal 85.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I075" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS005> ;
+    acad:periodo "Primavera 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A015> .
+
+<http://academico.edu.mx/recurso/inscripcion/I076> a acad:Inscripcion ;
+    acad:calificacionFinal 88.0 ;
+    acad:estatus "Aprobado" ;
+    acad:id "I076" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:periodo "Primavera 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A015> .
+
+<http://academico.edu.mx/recurso/inscripcion/I077> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS254-01" ;
+    acad:id "I077" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS254> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A006> .
+
+<http://academico.edu.mx/recurso/inscripcion/I078> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS262-01" ;
+    acad:id "I078" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS262> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A006> .
+
+<http://academico.edu.mx/recurso/inscripcion/I079> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS260-01" ;
+    acad:id "I079" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS260> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A006> .
+
+<http://academico.edu.mx/recurso/inscripcion/I080> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS270-01" ;
+    acad:id "I080" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS270> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A006> .
+
+<http://academico.edu.mx/recurso/inscripcion/I081> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS275-01" ;
+    acad:id "I081" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS275> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A006> .
+
+<http://academico.edu.mx/recurso/inscripcion/I082> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS280-01" ;
+    acad:id "I082" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS280> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A006> .
+
+<http://academico.edu.mx/recurso/inscripcion/I083> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS254-01" ;
+    acad:id "I083" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS254> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A002> .
+
+<http://academico.edu.mx/recurso/inscripcion/I084> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS262-01" ;
+    acad:id "I084" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS262> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A002> .
+
+<http://academico.edu.mx/recurso/inscripcion/I085> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS260-01" ;
+    acad:id "I085" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS260> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A002> .
+
+<http://academico.edu.mx/recurso/inscripcion/I086> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS262-01" ;
+    acad:id "I086" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS262> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A003> .
+
+<http://academico.edu.mx/recurso/inscripcion/I087> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS254-01" ;
+    acad:id "I087" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS254> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
+
+<http://academico.edu.mx/recurso/inscripcion/I088> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS250-01" ;
+    acad:id "I088" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS250> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
+
+<http://academico.edu.mx/recurso/inscripcion/I089> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS256-02" ;
+    acad:id "I089" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS256> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
+
+<http://academico.edu.mx/recurso/inscripcion/I090> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS257-02" ;
+    acad:id "I090" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS257> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
+
+<http://academico.edu.mx/recurso/inscripcion/I091> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS258-02" ;
+    acad:id "I091" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A007> .
+
+<http://academico.edu.mx/recurso/inscripcion/I092> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS252-01" ;
+    acad:id "I092" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS252> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A008> .
+
+<http://academico.edu.mx/recurso/inscripcion/I093> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS007-01" ;
+    acad:id "I093" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS007> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A008> .
+
+<http://academico.edu.mx/recurso/inscripcion/I094> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS006-01" ;
+    acad:id "I094" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS006> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A008> .
+
+<http://academico.edu.mx/recurso/inscripcion/I095> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS256-02" ;
+    acad:id "I095" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS256> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A008> .
+
+<http://academico.edu.mx/recurso/inscripcion/I096> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS258-01" ;
+    acad:id "I096" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A008> .
+
+<http://academico.edu.mx/recurso/inscripcion/I097> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS013-01" ;
+    acad:id "I097" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A009> .
+
+<http://academico.edu.mx/recurso/inscripcion/I098> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS004-01" ;
+    acad:id "I098" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A009> .
+
+<http://academico.edu.mx/recurso/inscripcion/I099> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS006-01" ;
+    acad:id "I099" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS006> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A009> .
+
+<http://academico.edu.mx/recurso/inscripcion/I100> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS013-01" ;
+    acad:id "I100" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A010> .
+
+<http://academico.edu.mx/recurso/inscripcion/I101> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS004-01" ;
+    acad:id "I101" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A010> .
+
+<http://academico.edu.mx/recurso/inscripcion/I102> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS006-01" ;
+    acad:id "I102" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS006> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A010> .
+
+<http://academico.edu.mx/recurso/inscripcion/I103> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS257-01" ;
+    acad:id "I103" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS257> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A010> .
+
+<http://academico.edu.mx/recurso/inscripcion/I104> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS260-01" ;
+    acad:id "I104" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS260> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I105> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS262-01" ;
+    acad:id "I105" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS262> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I106> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS275-01" ;
+    acad:id "I106" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS275> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I107> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS270-01" ;
+    acad:id "I107" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS270> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A012> .
+
+<http://academico.edu.mx/recurso/inscripcion/I108> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS252-01" ;
+    acad:id "I108" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS252> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A013> .
+
+<http://academico.edu.mx/recurso/inscripcion/I109> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS004-01" ;
+    acad:id "I109" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A013> .
+
+<http://academico.edu.mx/recurso/inscripcion/I110> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS257-02" ;
+    acad:id "I110" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS257> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A013> .
+
+<http://academico.edu.mx/recurso/inscripcion/I111> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS270-01" ;
+    acad:id "I111" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS270> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I112> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS280-01" ;
+    acad:id "I112" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS280> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I113> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS270-01" ;
+    acad:id "I113" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS270> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A014> .
+
+<http://academico.edu.mx/recurso/inscripcion/I114> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS008-02" ;
+    acad:id "I114" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A015> .
+
+<http://academico.edu.mx/recurso/inscripcion/I115> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-CCOS013-01" ;
+    acad:id "I115" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A015> .
+
+<http://academico.edu.mx/recurso/inscripcion/I116> a acad:Inscripcion ;
+    acad:estatus "Cursando" ;
+    acad:grupo "G-ICCS007-01" ;
+    acad:id "I116" ;
+    acad:inscribeA <http://academico.edu.mx/recurso/materia/ICCS007> ;
+    acad:periodo "Otoño 2026" ;
+    acad:realizadaPor <http://academico.edu.mx/recurso/alumno/A015> .
+
+<http://academico.edu.mx/recurso/profesor/P1002> a acad:Profesor ;
+    acad:correo "juan.perez@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Bases de Datos" ;
+    acad:id "P1002" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/CS105> ;
+    acad:nombre "Juan Pérez" .
+
+<http://academico.edu.mx/recurso/profesor/P1003> a acad:Profesor ;
+    acad:correo "maria.garcia@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Inteligencia Artificial" ;
+    acad:id "P1003" ;
+    acad:nombre "María García" .
+
+<http://academico.edu.mx/recurso/materia/ICCS262> a acad:Materia ;
+    acad:clave "ICCS 262" ;
+    acad:creditos 6 ;
+    acad:descripcion "Análisis léxico, sintáctico y semántico; generación de código." ;
+    acad:id "ICCS262" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P003> ;
+    acad:nombre "Compiladores" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 6 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS013> .
+
+<http://academico.edu.mx/recurso/profesor/P004> a acad:Profesor ;
+    acad:correo "gilberto.lopez.poblano@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Sistemas Operativos I" ;
+    acad:id "P004" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/CCOS252> ;
+    acad:nombre "Gilberto López-Poblano" .
+
+<http://academico.edu.mx/recurso/profesor/P006> a acad:Profesor ;
+    acad:correo "ernest.cortez@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Física II" ;
+    acad:id "P006" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:nombre "Ernest Cortez" .
+
+<http://academico.edu.mx/recurso/profesor/P007> a acad:Profesor ;
+    acad:correo "maria.del.consuelo.molina.garcia@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Ecuaciones Diferenciales" ;
+    acad:id "P007" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/ICCS006> ;
+    acad:nombre "María del Consuelo Molina-García" .
+
+<http://academico.edu.mx/recurso/profesor/P008> a acad:Profesor ;
+    acad:correo "berenice.rodriguez.pedroza@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Circuitos Electrónicos" ;
+    acad:id "P008" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/ICCS250> ;
+    acad:nombre "Berenice Rodríguez-Pedroza" .
+
+<http://academico.edu.mx/recurso/profesor/P009> a acad:Profesor ;
+    acad:correo "maria.de.la.concepcion.perez.de.celis.herrero@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Bases de Datos para Ingeniería" ;
+    acad:id "P009" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/ICCS256> ;
+    acad:nombre "María de la Concepción Pérez de Celis-Herrero" .
+
+<http://academico.edu.mx/recurso/profesor/P010> a acad:Profesor ;
+    acad:correo "adolfo.aguilar.rico@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Minería de Datos" ;
+    acad:id "P010" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/ICCS257> ;
+    acad:nombre "Adolfo Aguilar-Rico" .
+
+<http://academico.edu.mx/recurso/profesor/P011> a acad:Profesor ;
+    acad:correo "eugenia.erica.vera.cervantes@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Desarrollo de Aplicaciones Web" ;
+    acad:id "P011" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:nombre "Eugenia Erica Vera-Cervantes" .
+
+<http://academico.edu.mx/recurso/profesor/P015> a acad:Profesor ;
+    acad:correo "daniela.fuentes.rojas@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Desarrollo de Software Móvil" ;
+    acad:id "P015" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/ICCS280> ;
+    acad:nombre "Daniela Fuentes-Rojas" .
 
 <http://academico.edu.mx/recurso/alumno/A005> a acad:Alumno ;
     acad:apellidos "Ramírez Flores" ;
@@ -406,26 +1060,110 @@ ac:Prof_P1003 a ac:Profesor ;
     acad:promedio 89.7 ;
     acad:semestre 2 .
 
-<http://academico.edu.mx/recurso/materia/ICCS006> a acad:Materia ;
-    acad:clave "ICCS 006" ;
+<http://academico.edu.mx/recurso/profesor/P001> a acad:Profesor ;
+    acad:correo "jose.fernando.contreras.monsalvo@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Ensamblador" ;
+    acad:id "P001" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/ICCS007> ;
+    acad:nombre "José Fernando Contreras-Monsalvo" .
+
+<http://academico.edu.mx/recurso/profesor/P002> a acad:Profesor ;
+    acad:correo "carlos.palomino.jimenez@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Cálculo Integral" ;
+    acad:id "P002" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/ICCS260> ;
+    acad:nombre "Carlos Palomino-Jiménez" .
+
+<http://academico.edu.mx/recurso/profesor/P003> a acad:Profesor ;
+    acad:correo "beatriz.beltran.martinez@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Estructuras de Datos" ;
+    acad:id "P003" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/ICCS262> ;
+    acad:nombre "Beatriz Beltrán-Martínez" .
+
+<http://academico.edu.mx/recurso/profesor/P013> a acad:Profesor ;
+    acad:correo "mariana.solis.vega@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Redes y Seguridad" ;
+    acad:id "P013" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/CCOS260>,
+        <http://academico.edu.mx/recurso/materia/CCOS280> ;
+    acad:nombre "Mariana Solís-Vega" .
+
+<http://academico.edu.mx/recurso/profesor/P014> a acad:Profesor ;
+    acad:correo "ricardo.ochoa.barrios@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Inteligencia Artificial" ;
+    acad:id "P014" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/CCOS270>,
+        <http://academico.edu.mx/recurso/materia/ICCS270> ;
+    acad:nombre "Ricardo Ochoa-Barrios" .
+
+<http://academico.edu.mx/recurso/materia/CCOS280> a acad:Materia ;
+    acad:clave "CCOS 280" ;
     acad:creditos 6 ;
-    acad:descripcion "Estudio y aplicación de ecuaciones diferenciales en problemas de ingeniería." ;
-    acad:id "ICCS006" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P007> ;
-    acad:nombre "Ecuaciones Diferenciales" ;
+    acad:descripcion "Criptografía aplicada, seguridad en redes y en aplicaciones." ;
+    acad:id "CCOS280" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P013> ;
+    acad:nombre "Seguridad Informática" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 7 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS260> .
+
+<http://academico.edu.mx/recurso/materia/ICCS260> a acad:Materia ;
+    acad:clave "ICCS 260" ;
+    acad:creditos 6 ;
+    acad:descripcion "Variables aleatorias, distribuciones e inferencia estadística básica." ;
+    acad:id "ICCS260" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P002> ;
+    acad:nombre "Probabilidad y Estadística" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
     acad:semestre 4 ;
     acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS008> .
 
-<http://academico.edu.mx/recurso/materia/ICCS257> a acad:Materia ;
-    acad:clave "ICCS 257" ;
+<http://academico.edu.mx/recurso/materia/ICCS270> a acad:Materia ;
+    acad:clave "ICCS 270" ;
     acad:creditos 6 ;
-    acad:descripcion "Análisis de grandes conjuntos de datos para obtener información y patrones." ;
-    acad:id "ICCS257" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P010> ;
-    acad:nombre "Minería de Datos" ;
+    acad:descripcion "Virtualización, servicios en la nube, contenedores y despliegue escalable." ;
+    acad:id "ICCS270" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P014> ;
+    acad:nombre "Computación en la Nube" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 7 .
+    acad:semestre 8 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS254>,
+        <http://academico.edu.mx/recurso/materia/CCOS260> .
+
+<http://academico.edu.mx/recurso/materia/ICCS280> a acad:Materia ;
+    acad:clave "ICCS 280" ;
+    acad:creditos 6 ;
+    acad:descripcion "Diseño y construcción de aplicaciones para dispositivos móviles." ;
+    acad:id "ICCS280" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P015> ;
+    acad:nombre "Desarrollo de Aplicaciones Móviles" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 7 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/ICCS258> .
+
+<http://academico.edu.mx/recurso/profesor/P012> a acad:Profesor ;
+    acad:correo "eduardo.profesor@universidad.edu.mx" ;
+    acad:departamento "Sistemas" ;
+    acad:especialidad "Ensamblador" ;
+    acad:id "P012" ;
+    acad:imparte <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS254>,
+        <http://academico.edu.mx/recurso/materia/CCOS262>,
+        <http://academico.edu.mx/recurso/materia/CCOS275>,
+        <http://academico.edu.mx/recurso/materia/ICCS256>,
+        <http://academico.edu.mx/recurso/materia/ICCS257>,
+        <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:nombre "Eduardo Profesor" .
 
 <http://academico.edu.mx/recurso/alumno/A001> a acad:Alumno ;
     acad:apellidos "García López" ;
@@ -443,35 +1181,45 @@ ac:Prof_P1003 a ac:Profesor ;
     acad:promedio 95.0 ;
     acad:semestre 3 .
 
-<http://academico.edu.mx/recurso/materia/ICCS250> a acad:Materia ;
-    acad:clave "ICCS 250" ;
-    acad:creditos 6 ;
-    acad:descripcion "Estudio de componentes electrónicos y análisis de circuitos." ;
-    acad:id "ICCS250" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P008> ;
-    acad:nombre "Circuitos Electrónicos" ;
-    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 5 ;
-    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/ICCS007> .
+<http://academico.edu.mx/recurso/alumno/A015> a acad:Alumno ;
+    acad:apellidos "Guzmán Herrera" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:correo "paola.guzman@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS007> ;
+    acad:estatus "Activo" ;
+    acad:id "A015" ;
+    acad:matricula "20240015" ;
+    acad:nombre "Paola" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 86.5 ;
+    acad:semestre 3 .
 
-<http://academico.edu.mx/recurso/materia/ICCS256> a acad:Materia ;
-    acad:clave "ICCS 256" ;
+<http://academico.edu.mx/recurso/materia/CCOS275> a acad:Materia ;
+    acad:clave "CCOS 275" ;
     acad:creditos 6 ;
-    acad:descripcion "Diseño y administración de bases de datos aplicadas a problemas de ingeniería." ;
-    acad:id "ICCS256" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P009> ;
-    acad:nombre "Bases de Datos para Ingeniería" ;
+    acad:descripcion "RDF, ontologías OWL, consultas SPARQL y datos enlazados." ;
+    acad:id "CCOS275" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P012> ;
+    acad:nombre "Web Semántica" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 6 ;
-    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS013> .
+    acad:semestre 8 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/ICCS256>,
+        <http://academico.edu.mx/recurso/materia/ICCS258> .
 
 <http://academico.edu.mx/recurso/alumno/A003> a acad:Alumno ;
     acad:apellidos "Martínez Torres" ;
     acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS013>,
-        <http://academico.edu.mx/recurso/materia/ICCS004> ;
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS258> ;
     acad:correo "laura.martinez@alumno.buap.mx" ;
     acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS013>,
         <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/CCOS262>,
         <http://academico.edu.mx/recurso/materia/ICCS004>,
         <http://academico.edu.mx/recurso/materia/ICCS007>,
         <http://academico.edu.mx/recurso/materia/ICCS258> ;
@@ -480,40 +1228,133 @@ ac:Prof_P1003 a ac:Profesor ;
     acad:matricula "20230003" ;
     acad:nombre "Laura" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C002> ;
-    acad:promedio 63.9 ;
+    acad:promedio 89.4 ;
     acad:semestre 4 .
 
-<http://academico.edu.mx/recurso/materia/ICCS258> a acad:Materia ;
-    acad:clave "ICCS 258" ;
-    acad:creditos 6 ;
-    acad:descripcion "Desarrollo de aplicaciones y servicios orientados a plataformas web." ;
-    acad:id "ICCS258" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P011> ;
-    acad:nombre "Desarrollo de Aplicaciones Web" ;
-    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 7 .
+<http://academico.edu.mx/recurso/alumno/A009> a acad:Alumno ;
+    acad:apellidos "Torres Vega" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:correo "luis.angel.torres@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS006> ;
+    acad:estatus "Activo" ;
+    acad:id "A009" ;
+    acad:matricula "20240009" ;
+    acad:nombre "Luis Ángel" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 70.0 ;
+    acad:semestre 4 .
 
-<http://academico.edu.mx/recurso/materia/CCOS252> a acad:Materia ;
-    acad:clave "CCOS 252" ;
+<http://academico.edu.mx/recurso/alumno/A010> a acad:Alumno ;
+    acad:apellidos "Ortiz Lara" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008> ;
+    acad:correo "fernanda.ortiz@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS006>,
+        <http://academico.edu.mx/recurso/materia/ICCS257> ;
+    acad:estatus "Activo" ;
+    acad:id "A010" ;
+    acad:matricula "20240010" ;
+    acad:nombre "Fernanda" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 88.5 ;
+    acad:semestre 4 .
+
+<http://academico.edu.mx/recurso/alumno/A013> a acad:Alumno ;
+    acad:apellidos "Núñez Ibarra" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013> ;
+    acad:correo "valeria.nunez@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS257> ;
+    acad:estatus "Activo" ;
+    acad:id "A013" ;
+    acad:matricula "20230013" ;
+    acad:nombre "Valeria" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 69.8 ;
+    acad:semestre 5 .
+
+<http://academico.edu.mx/recurso/materia/CCOS270> a acad:Materia ;
+    acad:clave "CCOS 270" ;
     acad:creditos 6 ;
-    acad:descripcion "Fundamentos de sistemas operativos, procesos, memoria y administración de recursos." ;
-    acad:id "CCOS252" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P004> ;
-    acad:nombre "Sistemas Operativos I" ;
+    acad:descripcion "Búsqueda, representación del conocimiento y aprendizaje automático." ;
+    acad:id "CCOS270" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P014> ;
+    acad:nombre "Inteligencia Artificial" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 5 ;
+    acad:semestre 7 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/ICCS256> .
+
+<http://academico.edu.mx/recurso/alumno/A008> a acad:Alumno ;
+    acad:apellidos "Mendoza Cruz" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/ICCS004> ;
+    acad:correo "ana.sofia.mendoza@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS006>,
+        <http://academico.edu.mx/recurso/materia/ICCS007>,
+        <http://academico.edu.mx/recurso/materia/ICCS256>,
+        <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:estatus "Activo" ;
+    acad:id "A008" ;
+    acad:matricula "20230008" ;
+    acad:nombre "Ana Sofía" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 89.2 ;
+    acad:semestre 5 .
+
+<http://academico.edu.mx/recurso/materia/CCOS262> a acad:Materia ;
+    acad:clave "CCOS 262" ;
+    acad:creditos 6 ;
+    acad:descripcion "Ciclo de vida del software, requisitos, diseño, pruebas y metodologías ágiles." ;
+    acad:id "CCOS262" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P012> ;
+    acad:nombre "Ingeniería de Software" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 6 ;
     acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS013> .
 
-<http://academico.edu.mx/recurso/materia/ICCS007> a acad:Materia ;
-    acad:clave "ICCS 007" ;
+<http://academico.edu.mx/recurso/materia/CCOS260> a acad:Materia ;
+    acad:clave "CCOS 260" ;
     acad:creditos 6 ;
-    acad:descripcion "Fundamentos de circuitos eléctricos y análisis de sus principales componentes." ;
-    acad:id "ICCS007" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P001> ;
-    acad:nombre "Circuitos Eléctricos" ;
+    acad:descripcion "Modelos de capas, protocolos TCP/IP, direccionamiento y enrutamiento." ;
+    acad:id "CCOS260" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P013> ;
+    acad:nombre "Redes de Computadoras" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 4 ;
-    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/ICCS004> .
+    acad:semestre 5 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS252> .
+
+<http://academico.edu.mx/recurso/materia/ICCS257> a acad:Materia ;
+    acad:clave "ICCS 257" ;
+    acad:creditos 6 ;
+    acad:descripcion "Análisis de grandes conjuntos de datos para obtener información y patrones." ;
+    acad:id "ICCS257" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P010> ;
+    acad:nombre "Minería de Datos" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 7 .
 
 <http://academico.edu.mx/recurso/alumno/A002> a acad:Alumno ;
     acad:apellidos "Hernández Ruiz" ;
@@ -528,18 +1369,247 @@ ac:Prof_P1003 a ac:Profesor ;
         <http://academico.edu.mx/recurso/materia/CCOS008>,
         <http://academico.edu.mx/recurso/materia/CCOS013>,
         <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/CCOS254>,
+        <http://academico.edu.mx/recurso/materia/CCOS262>,
         <http://academico.edu.mx/recurso/materia/ICCS004>,
         <http://academico.edu.mx/recurso/materia/ICCS007>,
         <http://academico.edu.mx/recurso/materia/ICCS250>,
         <http://academico.edu.mx/recurso/materia/ICCS256>,
-        <http://academico.edu.mx/recurso/materia/ICCS258> ;
+        <http://academico.edu.mx/recurso/materia/ICCS258>,
+        <http://academico.edu.mx/recurso/materia/ICCS260> ;
     acad:estatus "Activo" ;
     acad:id "A002" ;
     acad:matricula "20230002" ;
     acad:nombre "Carlos" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
-    acad:promedio 82.0 ;
+    acad:promedio 86.8 ;
     acad:semestre 6 .
+
+<http://academico.edu.mx/recurso/alumno/A007> a acad:Alumno ;
+    acad:apellidos "Ramírez Soto" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS006>,
+        <http://academico.edu.mx/recurso/materia/ICCS007> ;
+    acad:correo "diego.ramirez@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/CCOS254>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS006>,
+        <http://academico.edu.mx/recurso/materia/ICCS007>,
+        <http://academico.edu.mx/recurso/materia/ICCS250>,
+        <http://academico.edu.mx/recurso/materia/ICCS256>,
+        <http://academico.edu.mx/recurso/materia/ICCS257>,
+        <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:estatus "Activo" ;
+    acad:id "A007" ;
+    acad:matricula "20230007" ;
+    acad:nombre "Diego" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 84.0 ;
+    acad:semestre 6 .
+
+<http://academico.edu.mx/recurso/alumno/A014> a acad:Alumno ;
+    acad:apellidos "Reyes Salas" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/CCOS254>,
+        <http://academico.edu.mx/recurso/materia/CCOS260>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS007>,
+        <http://academico.edu.mx/recurso/materia/ICCS250>,
+        <http://academico.edu.mx/recurso/materia/ICCS256>,
+        <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:correo "miguel.angel.reyes@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/CCOS254>,
+        <http://academico.edu.mx/recurso/materia/CCOS260>,
+        <http://academico.edu.mx/recurso/materia/CCOS270>,
+        <http://academico.edu.mx/recurso/materia/CCOS280>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS007>,
+        <http://academico.edu.mx/recurso/materia/ICCS250>,
+        <http://academico.edu.mx/recurso/materia/ICCS256>,
+        <http://academico.edu.mx/recurso/materia/ICCS258>,
+        <http://academico.edu.mx/recurso/materia/ICCS270> ;
+    acad:estatus "Activo" ;
+    acad:id "A014" ;
+    acad:matricula "20220014" ;
+    acad:nombre "Miguel Ángel" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 91.6 ;
+    acad:semestre 7 .
+
+<http://academico.edu.mx/recurso/materia/CCOS254> a acad:Materia ;
+    acad:clave "CCOS 254" ;
+    acad:creditos 6 ;
+    acad:descripcion "Planificación avanzada, memoria virtual, sistemas de archivos y concurrencia." ;
+    acad:id "CCOS254" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P012> ;
+    acad:nombre "Sistemas Operativos II" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 5 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS252> .
+
+<http://academico.edu.mx/recurso/materia/ICCS250> a acad:Materia ;
+    acad:clave "ICCS 250" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio de componentes electrónicos y análisis de circuitos." ;
+    acad:id "ICCS250" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P008> ;
+    acad:nombre "Circuitos Electrónicos" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 5 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/ICCS007> .
+
+<http://academico.edu.mx/recurso/alumno/A012> a acad:Alumno ;
+    acad:apellidos "Castillo Pérez" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/CCOS254>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS006>,
+        <http://academico.edu.mx/recurso/materia/ICCS007>,
+        <http://academico.edu.mx/recurso/materia/ICCS250>,
+        <http://academico.edu.mx/recurso/materia/ICCS256>,
+        <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:correo "jorge.castillo@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/CCOS254>,
+        <http://academico.edu.mx/recurso/materia/CCOS260>,
+        <http://academico.edu.mx/recurso/materia/CCOS262>,
+        <http://academico.edu.mx/recurso/materia/CCOS270>,
+        <http://academico.edu.mx/recurso/materia/CCOS275>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS006>,
+        <http://academico.edu.mx/recurso/materia/ICCS007>,
+        <http://academico.edu.mx/recurso/materia/ICCS250>,
+        <http://academico.edu.mx/recurso/materia/ICCS256>,
+        <http://academico.edu.mx/recurso/materia/ICCS258> ;
+    acad:estatus "Activo" ;
+    acad:id "A012" ;
+    acad:matricula "20220012" ;
+    acad:nombre "Jorge" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 81.0 ;
+    acad:semestre 8 .
+
+<http://academico.edu.mx/recurso/materia/ICCS006> a acad:Materia ;
+    acad:clave "ICCS 006" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio y aplicación de ecuaciones diferenciales en problemas de ingeniería." ;
+    acad:id "ICCS006" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P007> ;
+    acad:nombre "Ecuaciones Diferenciales" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 4 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS008> .
+
+<http://academico.edu.mx/recurso/alumno/A006> a acad:Alumno ;
+    acad:apellidos "Serrano Pastrana" ;
+    acad:aproboMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS006>,
+        <http://academico.edu.mx/recurso/materia/ICCS007>,
+        <http://academico.edu.mx/recurso/materia/ICCS250>,
+        <http://academico.edu.mx/recurso/materia/ICCS256> ;
+    acad:correo "yael.alfonso.serrano@alumno.buap.mx" ;
+    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
+        <http://academico.edu.mx/recurso/materia/CCOS008>,
+        <http://academico.edu.mx/recurso/materia/CCOS013>,
+        <http://academico.edu.mx/recurso/materia/CCOS252>,
+        <http://academico.edu.mx/recurso/materia/CCOS254>,
+        <http://academico.edu.mx/recurso/materia/CCOS260>,
+        <http://academico.edu.mx/recurso/materia/CCOS262>,
+        <http://academico.edu.mx/recurso/materia/CCOS270>,
+        <http://academico.edu.mx/recurso/materia/CCOS275>,
+        <http://academico.edu.mx/recurso/materia/ICCS004>,
+        <http://academico.edu.mx/recurso/materia/ICCS006>,
+        <http://academico.edu.mx/recurso/materia/ICCS007>,
+        <http://academico.edu.mx/recurso/materia/ICCS250>,
+        <http://academico.edu.mx/recurso/materia/ICCS256>,
+        <http://academico.edu.mx/recurso/materia/ICCS257>,
+        <http://academico.edu.mx/recurso/materia/ICCS258>,
+        <http://academico.edu.mx/recurso/materia/ICCS280> ;
+    acad:estatus "Activo" ;
+    acad:id "A006" ;
+    acad:matricula "202254021" ;
+    acad:nombre "Yael Alfonso" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/C001> ;
+    acad:promedio 84.9 ;
+    acad:semestre 8 .
+
+<http://academico.edu.mx/recurso/materia/ICCS256> a acad:Materia ;
+    acad:clave "ICCS 256" ;
+    acad:creditos 6 ;
+    acad:descripcion "Diseño y administración de bases de datos aplicadas a problemas de ingeniería." ;
+    acad:id "ICCS256" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P009> ;
+    acad:nombre "Bases de Datos para Ingeniería" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 6 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS013> .
+
+<http://academico.edu.mx/recurso/materia/ICCS258> a acad:Materia ;
+    acad:clave "ICCS 258" ;
+    acad:creditos 6 ;
+    acad:descripcion "Desarrollo de aplicaciones y servicios orientados a plataformas web." ;
+    acad:id "ICCS258" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P011> ;
+    acad:nombre "Desarrollo de Aplicaciones Web" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 7 .
+
+<http://academico.edu.mx/recurso/materia/ICCS007> a acad:Materia ;
+    acad:clave "ICCS 007" ;
+    acad:creditos 6 ;
+    acad:descripcion "Fundamentos de circuitos eléctricos y análisis de sus principales componentes." ;
+    acad:id "ICCS007" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P001> ;
+    acad:nombre "Circuitos Eléctricos" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 4 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/ICCS004> .
+
+<http://academico.edu.mx/recurso/materia/CCOS252> a acad:Materia ;
+    acad:clave "CCOS 252" ;
+    acad:creditos 6 ;
+    acad:descripcion "Fundamentos de sistemas operativos, procesos, memoria y administración de recursos." ;
+    acad:id "CCOS252" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P004> ;
+    acad:nombre "Sistemas Operativos I" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 5 ;
+    acad:tienePrerrequisito <http://academico.edu.mx/recurso/materia/CCOS013> .
+
+<http://academico.edu.mx/recurso/materia/ICCS004> a acad:Materia ;
+    acad:clave "ICCS 004" ;
+    acad:creditos 6 ;
+    acad:descripcion "Estudio de fenómenos físicos y principios aplicados a la ingeniería." ;
+    acad:id "ICCS004" ;
+    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P006> ;
+    acad:nombre "Física II" ;
+    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
+    acad:semestre 4 .
 
 <http://academico.edu.mx/recurso/materia/CCOS005> a acad:Materia ;
     acad:clave "CCOS 005" ;
@@ -561,29 +1631,6 @@ ac:Prof_P1003 a ac:Profesor ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
     acad:semestre 3 .
 
-<http://academico.edu.mx/recurso/materia/ICCS004> a acad:Materia ;
-    acad:clave "ICCS 004" ;
-    acad:creditos 6 ;
-    acad:descripcion "Estudio de fenómenos físicos y principios aplicados a la ingeniería." ;
-    acad:id "ICCS004" ;
-    acad:impartidaPor <http://academico.edu.mx/recurso/profesor/P006> ;
-    acad:nombre "Física II" ;
-    acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
-    acad:semestre 4 .
-
-<http://academico.edu.mx/recurso/alumno/A006> a acad:Alumno ;
-    acad:cursaMateria <http://academico.edu.mx/recurso/materia/CCOS005>,
-        <http://academico.edu.mx/recurso/materia/CCOS008>,
-        <http://academico.edu.mx/recurso/materia/CCOS013>,
-        <http://academico.edu.mx/recurso/materia/CCOS252>,
-        <http://academico.edu.mx/recurso/materia/ICCS004>,
-        <http://academico.edu.mx/recurso/materia/ICCS006>,
-        <http://academico.edu.mx/recurso/materia/ICCS007>,
-        <http://academico.edu.mx/recurso/materia/ICCS250>,
-        <http://academico.edu.mx/recurso/materia/ICCS256>,
-        <http://academico.edu.mx/recurso/materia/ICCS257>,
-        <http://academico.edu.mx/recurso/materia/ICCS258> .
-
 <http://academico.edu.mx/recurso/materia/CCOS013> a acad:Materia ;
     acad:clave "CCOS 013" ;
     acad:creditos 6 ;
@@ -593,7 +1640,4 @@ ac:Prof_P1003 a ac:Profesor ;
     acad:nombre "Estructuras de Datos" ;
     acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ICC> ;
     acad:semestre 4 .
-
-ac:Dep_Sistemas a ac:Departamento ;
-    rdfs:label "Sistemas" .
 

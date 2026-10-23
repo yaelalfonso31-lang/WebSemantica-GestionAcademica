@@ -117,7 +117,7 @@
                                     <td>
                                         <div class="cell-primary">
                                             <xsl:value-of select="nombre"/>
-                                            <xsl:text></xsl:text>
+                                            <xsl:text> </xsl:text>
                                             <xsl:value-of select="apellidos"/>
                                         </div>
                                         <div class="cell-secondary">

@@ -1,12 +1,13 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX acad: <http://academico.edu.mx/ontologia#>
 
-SELECT ?id ?nombre ?apellidos ?departamento
+# Profesores agrupados por la carrera de las materias que imparten.
+SELECT DISTINCT ?carrera ?nombre ?departamento
 WHERE {
     ?profesor a acad:Profesor ;
-              acad:id ?id ;
               acad:nombre ?nombre ;
-              acad:apellidos ?apellidos ;
-              acad:departamento ?departamento .
+              acad:departamento ?departamento ;
+              acad:imparte ?materia .
+    ?materia acad:perteneceACarrera ?uriCarrera .
+    BIND(STRAFTER(STR(?uriCarrera), "recurso/carrera/") AS ?carrera)
 }
-ORDER BY ASC(?departamento) ASC(?nombre)
+ORDER BY ?carrera ?nombre

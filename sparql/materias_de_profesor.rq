@@ -1,0 +1,11 @@
+PREFIX acad: <http://academico.edu.mx/ontologia#>
+
+# Materias que imparte un profesor. Se puede acotar enlazando la variable ?profesor.
+SELECT ?profesor ?nombre ?codigo
+WHERE {
+    ?profesor a acad:Profesor ;
+              acad:nombre ?nombre ;
+              acad:imparte ?materia .
+    BIND(STRAFTER(STR(?materia), "recurso/materia/") AS ?codigo)
+}
+ORDER BY ?nombre ?codigo

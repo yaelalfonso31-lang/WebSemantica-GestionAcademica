@@ -18,7 +18,7 @@
     <acad:apellidos>Hernández Ruiz</acad:apellidos>
     <acad:correo>carlos.hernandez@alumno.buap.mx</acad:correo>
     <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:semestre>
-    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">82.0</acad:promedio>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.8</acad:promedio>
     <acad:estatus>Activo</acad:estatus>
     <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
   </acad:Alumno>
@@ -29,7 +29,7 @@
     <acad:apellidos>Martínez Torres</acad:apellidos>
     <acad:correo>laura.martinez@alumno.buap.mx</acad:correo>
     <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acad:semestre>
-    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63.9</acad:promedio>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">89.4</acad:promedio>
     <acad:estatus>Activo</acad:estatus>
     <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C002"/>
   </acad:Alumno>
@@ -54,5 +54,104 @@
     <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</acad:promedio>
     <acad:estatus>Activo</acad:estatus>
     <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C003"/>
+  </acad:Alumno>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A006">
+    <acad:id>A006</acad:id>
+    <acad:matricula>202254021</acad:matricula>
+    <acad:nombre>Yael Alfonso</acad:nombre>
+    <acad:apellidos>Serrano Pastrana</acad:apellidos>
+    <acad:correo>yael.alfonso.serrano@alumno.buap.mx</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.9</acad:promedio>
+    <acad:estatus>Activo</acad:estatus>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
+  </acad:Alumno>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A007">
+    <acad:id>A007</acad:id>
+    <acad:matricula>20230007</acad:matricula>
+    <acad:nombre>Diego</acad:nombre>
+    <acad:apellidos>Ramírez Soto</acad:apellidos>
+    <acad:correo>diego.ramirez@alumno.buap.mx</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.0</acad:promedio>
+    <acad:estatus>Activo</acad:estatus>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
+  </acad:Alumno>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A008">
+    <acad:id>A008</acad:id>
+    <acad:matricula>20230008</acad:matricula>
+    <acad:nombre>Ana Sofía</acad:nombre>
+    <acad:apellidos>Mendoza Cruz</acad:apellidos>
+    <acad:correo>ana.sofia.mendoza@alumno.buap.mx</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">89.2</acad:promedio>
+    <acad:estatus>Activo</acad:estatus>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
+  </acad:Alumno>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A009">
+    <acad:id>A009</acad:id>
+    <acad:matricula>20240009</acad:matricula>
+    <acad:nombre>Luis Ángel</acad:nombre>
+    <acad:apellidos>Torres Vega</acad:apellidos>
+    <acad:correo>luis.angel.torres@alumno.buap.mx</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.0</acad:promedio>
+    <acad:estatus>Activo</acad:estatus>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
+  </acad:Alumno>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A010">
+    <acad:id>A010</acad:id>
+    <acad:matricula>20240010</acad:matricula>
+    <acad:nombre>Fernanda</acad:nombre>
+    <acad:apellidos>Ortiz Lara</acad:apellidos>
+    <acad:correo>fernanda.ortiz@alumno.buap.mx</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.5</acad:promedio>
+    <acad:estatus>Activo</acad:estatus>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
+  </acad:Alumno>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A012">
+    <acad:id>A012</acad:id>
+    <acad:matricula>20220012</acad:matricula>
+    <acad:nombre>Jorge</acad:nombre>
+    <acad:apellidos>Castillo Pérez</acad:apellidos>
+    <acad:correo>jorge.castillo@alumno.buap.mx</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">81.0</acad:promedio>
+    <acad:estatus>Activo</acad:estatus>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
+  </acad:Alumno>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A013">
+    <acad:id>A013</acad:id>
+    <acad:matricula>20230013</acad:matricula>
+    <acad:nombre>Valeria</acad:nombre>
+    <acad:apellidos>Núñez Ibarra</acad:apellidos>
+    <acad:correo>valeria.nunez@alumno.buap.mx</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">69.8</acad:promedio>
+    <acad:estatus>Activo</acad:estatus>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
+  </acad:Alumno>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A014">
+    <acad:id>A014</acad:id>
+    <acad:matricula>20220014</acad:matricula>
+    <acad:nombre>Miguel Ángel</acad:nombre>
+    <acad:apellidos>Reyes Salas</acad:apellidos>
+    <acad:correo>miguel.angel.reyes@alumno.buap.mx</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91.6</acad:promedio>
+    <acad:estatus>Activo</acad:estatus>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
+  </acad:Alumno>
+  <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/A015">
+    <acad:id>A015</acad:id>
+    <acad:matricula>20240015</acad:matricula>
+    <acad:nombre>Paola</acad:nombre>
+    <acad:apellidos>Guzmán Herrera</acad:apellidos>
+    <acad:correo>paola.guzman@alumno.buap.mx</acad:correo>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</acad:semestre>
+    <acad:promedio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.5</acad:promedio>
+    <acad:estatus>Activo</acad:estatus>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/C001"/>
   </acad:Alumno>
 </rdf:RDF>

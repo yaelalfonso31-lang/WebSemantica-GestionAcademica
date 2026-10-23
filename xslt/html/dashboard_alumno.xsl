@@ -79,6 +79,21 @@
                 </div>
 
             </div>
+
+            <xsl:if test="dashboard/disponibles/materia">
+                <section class="disponibles">
+                    <h2 class="disponibles__titulo">Materias que puedes cursar</h2>
+                    <p class="disponibles__nota">Ya cumples sus prerrequisitos y aún no las has aprobado ni las estás cursando.</p>
+                    <ul class="disponibles__lista">
+                        <xsl:for-each select="dashboard/disponibles/materia">
+                            <li>
+                                <span class="disponibles__nombre"><xsl:value-of select="."/></span>
+                                <span class="disponibles__meta"><xsl:value-of select="@id"/> · semestre <xsl:value-of select="@semestre"/> · <xsl:value-of select="@creditos"/> créditos</span>
+                            </li>
+                        </xsl:for-each>
+                    </ul>
+                </section>
+            </xsl:if>
         </div>
     </xsl:template>
     <xsl:template match="metrica">

@@ -2,7 +2,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 
 def hashear_contrasena(password):
-    """Devuelve el hash que se guarda en usuarios.xml (nunca la contraseña en claro)."""
+    """Devuelve el hash que se guarda en usuarios.xml"""
     return generate_password_hash(password)
 
 

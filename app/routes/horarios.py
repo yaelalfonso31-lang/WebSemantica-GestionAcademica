@@ -9,11 +9,13 @@ horarios_bp = Blueprint('horarios', __name__)
 
 @horarios_bp.route('/horarios', methods=['GET'])
 @login_requerido
-@rol_requerido('alumno')
+@rol_requerido('alumno', 'profesor')
 def vista_horarios():
-    """Grupos de las materias que el alumno cursa actualmente."""
+    """Horario semanal: el alumno ve sus materias en curso y el profesor los grupos que imparte."""
+    ref = session.get('ref_id')
+    xml = metricas.xml_horario_profesor(ref) if session.get('rol') == 'profesor' else metricas.xml_horario(ref)
     return transformar_a_html(
-        xml_path_or_string=metricas.xml_horario(session.get('ref_id')),
+        xml_path_or_string=xml,
         xslt_filename='horario.xsl',
         params={'rol_usuario': session.get('rol'),
                 'nombre_usuario': session.get('nombre') or session.get('username')},

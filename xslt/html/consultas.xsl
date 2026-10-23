@@ -50,9 +50,14 @@
                                 <select id="selectConsulta" class="form-input">
                                     <option value="" selected="selected" disabled="disabled">— Elige una consulta —</option>
                                     <option value="alumnos_en_riesgo.rq">Alumnos en Riesgo Académico</option>
-                                    <option value="materias_disponibles.rq">Materias Disponibles</option>
-                                    <option value="prerrequisitos_de_materia.rq">Prerrequisitos de Materias</option>
+                                    <option value="materias_disponibles.rq">Materias Disponibles por Alumno</option>
+                                    <option value="prerrequisitos_de_materia.rq">Prerrequisitos de Materias (directos y transitivos)</option>
+                                    <option value="alumnos_por_materia.rq">Alumnos Cursando por Materia</option>
+                                    <option value="promedio_por_grupo.rq">Promedio por Grupo</option>
                                     <option value="profesores_por_carrera.rq">Profesores por Carrera</option>
+                                    <option value="profesores_por_departamento.rq">Profesores por Departamento</option>
+                                    <option value="materias_de_profesor.rq">Materias que Imparte cada Profesor</option>
+                                    <option value="profesores_sin_materias.rq">Profesores sin Materias Asignadas</option>
                                 </select>
                             </div>
 

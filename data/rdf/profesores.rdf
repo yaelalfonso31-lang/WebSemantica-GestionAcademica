@@ -1,112 +1,142 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:ac="http://ejemplo.edu/academico#">
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P1002">
-    <ac:idProfesor>P1002</ac:idProfesor>
-    <foaf:name>Juan Pérez</foaf:name>
-    <foaf:mbox rdf:resource="mailto:juan.perez@universidad.edu.mx"/>
-    <ac:especialidad>Bases de Datos</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_CS105"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P1003">
-    <ac:idProfesor>P1003</ac:idProfesor>
-    <foaf:name>María García</foaf:name>
-    <foaf:mbox rdf:resource="mailto:maria.garcia@universidad.edu.mx"/>
-    <ac:especialidad>Inteligencia Artificial</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P001">
-    <ac:idProfesor>P001</ac:idProfesor>
-    <foaf:name>José Fernando Contreras-Monsalvo</foaf:name>
-    <foaf:mbox rdf:resource="mailto:jose.fernando.contreras.monsalvo@universidad.edu.mx"/>
-    <ac:especialidad>Ensamblador</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_CCOS005"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_ICCS007"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P002">
-    <ac:idProfesor>P002</ac:idProfesor>
-    <foaf:name>Carlos Palomino-Jiménez</foaf:name>
-    <foaf:mbox rdf:resource="mailto:carlos.palomino.jimenez@universidad.edu.mx"/>
-    <ac:especialidad>Cálculo Integral</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_CCOS008"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P003">
-    <ac:idProfesor>P003</ac:idProfesor>
-    <foaf:name>Beatriz Beltrán-Martínez</foaf:name>
-    <foaf:mbox rdf:resource="mailto:beatriz.beltran.martinez@universidad.edu.mx"/>
-    <ac:especialidad>Estructuras de Datos</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_CCOS013"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P004">
-    <ac:idProfesor>P004</ac:idProfesor>
-    <foaf:name>Gilberto López-Poblano</foaf:name>
-    <foaf:mbox rdf:resource="mailto:gilberto.lopez.poblano@universidad.edu.mx"/>
-    <ac:especialidad>Sistemas Operativos I</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_CCOS252"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P006">
-    <ac:idProfesor>P006</ac:idProfesor>
-    <foaf:name>Ernest Cortez</foaf:name>
-    <foaf:mbox rdf:resource="mailto:ernest.cortez@universidad.edu.mx"/>
-    <ac:especialidad>Física II</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_ICCS004"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P007">
-    <ac:idProfesor>P007</ac:idProfesor>
-    <foaf:name>María del Consuelo Molina-García</foaf:name>
-    <foaf:mbox rdf:resource="mailto:maria.del.consuelo.molina.garcia@universidad.edu.mx"/>
-    <ac:especialidad>Ecuaciones Diferenciales</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_ICCS006"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P008">
-    <ac:idProfesor>P008</ac:idProfesor>
-    <foaf:name>Berenice Rodríguez-Pedroza</foaf:name>
-    <foaf:mbox rdf:resource="mailto:berenice.rodriguez.pedroza@universidad.edu.mx"/>
-    <ac:especialidad>Circuitos Electrónicos</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_ICCS250"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P009">
-    <ac:idProfesor>P009</ac:idProfesor>
-    <foaf:name>María de la Concepción Pérez de Celis-Herrero</foaf:name>
-    <foaf:mbox rdf:resource="mailto:maria.de.la.concepcion.perez.de.celis.herrero@universidad.edu.mx"/>
-    <ac:especialidad>Bases de Datos para Ingeniería</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_ICCS256"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P010">
-    <ac:idProfesor>P010</ac:idProfesor>
-    <foaf:name>Adolfo Aguilar-Rico</foaf:name>
-    <foaf:mbox rdf:resource="mailto:adolfo.aguilar.rico@universidad.edu.mx"/>
-    <ac:especialidad>Minería de Datos</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_ICCS257"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P011">
-    <ac:idProfesor>P011</ac:idProfesor>
-    <foaf:name>Eugenia Erica Vera-Cervantes</foaf:name>
-    <foaf:mbox rdf:resource="mailto:eugenia.erica.vera.cervantes@universidad.edu.mx"/>
-    <ac:especialidad>Desarrollo de Aplicaciones Web</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_ICCS258"/>
-  </ac:Profesor>
-  <ac:Profesor rdf:about="http://ejemplo.edu/academico#Prof_P012">
-    <ac:idProfesor>P012</ac:idProfesor>
-    <foaf:name>Eduardo Profesor</foaf:name>
-    <foaf:mbox rdf:resource="mailto:eduardo.profesor@universidad.edu.mx"/>
-    <ac:especialidad>Ensamblador</ac:especialidad>
-    <ac:perteneceADepartamento rdf:resource="http://ejemplo.edu/academico#Dep_Sistemas"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_CCOS005"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_ICCS256"/>
-    <ac:imparte rdf:resource="http://ejemplo.edu/academico#Mat_ICCS258"/>
-  </ac:Profesor>
-  <ac:Departamento rdf:about="http://ejemplo.edu/academico#Dep_Sistemas">
-    <rdfs:label>Sistemas</rdfs:label>
-  </ac:Departamento>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:acad="http://academico.edu.mx/ontologia#">
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P1002">
+    <acad:id>P1002</acad:id>
+    <acad:nombre>Juan Pérez</acad:nombre>
+    <acad:especialidad>Bases de Datos</acad:especialidad>
+    <acad:correo>juan.perez@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CS105"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P1003">
+    <acad:id>P1003</acad:id>
+    <acad:nombre>María García</acad:nombre>
+    <acad:especialidad>Inteligencia Artificial</acad:especialidad>
+    <acad:correo>maria.garcia@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P001">
+    <acad:id>P001</acad:id>
+    <acad:nombre>José Fernando Contreras-Monsalvo</acad:nombre>
+    <acad:especialidad>Ensamblador</acad:especialidad>
+    <acad:correo>jose.fernando.contreras.monsalvo@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS007"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P002">
+    <acad:id>P002</acad:id>
+    <acad:nombre>Carlos Palomino-Jiménez</acad:nombre>
+    <acad:especialidad>Cálculo Integral</acad:especialidad>
+    <acad:correo>carlos.palomino.jimenez@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS260"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P003">
+    <acad:id>P003</acad:id>
+    <acad:nombre>Beatriz Beltrán-Martínez</acad:nombre>
+    <acad:especialidad>Estructuras de Datos</acad:especialidad>
+    <acad:correo>beatriz.beltran.martinez@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS262"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P004">
+    <acad:id>P004</acad:id>
+    <acad:nombre>Gilberto López-Poblano</acad:nombre>
+    <acad:especialidad>Sistemas Operativos I</acad:especialidad>
+    <acad:correo>gilberto.lopez.poblano@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P006">
+    <acad:id>P006</acad:id>
+    <acad:nombre>Ernest Cortez</acad:nombre>
+    <acad:especialidad>Física II</acad:especialidad>
+    <acad:correo>ernest.cortez@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS004"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P007">
+    <acad:id>P007</acad:id>
+    <acad:nombre>María del Consuelo Molina-García</acad:nombre>
+    <acad:especialidad>Ecuaciones Diferenciales</acad:especialidad>
+    <acad:correo>maria.del.consuelo.molina.garcia@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS006"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P008">
+    <acad:id>P008</acad:id>
+    <acad:nombre>Berenice Rodríguez-Pedroza</acad:nombre>
+    <acad:especialidad>Circuitos Electrónicos</acad:especialidad>
+    <acad:correo>berenice.rodriguez.pedroza@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS250"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P009">
+    <acad:id>P009</acad:id>
+    <acad:nombre>María de la Concepción Pérez de Celis-Herrero</acad:nombre>
+    <acad:especialidad>Bases de Datos para Ingeniería</acad:especialidad>
+    <acad:correo>maria.de.la.concepcion.perez.de.celis.herrero@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS256"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P010">
+    <acad:id>P010</acad:id>
+    <acad:nombre>Adolfo Aguilar-Rico</acad:nombre>
+    <acad:especialidad>Minería de Datos</acad:especialidad>
+    <acad:correo>adolfo.aguilar.rico@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS257"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P011">
+    <acad:id>P011</acad:id>
+    <acad:nombre>Eugenia Erica Vera-Cervantes</acad:nombre>
+    <acad:especialidad>Desarrollo de Aplicaciones Web</acad:especialidad>
+    <acad:correo>eugenia.erica.vera.cervantes@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P012">
+    <acad:id>P012</acad:id>
+    <acad:nombre>Eduardo Profesor</acad:nombre>
+    <acad:especialidad>Ensamblador</acad:especialidad>
+    <acad:correo>eduardo.profesor@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS256"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS254"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS262"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS275"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS257"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P013">
+    <acad:id>P013</acad:id>
+    <acad:nombre>Mariana Solís-Vega</acad:nombre>
+    <acad:especialidad>Redes y Seguridad</acad:especialidad>
+    <acad:correo>mariana.solis.vega@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS260"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS280"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P014">
+    <acad:id>P014</acad:id>
+    <acad:nombre>Ricardo Ochoa-Barrios</acad:nombre>
+    <acad:especialidad>Inteligencia Artificial</acad:especialidad>
+    <acad:correo>ricardo.ochoa.barrios@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/CCOS270"/>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS270"/>
+  </acad:Profesor>
+  <acad:Profesor rdf:about="http://academico.edu.mx/recurso/profesor/P015">
+    <acad:id>P015</acad:id>
+    <acad:nombre>Daniela Fuentes-Rojas</acad:nombre>
+    <acad:especialidad>Desarrollo de Software Móvil</acad:especialidad>
+    <acad:correo>daniela.fuentes.rojas@universidad.edu.mx</acad:correo>
+    <acad:departamento>Sistemas</acad:departamento>
+    <acad:imparte rdf:resource="http://academico.edu.mx/recurso/materia/ICCS280"/>
+  </acad:Profesor>
 </rdf:RDF>

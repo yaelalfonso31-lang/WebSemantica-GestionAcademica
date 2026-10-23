@@ -10,7 +10,7 @@ from lxml import etree
 from rdflib import Graph, Literal, URIRef
 
 ROOT = Path(__file__).resolve().parents[1]
-XML = ROOT / "data" / "xml" / "profesores.xml"
+XML = ROOT / "tests" / "fixtures" / "xml" / "profesores_ejemplo.xml"   # 3 profesores de muestra (P1001-P1003)
 DTD = ROOT / "schemas" / "dtd" / "profesores.dtd"
 XSD = ROOT / "schemas" / "xsd" / "profesores.xsd"
 XSL_HTML = ROOT / "xslt" / "html" / "profesores.xsl"
@@ -18,7 +18,9 @@ XSL_RDF = ROOT / "xslt" / "rdf" / "profesores2rdf.xsl"
 ONTOLOGIA = ROOT / "ontology" / "academico.ttl"
 SPARQL = ROOT / "sparql"
 
-AC = "http://ejemplo.edu/academico#"
+AC = "http://academico.edu.mx/ontologia#"
+RP = "http://academico.edu.mx/recurso/profesor/"
+RM = "http://academico.edu.mx/recurso/materia/"
 
 
 # ---------- utilidades ----------
@@ -100,37 +102,39 @@ def test_xsd_permite_profesor_sin_materias(doc, xsd):
 # ---------- XSLT -> HTML ----------
 def test_xslt_html_genera_una_fila_por_profesor(doc):
     html = etree.XSLT(etree.parse(str(XSL_HTML)))(doc)
-    assert len(html.xpath("//tbody/tr")) == 14      # 3 de ejemplo + 11 reales (seed_data.py)
+    assert len(html.xpath("//tbody/tr")) == len(doc.xpath("//profesor"))
     texto = str(html)
     assert "Ana López" in texto
     assert "Sin materias asignadas" in texto     # María García no tiene materias
 
 
-# ---------- XSLT -> RDF ----------
+# ---------- XSLT -> RDF (vocabulario acad: unificado con el resto del sistema) ----------
+RDF_TYPE = URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
+
+
 def test_rdf_numero_de_profesores_y_departamentos(grafo):
-    assert len(list(grafo.subjects(predicate=URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-                                   object=URIRef(AC + "Profesor")))) == 14
-    deps = set(grafo.subjects(predicate=URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-                              object=URIRef(AC + "Departamento")))
-    assert len(deps) == 1      # los 3 profesores son de "Sistemas"
+    assert len(set(grafo.subjects(RDF_TYPE, URIRef(AC + "Profesor")))) == 3
+    assert {str(o) for o in grafo.objects(None, URIRef(AC + "departamento"))} == {"Sistemas"}
+
+
+def test_rdf_usa_las_mismas_uris_que_materias(grafo):
+    """El profesor se identifica igual que en materias2rdf (recurso/profesor/<id>)."""
+    assert (URIRef(RP + "P1001"), RDF_TYPE, URIRef(AC + "Profesor")) in grafo
 
 
 def test_rdf_relacion_imparte(grafo):
-    ana = URIRef(AC + "Prof_P1001")
-    materias = set(grafo.objects(ana, URIRef(AC + "imparte")))
-    assert materias == {URIRef(AC + "Mat_CS201"), URIRef(AC + "Mat_CS205")}
+    materias = set(grafo.objects(URIRef(RP + "P1001"), URIRef(AC + "imparte")))
+    assert materias == {URIRef(RM + "CS201"), URIRef(RM + "CS205")}
 
 
 # ---------- SPARQL ----------
 def test_sparql_profesores_por_departamento(grafo):
-    filas = {str(r.nombre): int(r.numMaterias)
-             for r in grafo.query(consulta("profesores_por_departamento.rq"))}
+    filas = {str(r.nombre): int(r.numMaterias) for r in grafo.query(consulta("profesores_por_departamento.rq"))}
     assert filas == {"Ana López": 2, "Juan Pérez": 1, "María García": 0}
 
 
 def test_sparql_materias_de_profesor(grafo):
-    r = grafo.query(consulta("materias_de_profesor.rq"),
-                    initBindings={"profesor": URIRef(AC + "Prof_P1001")})
+    r = grafo.query(consulta("materias_de_profesor.rq"), initBindings={"profesor": URIRef(RP + "P1001")})
     assert [str(f.codigo) for f in r] == ["CS201", "CS205"]
 
 
@@ -140,24 +144,20 @@ def test_sparql_profesores_sin_materias(grafo):
 
 
 def test_sparql_ruta_inversa(grafo):
-    """El grafo solo guarda 'imparte'; con la ruta inversa ^ se obtiene quién imparte la materia
-    sin necesidad de un razonador que materialice 'impartidaPor'."""
-    q = """PREFIX ac: <http://ejemplo.edu/academico#>
-           SELECT ?prof WHERE { ac:Mat_CS105 ^ac:imparte ?prof }"""
-    assert [str(f.prof) for f in grafo.query(q)] == [AC + "Prof_P1002"]
+    """Con la ruta inversa ^ se obtiene quién imparte la materia sin materializar 'impartidaPor'."""
+    q = f"PREFIX acad: <{AC}> SELECT ?prof WHERE {{ <{RM}CS105> ^acad:imparte ?prof }}"
+    assert [str(f.prof) for f in grafo.query(q)] == [RP + "P1002"]
 
 
 def test_sparql_profesores_por_carrera(grafo):
-    """Requiere el RDF de materias: aquí se simula con un fragmento."""
+    """Se combina con el RDF de materias: aquí se simula con un fragmento."""
     g = Graph()
     for t in grafo:
         g.add(t)
     g.parse(data=f"""
-        @prefix ac: <{AC}> .
-        ac:Carrera_ISC a ac:Carrera ; ac:codigo "ISC" .
-        ac:Mat_CS201 ac:perteneceA ac:Carrera_ISC .
-        ac:Mat_CS105 ac:perteneceA ac:Carrera_ISC .
+        @prefix acad: <{AC}> .
+        <{RM}CS201> acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ISC> .
+        <{RM}CS105> acad:perteneceACarrera <http://academico.edu.mx/recurso/carrera/ISC> .
     """, format="turtle")
-    r = g.query(consulta("profesores_por_carrera.rq"),
-                initBindings={"codigoCarrera": Literal("ISC")})
-    assert [str(f.nombre) for f in r] == ["Ana López", "Juan Pérez"]
+    r = g.query(consulta("profesores_por_carrera.rq"))
+    assert [(str(f.carrera), str(f.nombre)) for f in r] == [("ISC", "Ana López"), ("ISC", "Juan Pérez")]

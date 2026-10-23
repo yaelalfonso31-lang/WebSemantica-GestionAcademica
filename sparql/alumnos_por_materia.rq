@@ -1,0 +1,14 @@
+PREFIX acad: <http://academico.edu.mx/ontologia#>
+
+# Cuántos alumnos cursan actualmente cada materia (inscripciones en estatus "Cursando").
+SELECT ?materiaId ?materiaNombre (COUNT(DISTINCT ?alumno) AS ?totalAlumnos)
+WHERE {
+    ?insc a acad:Inscripcion ;
+          acad:estatus "Cursando" ;
+          acad:inscribeA ?materia ;
+          acad:realizadaPor ?alumno .
+    ?materia acad:id ?materiaId ;
+             acad:nombre ?materiaNombre .
+}
+GROUP BY ?materiaId ?materiaNombre
+ORDER BY DESC(?totalAlumnos) ?materiaId

@@ -1,6 +1,7 @@
 import os
 from lxml import etree
 from flask import Blueprint, current_app, session, request, jsonify
+from app.services import asignaciones as asig
 from app.auth.decorators import login_requerido, rol_requerido
 from app.services.rdf_graph import SemanticEngine
 from app.services.transformer import transformar_a_html
@@ -70,6 +71,9 @@ def api_crear_materia():
 @rol_requerido('admin')
 def api_eliminar_materia(materia_id):
     """Elimina una materia por su atributo ID."""
+    problemas = asig.problemas_eliminar_materia(materia_id)
+    if problemas:
+        return jsonify({"error": "No se puede eliminar la materia. " + " ".join(problemas)}), 409
     try:
         eliminado = repo.eliminar_materia(materia_id)
         if not eliminado:

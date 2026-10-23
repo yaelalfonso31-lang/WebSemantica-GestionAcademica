@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE alumnos SYSTEM "../../schemas/dtd/alumnos.dtd">
+<alumnos>
+  <alumno id="A001" matricula="20230001">
+    <nombre>María</nombre>
+    <apellidos>García López</apellidos>
+    <correo>maria.garcia@edusemantic.edu</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>3</semestre>
+    <promedio>95.0</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A002" matricula="20230002">
+    <nombre>Carlos</nombre>
+    <apellidos>Hernández Ruiz</apellidos>
+    <correo>carlos.hernandez@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>6</semestre>
+    <promedio>84.1</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A003" matricula="20230003">
+    <nombre>Laura</nombre>
+    <apellidos>Martínez Torres</apellidos>
+    <correo>laura.martinez@alumno.buap.mx</correo>
+    <carrera_id>C002</carrera_id>
+    <semestre>4</semestre>
+    <promedio>63.9</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A005" matricula="20230005">
+    <nombre>Sofía</nombre>
+    <apellidos>Ramírez Flores</apellidos>
+    <correo>sofia.ramirez@alumno.buap.mx</correo>
+    <carrera_id>C003</carrera_id>
+    <semestre>2</semestre>
+    <promedio>89.7</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A011" matricula="202254023">
+    <nombre>Rubi </nombre>
+    <apellidos>Aparicio</apellidos>
+    <correo>rubi@gmail.com</correo>
+    <carrera_id>C003</carrera_id>
+    <semestre>10</semestre>
+    <promedio>50</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A006" matricula="202254021">
+    <nombre>Yael Alfonso</nombre>
+    <apellidos>Serrano Pastrana</apellidos>
+    <correo>yael.alfonso.serrano@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>8</semestre>
+    <promedio>84.3</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A007" matricula="20230007">
+    <nombre>Diego</nombre>
+    <apellidos>Ramírez Soto</apellidos>
+    <correo>diego.ramirez@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>6</semestre>
+    <promedio>84.0</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A008" matricula="20230008">
+    <nombre>Ana Sofía</nombre>
+    <apellidos>Mendoza Cruz</apellidos>
+    <correo>ana.sofia.mendoza@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>5</semestre>
+    <promedio>89.2</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A009" matricula="20240009">
+    <nombre>Luis Ángel</nombre>
+    <apellidos>Torres Vega</apellidos>
+    <correo>luis.angel.torres@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>4</semestre>
+    <promedio>70.0</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A010" matricula="20240010">
+    <nombre>Fernanda</nombre>
+    <apellidos>Ortiz Lara</apellidos>
+    <correo>fernanda.ortiz@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>4</semestre>
+    <promedio>88.5</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A012" matricula="20220012">
+    <nombre>Jorge</nombre>
+    <apellidos>Castillo Pérez</apellidos>
+    <correo>jorge.castillo@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>8</semestre>
+    <promedio>81.0</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A013" matricula="20230013">
+    <nombre>Valeria</nombre>
+    <apellidos>Núñez Ibarra</apellidos>
+    <correo>valeria.nunez@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>5</semestre>
+    <promedio>69.8</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A014" matricula="20220014">
+    <nombre>Miguel Ángel</nombre>
+    <apellidos>Reyes Salas</apellidos>
+    <correo>miguel.angel.reyes@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>7</semestre>
+    <promedio>91.6</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+  <alumno id="A015" matricula="20240015">
+    <nombre>Paola</nombre>
+    <apellidos>Guzmán Herrera</apellidos>
+    <correo>paola.guzman@alumno.buap.mx</correo>
+    <carrera_id>C001</carrera_id>
+    <semestre>3</semestre>
+    <promedio>86.5</promedio>
+    <estatus>Activo</estatus>
+  </alumno>
+</alumnos>

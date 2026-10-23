@@ -32,7 +32,7 @@ class SPARQLEngine:
         if not query_string.strip():
             raise ValueError(f'La consulta {archivo_rq} está vacía.')
 
-        # initBindings enlaza valores como literales (no concatena texto en la consulta)
+        # initBindings enlaza valores como literales
         bindings = {k: Literal(v) for k, v in (parametros or {}).items()}
 
         g = SemanticEngine.obtener_grafo()

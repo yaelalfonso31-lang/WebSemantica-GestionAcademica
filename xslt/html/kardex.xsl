@@ -101,7 +101,8 @@
                         </thead>
                         <tbody>
                             <xsl:for-each select="inscripciones/inscripcion">
-                                <xsl:sort select="periodo" order="descending"/>
+                                <xsl:sort select="orden_periodo" data-type="number" order="descending"/>
+                                <xsl:sort select="materia_nombre"/>
 
                                 <tr>
                                     <td class="kardex-col-folio">

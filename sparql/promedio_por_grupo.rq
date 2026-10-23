@@ -1,0 +1,13 @@
+PREFIX acad: <http://academico.edu.mx/ontologia#>
+
+# Promedio de calificaciones por grupo (solo inscripciones ya calificadas).
+SELECT ?grupo ?materiaNombre (COUNT(?insc) AS ?evaluados) (ROUND(AVG(?cal) * 10) / 10 AS ?promedio)
+WHERE {
+    ?insc a acad:Inscripcion ;
+          acad:grupo ?grupo ;
+          acad:calificacionFinal ?cal ;
+          acad:inscribeA ?materia .
+    ?materia acad:nombre ?materiaNombre .
+}
+GROUP BY ?grupo ?materiaNombre
+ORDER BY DESC(?promedio)

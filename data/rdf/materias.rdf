@@ -115,4 +115,118 @@
     <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
     <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P011"/>
   </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS254">
+    <acad:id>CCOS254</acad:id>
+    <acad:clave>CCOS 254</acad:clave>
+    <acad:nombre>Sistemas Operativos II</acad:nombre>
+    <acad:descripcion>Planificación avanzada, memoria virtual, sistemas de archivos y concurrencia.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P012"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS260">
+    <acad:id>CCOS260</acad:id>
+    <acad:clave>CCOS 260</acad:clave>
+    <acad:nombre>Redes de Computadoras</acad:nombre>
+    <acad:descripcion>Modelos de capas, protocolos TCP/IP, direccionamiento y enrutamiento.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P013"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS252"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS260">
+    <acad:id>ICCS260</acad:id>
+    <acad:clave>ICCS 260</acad:clave>
+    <acad:nombre>Probabilidad y Estadística</acad:nombre>
+    <acad:descripcion>Variables aleatorias, distribuciones e inferencia estadística básica.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P002"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS008"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS262">
+    <acad:id>CCOS262</acad:id>
+    <acad:clave>CCOS 262</acad:clave>
+    <acad:nombre>Ingeniería de Software</acad:nombre>
+    <acad:descripcion>Ciclo de vida del software, requisitos, diseño, pruebas y metodologías ágiles.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P012"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS262">
+    <acad:id>ICCS262</acad:id>
+    <acad:clave>ICCS 262</acad:clave>
+    <acad:nombre>Compiladores</acad:nombre>
+    <acad:descripcion>Análisis léxico, sintáctico y semántico; generación de código.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P003"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS005"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS270">
+    <acad:id>CCOS270</acad:id>
+    <acad:clave>CCOS 270</acad:clave>
+    <acad:nombre>Inteligencia Artificial</acad:nombre>
+    <acad:descripcion>Búsqueda, representación del conocimiento y aprendizaje automático.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P014"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS013"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/ICCS256"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS280">
+    <acad:id>CCOS280</acad:id>
+    <acad:clave>CCOS 280</acad:clave>
+    <acad:nombre>Seguridad Informática</acad:nombre>
+    <acad:descripcion>Criptografía aplicada, seguridad en redes y en aplicaciones.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P013"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS260"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS280">
+    <acad:id>ICCS280</acad:id>
+    <acad:clave>ICCS 280</acad:clave>
+    <acad:nombre>Desarrollo de Aplicaciones Móviles</acad:nombre>
+    <acad:descripcion>Diseño y construcción de aplicaciones para dispositivos móviles.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P015"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/CCOS275">
+    <acad:id>CCOS275</acad:id>
+    <acad:clave>CCOS 275</acad:clave>
+    <acad:nombre>Web Semántica</acad:nombre>
+    <acad:descripcion>RDF, ontologías OWL, consultas SPARQL y datos enlazados.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P012"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/ICCS256"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/ICCS258"/>
+  </acad:Materia>
+  <acad:Materia rdf:about="http://academico.edu.mx/recurso/materia/ICCS270">
+    <acad:id>ICCS270</acad:id>
+    <acad:clave>ICCS 270</acad:clave>
+    <acad:nombre>Computación en la Nube</acad:nombre>
+    <acad:descripcion>Virtualización, servicios en la nube, contenedores y despliegue escalable.</acad:descripcion>
+    <acad:creditos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</acad:creditos>
+    <acad:semestre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</acad:semestre>
+    <acad:perteneceACarrera rdf:resource="http://academico.edu.mx/recurso/carrera/ICC"/>
+    <acad:impartidaPor rdf:resource="http://academico.edu.mx/recurso/profesor/P014"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS254"/>
+    <acad:tienePrerrequisito rdf:resource="http://academico.edu.mx/recurso/materia/CCOS260"/>
+  </acad:Materia>
 </rdf:RDF>

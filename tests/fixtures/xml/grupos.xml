@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE grupos SYSTEM "../../schemas/dtd/grupos.dtd">
+<grupos>
+  <grupo id="G-CCOS005-01">
+    <materia_id>CCOS005</materia_id>
+    <profesor_id>P001</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>07:00</hora_inicio>
+    <hora_fin>09:00</hora_fin>
+    <aula>Edificio 1 - Aula 101</aula>
+  </grupo>
+  <grupo id="G-CCOS005-02">
+    <materia_id>CCOS005</materia_id>
+    <profesor_id>P012</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>07:00</hora_inicio>
+    <hora_fin>09:00</hora_fin>
+    <aula>Edificio 1 - Aula 102</aula>
+  </grupo>
+  <grupo id="G-CCOS008-01">
+    <materia_id>CCOS008</materia_id>
+    <profesor_id>P002</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>09:00</hora_inicio>
+    <hora_fin>11:00</hora_fin>
+    <aula>Edificio 1 - Aula 104</aula>
+  </grupo>
+  <grupo id="G-CCOS013-01">
+    <materia_id>CCOS013</materia_id>
+    <profesor_id>P003</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>09:00</hora_inicio>
+    <hora_fin>11:00</hora_fin>
+    <aula>Laboratorio de Cómputo A</aula>
+  </grupo>
+  <grupo id="G-CCOS252-01">
+    <materia_id>CCOS252</materia_id>
+    <profesor_id>P004</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>11:00</hora_inicio>
+    <hora_fin>13:00</hora_fin>
+    <aula>Laboratorio de Cómputo B</aula>
+  </grupo>
+  <grupo id="G-ICCS004-01">
+    <materia_id>ICCS004</materia_id>
+    <profesor_id>P006</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>11:00</hora_inicio>
+    <hora_fin>13:00</hora_fin>
+    <aula>Edificio 2 - Aula 201</aula>
+  </grupo>
+  <grupo id="G-ICCS006-01">
+    <materia_id>ICCS006</materia_id>
+    <profesor_id>P007</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Viernes</dia>
+    <hora_inicio>09:00</hora_inicio>
+    <hora_fin>12:00</hora_fin>
+    <aula>Edificio 2 - Aula 202</aula>
+  </grupo>
+  <grupo id="G-ICCS007-01">
+    <materia_id>ICCS007</materia_id>
+    <profesor_id>P001</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>13:00</hora_inicio>
+    <hora_fin>15:00</hora_fin>
+    <aula>Laboratorio de Electrónica</aula>
+  </grupo>
+  <grupo id="G-ICCS250-01">
+    <materia_id>ICCS250</materia_id>
+    <profesor_id>P008</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>13:00</hora_inicio>
+    <hora_fin>15:00</hora_fin>
+    <aula>Laboratorio de Electrónica</aula>
+  </grupo>
+  <grupo id="G-ICCS256-01">
+    <materia_id>ICCS256</materia_id>
+    <profesor_id>P009</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>15:00</hora_inicio>
+    <hora_fin>17:00</hora_fin>
+    <aula>Laboratorio de Cómputo C</aula>
+  </grupo>
+  <grupo id="G-ICCS256-02">
+    <materia_id>ICCS256</materia_id>
+    <profesor_id>P012</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Viernes</dia>
+    <hora_inicio>12:00</hora_inicio>
+    <hora_fin>15:00</hora_fin>
+    <aula>Laboratorio de Cómputo C</aula>
+  </grupo>
+  <grupo id="G-ICCS257-01">
+    <materia_id>ICCS257</materia_id>
+    <profesor_id>P010</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>15:00</hora_inicio>
+    <hora_fin>17:00</hora_fin>
+    <aula>Laboratorio de Cómputo A</aula>
+  </grupo>
+  <grupo id="G-ICCS258-01">
+    <materia_id>ICCS258</materia_id>
+    <profesor_id>P011</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>17:00</hora_inicio>
+    <hora_fin>19:00</hora_fin>
+    <aula>Laboratorio de Cómputo B</aula>
+  </grupo>
+  <grupo id="G-ICCS258-02">
+    <materia_id>ICCS258</materia_id>
+    <profesor_id>P012</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>17:00</hora_inicio>
+    <hora_fin>19:00</hora_fin>
+    <aula>Laboratorio de Cómputo B</aula>
+  </grupo>
+  <grupo id="G-CCOS008-02">
+    <materia_id>CCOS008</materia_id>
+    <profesor_id>P012</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>07:00</hora_inicio>
+    <hora_fin>09:00</hora_fin>
+    <aula>Edificio 1 - Aula 103</aula>
+  </grupo>
+  <grupo id="G-ICCS257-02">
+    <materia_id>ICCS257</materia_id>
+    <profesor_id>P012</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Viernes</dia>
+    <hora_inicio>09:00</hora_inicio>
+    <hora_fin>12:00</hora_fin>
+    <aula>Laboratorio de Cómputo A</aula>
+  </grupo>
+  <grupo id="G-CCOS262-01">
+    <materia_id>CCOS262</materia_id>
+    <profesor_id>P012</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>11:00</hora_inicio>
+    <hora_fin>13:00</hora_fin>
+    <aula>Edificio 2 - Aula 204</aula>
+  </grupo>
+  <grupo id="G-CCOS254-01">
+    <materia_id>CCOS254</materia_id>
+    <profesor_id>P012</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>13:00</hora_inicio>
+    <hora_fin>15:00</hora_fin>
+    <aula>Laboratorio de Cómputo A</aula>
+  </grupo>
+  <grupo id="G-CCOS275-01">
+    <materia_id>CCOS275</materia_id>
+    <profesor_id>P012</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>15:00</hora_inicio>
+    <hora_fin>17:00</hora_fin>
+    <aula>Laboratorio de Cómputo A</aula>
+  </grupo>
+  <grupo id="G-CCOS260-01">
+    <materia_id>CCOS260</materia_id>
+    <profesor_id>P013</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>13:00</hora_inicio>
+    <hora_fin>15:00</hora_fin>
+    <aula>Edificio 2 - Aula 203</aula>
+  </grupo>
+  <grupo id="G-CCOS280-01">
+    <materia_id>CCOS280</materia_id>
+    <profesor_id>P013</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>11:00</hora_inicio>
+    <hora_fin>13:00</hora_fin>
+    <aula>Edificio 3 - Aula 302</aula>
+  </grupo>
+  <grupo id="G-CCOS270-01">
+    <materia_id>CCOS270</materia_id>
+    <profesor_id>P014</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>09:00</hora_inicio>
+    <hora_fin>11:00</hora_fin>
+    <aula>Edificio 3 - Aula 301</aula>
+  </grupo>
+  <grupo id="G-ICCS270-01">
+    <materia_id>ICCS270</materia_id>
+    <profesor_id>P014</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>17:00</hora_inicio>
+    <hora_fin>19:00</hora_fin>
+    <aula>Edificio 3 - Aula 301</aula>
+  </grupo>
+  <grupo id="G-ICCS280-01">
+    <materia_id>ICCS280</materia_id>
+    <profesor_id>P015</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Lunes y Miércoles</dia>
+    <hora_inicio>17:00</hora_inicio>
+    <hora_fin>19:00</hora_fin>
+    <aula>Laboratorio de Cómputo C</aula>
+  </grupo>
+  <grupo id="G-ICCS260-01">
+    <materia_id>ICCS260</materia_id>
+    <profesor_id>P002</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Martes y Jueves</dia>
+    <hora_inicio>07:00</hora_inicio>
+    <hora_fin>09:00</hora_fin>
+    <aula>Edificio 1 - Aula 105</aula>
+  </grupo>
+  <grupo id="G-ICCS262-01">
+    <materia_id>ICCS262</materia_id>
+    <profesor_id>P003</profesor_id>
+    <periodo>Otoño 2026</periodo>
+    <dia>Viernes</dia>
+    <hora_inicio>12:00</hora_inicio>
+    <hora_fin>15:00</hora_fin>
+    <aula>Edificio 3 - Aula 303</aula>
+  </grupo>
+</grupos>

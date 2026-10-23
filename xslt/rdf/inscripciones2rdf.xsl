@@ -38,9 +38,12 @@
 
                 </acad:Inscripcion>
 
-                <!-- Inferencia directa: Si hay inscripción, el alumno cursa la materia -->
+                <!-- Si hay inscripción, el alumno cursa la materia; si la aprobó, también aproboMateria -->
                 <acad:Alumno rdf:about="http://academico.edu.mx/recurso/alumno/{alumno_id}">
                     <acad:cursaMateria rdf:resource="http://academico.edu.mx/recurso/materia/{materia_id}"/>
+                    <xsl:if test="estatus = 'Aprobado'">
+                        <acad:aproboMateria rdf:resource="http://academico.edu.mx/recurso/materia/{materia_id}"/>
+                    </xsl:if>
                 </acad:Alumno>
 
             </xsl:for-each>

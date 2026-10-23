@@ -21,3 +21,21 @@ Los alumnos ven su kardex y horario; los profesores sus grupos (`grupos.xml`) y 
 ## Modelo de datos (IDs que deben coincidir)
 usuario.ref → alumno/profesor · inscripcion.alumno_id → alumno · inscripcion.materia_id → materia ·
 inscripcion.grupo_id → grupo · grupo.materia_id → materia · grupo.profesor_id → profesor.
+
+## Datos de ejemplo
+- `python scripts/seed_data.py` — crea un conjunto base coherente (sobrescribe usuarios, grupos e inscripciones; deja respaldo).
+- `python scripts/ampliar_datos.py` — **agrega** más materias, profesores, alumnos, grupos e inscripciones sin borrar nada
+  (`--dry-run` para solo ver qué haría). Cada alta se valida con las reglas del sistema (prerrequisitos, choques de horario).
+  Los profesores y alumnos añadidos son ficticios.
+
+## Qué hace cada rol
+| Rol | Secciones |
+|---|---|
+| admin | Alumnos, Profesores, Materias, **Grupos** (crear grupos, inscribir y dar de baja), SPARQL |
+| profesor | Mis Grupos, Calificaciones, **Mi Horario** (calendario semanal) |
+| alumno | Mi Kardex, **Mi Horario** (calendario semanal), panel con materias que puede cursar |
+
+Reglas completas en `docs/reglas_de_negocio.md`.
+
+## Pruebas
+`pytest` — usan una copia de `tests/fixtures/xml`, por lo que no dependen ni modifican tu `data/`.

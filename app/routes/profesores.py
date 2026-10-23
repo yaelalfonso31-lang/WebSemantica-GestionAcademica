@@ -1,6 +1,7 @@
 import os
 from flask import (Blueprint, current_app, session, request, jsonify)
 from lxml import etree
+from app.services import asignaciones as asig
 from app.auth.decorators import login_requerido, rol_requerido
 from app.services.transformer import transformar_a_html
 from app.services.xml_repository import XMLRepository
@@ -158,6 +159,11 @@ def api_actualizar_profesor(profesor_id):
 @login_requerido
 @rol_requerido('admin')
 def api_eliminar_profesor(profesor_id):
+    problemas = asig.problemas_eliminar_profesor(profesor_id)
+    if problemas:
+        return jsonify({
+            "error": "No se puede eliminar el profesor. " + " ".join(problemas)
+        }), 409
     eliminado = repo.eliminar_profesor(profesor_id)
 
     if not eliminado:

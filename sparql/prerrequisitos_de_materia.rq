@@ -1,14 +1,16 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX acad: <http://academico.edu.mx/ontologia#>
 
-SELECT ?claveMateria ?nombreMateria ?claveRequisito ?nombreRequisito
+# Prerrequisitos de cada materia. La ruta de propiedad "+" recorre la cadena completa
+# (transitividad) sin necesidad de un razonador: "Directo" si la materia lo exige
+# expresamente y "Transitivo" si lo hereda a través de otro prerrequisito.
+SELECT ?materiaId ?materiaNombre ?prerrequisitoId ?prerrequisitoNombre ?tipo
 WHERE {
     ?materia a acad:Materia ;
-             acad:id ?claveMateria ;
-             acad:nombre ?nombreMateria ;
-             acad:tienePrerrequisito ?requisito .
-             
-    ?requisito acad:id ?claveRequisito ;
-               acad:nombre ?nombreRequisito .
+             acad:id ?materiaId ;
+             acad:nombre ?materiaNombre ;
+             acad:tienePrerrequisito+ ?requisito .
+    ?requisito acad:id ?prerrequisitoId ;
+               acad:nombre ?prerrequisitoNombre .
+    BIND(IF(EXISTS { ?materia acad:tienePrerrequisito ?requisito }, "Directo", "Transitivo") AS ?tipo)
 }
-ORDER BY ASC(?nombreMateria)
+ORDER BY ?materiaId ?tipo ?prerrequisitoId

@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE materias SYSTEM "../../schemas/dtd/materias.dtd">
+<materias>
+  <materia id="CCOS005" clave="CCOS 005">
+    <nombre>Ensamblador</nombre>
+    <descripcion>
+            Fundamentos de programación en lenguaje ensamblador y organización de bajo nivel.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>3</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P001">
+            José Fernando Contreras-Monsalvo
+        </profesor>
+    <prerrequisitos>
+        </prerrequisitos>
+  </materia>
+  <materia id="CCOS008" clave="CCOS 008">
+    <nombre>Cálculo Integral</nombre>
+    <descripcion>
+            Estudio de técnicas de integración y sus aplicaciones.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>3</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P002">
+            Carlos Palomino-Jiménez
+        </profesor>
+    <prerrequisitos>
+        </prerrequisitos>
+  </materia>
+  <materia id="CCOS013" clave="CCOS 013">
+    <nombre>Estructuras de Datos</nombre>
+    <descripcion>
+            Estudio de estructuras de datos y técnicas para su manejo en programas.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>4</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P003">
+            Beatriz Beltrán-Martínez
+        </profesor>
+    <prerrequisitos>
+        </prerrequisitos>
+  </materia>
+  <materia id="CCOS252" clave="CCOS 252">
+    <nombre>Sistemas Operativos I</nombre>
+    <descripcion>
+            Fundamentos de sistemas operativos, procesos, memoria y administración de recursos.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>5</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P004">
+            Gilberto López-Poblano
+        </profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS013" nombre="Estructuras de Datos"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="ICCS004" clave="ICCS 004">
+    <nombre>Física II</nombre>
+    <descripcion>
+            Estudio de fenómenos físicos y principios aplicados a la ingeniería.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>4</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P006">
+            Ernest Cortez
+        </profesor>
+    <prerrequisitos>
+        </prerrequisitos>
+  </materia>
+  <materia id="ICCS006" clave="ICCS 006">
+    <nombre>Ecuaciones Diferenciales</nombre>
+    <descripcion>
+            Estudio y aplicación de ecuaciones diferenciales en problemas de ingeniería.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>4</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P007">
+            María del Consuelo Molina-García
+        </profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS008" nombre="Cálculo Integral"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="ICCS007" clave="ICCS 007">
+    <nombre>Circuitos Eléctricos</nombre>
+    <descripcion>
+            Fundamentos de circuitos eléctricos y análisis de sus principales componentes.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>4</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P001">
+            José Fernando Contreras-Monsalvo
+        </profesor>
+    <prerrequisitos>
+      <prerrequisito ref="ICCS004" nombre="Física II"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="ICCS250" clave="ICCS 250">
+    <nombre>Circuitos Electrónicos</nombre>
+    <descripcion>
+            Estudio de componentes electrónicos y análisis de circuitos.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>5</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P008">
+            Berenice Rodríguez-Pedroza
+        </profesor>
+    <prerrequisitos>
+      <prerrequisito ref="ICCS007" nombre="Circuitos Eléctricos"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="ICCS256" clave="ICCS 256">
+    <nombre>Bases de Datos para Ingeniería</nombre>
+    <descripcion>
+            Diseño y administración de bases de datos aplicadas a problemas de ingeniería.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>6</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P009">
+            María de la Concepción Pérez de Celis-Herrero
+        </profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS013" nombre="Estructuras de Datos"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="ICCS257" clave="ICCS 257">
+    <nombre>Minería de Datos</nombre>
+    <descripcion>
+            Análisis de grandes conjuntos de datos para obtener información y patrones.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>7</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P010">
+            Adolfo Aguilar-Rico
+        </profesor>
+    <prerrequisitos>
+        </prerrequisitos>
+  </materia>
+  <materia id="ICCS258" clave="ICCS 258">
+    <nombre>Desarrollo de Aplicaciones Web</nombre>
+    <descripcion>
+            Desarrollo de aplicaciones y servicios orientados a plataformas web.
+        </descripcion>
+    <creditos>6</creditos>
+    <semestre>7</semestre>
+    <carrera codigo="ICC">
+            Ingeniería en Ciencias de la Computación
+        </carrera>
+    <profesor id="P011">
+            Eugenia Erica Vera-Cervantes
+        </profesor>
+    <prerrequisitos>
+        </prerrequisitos>
+  </materia>
+  <materia id="CCOS254" clave="CCOS 254">
+    <nombre>Sistemas Operativos II</nombre>
+    <descripcion>Planificación avanzada, memoria virtual, sistemas de archivos y concurrencia.</descripcion>
+    <creditos>6</creditos>
+    <semestre>5</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P012">Eduardo Profesor</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS252" nombre="Sistemas Operativos I"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="CCOS260" clave="CCOS 260">
+    <nombre>Redes de Computadoras</nombre>
+    <descripcion>Modelos de capas, protocolos TCP/IP, direccionamiento y enrutamiento.</descripcion>
+    <creditos>6</creditos>
+    <semestre>5</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P013">Mariana Solís-Vega</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS252" nombre="Sistemas Operativos I"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="ICCS260" clave="ICCS 260">
+    <nombre>Probabilidad y Estadística</nombre>
+    <descripcion>Variables aleatorias, distribuciones e inferencia estadística básica.</descripcion>
+    <creditos>6</creditos>
+    <semestre>4</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P002">Carlos Palomino-Jiménez</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS008" nombre="Cálculo Integral"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="CCOS262" clave="CCOS 262">
+    <nombre>Ingeniería de Software</nombre>
+    <descripcion>Ciclo de vida del software, requisitos, diseño, pruebas y metodologías ágiles.</descripcion>
+    <creditos>6</creditos>
+    <semestre>6</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P012">Eduardo Profesor</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS013" nombre="Estructuras de Datos"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="ICCS262" clave="ICCS 262">
+    <nombre>Compiladores</nombre>
+    <descripcion>Análisis léxico, sintáctico y semántico; generación de código.</descripcion>
+    <creditos>6</creditos>
+    <semestre>6</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P003">Beatriz Beltrán-Martínez</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS005" nombre="Ensamblador"/>
+      <prerrequisito ref="CCOS013" nombre="Estructuras de Datos"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="CCOS270" clave="CCOS 270">
+    <nombre>Inteligencia Artificial</nombre>
+    <descripcion>Búsqueda, representación del conocimiento y aprendizaje automático.</descripcion>
+    <creditos>6</creditos>
+    <semestre>7</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P014">Ricardo Ochoa-Barrios</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS013" nombre="Estructuras de Datos"/>
+      <prerrequisito ref="ICCS256" nombre="Bases de Datos para Ingeniería"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="CCOS280" clave="CCOS 280">
+    <nombre>Seguridad Informática</nombre>
+    <descripcion>Criptografía aplicada, seguridad en redes y en aplicaciones.</descripcion>
+    <creditos>6</creditos>
+    <semestre>7</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P013">Mariana Solís-Vega</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS260" nombre="Redes de Computadoras"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="ICCS280" clave="ICCS 280">
+    <nombre>Desarrollo de Aplicaciones Móviles</nombre>
+    <descripcion>Diseño y construcción de aplicaciones para dispositivos móviles.</descripcion>
+    <creditos>6</creditos>
+    <semestre>7</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P015">Daniela Fuentes-Rojas</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="ICCS258" nombre="Desarrollo de Aplicaciones Web"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="CCOS275" clave="CCOS 275">
+    <nombre>Web Semántica</nombre>
+    <descripcion>RDF, ontologías OWL, consultas SPARQL y datos enlazados.</descripcion>
+    <creditos>6</creditos>
+    <semestre>8</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P012">Eduardo Profesor</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="ICCS256" nombre="Bases de Datos para Ingeniería"/>
+      <prerrequisito ref="ICCS258" nombre="Desarrollo de Aplicaciones Web"/>
+    </prerrequisitos>
+  </materia>
+  <materia id="ICCS270" clave="ICCS 270">
+    <nombre>Computación en la Nube</nombre>
+    <descripcion>Virtualización, servicios en la nube, contenedores y despliegue escalable.</descripcion>
+    <creditos>6</creditos>
+    <semestre>8</semestre>
+    <carrera codigo="ICC">Ingeniería en Ciencias de la Computación</carrera>
+    <profesor id="P014">Ricardo Ochoa-Barrios</profesor>
+    <prerrequisitos>
+      <prerrequisito ref="CCOS254" nombre="Sistemas Operativos II"/>
+      <prerrequisito ref="CCOS260" nombre="Redes de Computadoras"/>
+    </prerrequisitos>
+  </materia>
+</materias>
